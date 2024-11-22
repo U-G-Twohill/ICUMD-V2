@@ -1,0 +1,10 @@
+runtime: php81  # This runtime setting is fine even if your main file is HTML
+
+handlers:
+- url: /(.*\.(gif|png|jpg|css|js|html))$
+  static_files: \1
+  upload: .*\.(gif|png|jpg|css|js|html)$
+
+- url: /.*
+  static_files: index.html
+  upload: index.html

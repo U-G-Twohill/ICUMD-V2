@@ -10942,7 +10942,7 @@ a:hover {
   display: flex;
   height: 110px;
   -webkit-transition: all, 0.5s;
-  transition: all, 0.5s;
+  transition: all, 0.5s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -10964,6 +10964,10 @@ a:hover {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.page-navbar.no-transition {
+  transition: none !important;
 }
 
 .page-navbar .nav-navbar .nav-item {
@@ -11002,8 +11006,10 @@ a:hover {
   font-size: 14px;
 }
 
+/* Adjust the logo size to be consistent */
 .page-navbar .nav-navbar .nav-link img {
-  width: calc(25px + (45 - 25) * ((100vw - 300px) / (1300 - 300)));
+  width: 150px;  /* Set a fixed width instead of using calc */
+  height: auto;
 }
 
 .page-navbar .nav-navbar .search {
@@ -11070,7 +11076,7 @@ a:hover {
 
 .page-navbar.affix {
   background: #212529;
-  height: 70px;
+  height: 70px;  /* Keep the shrunk height consistent */
   border-bottom: 1px solid rgba(173, 181, 189, 0.1);
 }
 

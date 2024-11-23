@@ -11,7 +11,8 @@
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
 </head>
-<body id="services" class="dark-theme">
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="services" class="dark-theme">
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
@@ -33,15 +34,6 @@
             <p class="header-subtitle">At ICU Media Design, we offer a range of services designed to meet the unique needs of small businesses in New Zealand. Our focus areas include web design, maintenance, and additional features that enhance your online presence.</p>
         </div>
     </header>
-
-    <div class="container">2121
-         
-    </div>
-        <h1>Test Payments</h1>
-        <button id="checkout-button">Buy Now ($69.69)</button>
-        <button id="subscription-button">Subscribe ($420.69/month)</button>
-        <button id="0-dollar-button">Test Payment ($0.50)</button>
-    </div>
 
     <!-- page container -->
     <!-- Design Section -->
@@ -215,6 +207,15 @@
         <a href="contact.html" class="btn btn-primary">Contact Us</a>
     </section>
 
+    
+         
+    </div>
+        <h1>Test Payments</h1>
+            <button id="checkout-button">Buy Now ($69.69)</button>
+            <button id="subscription-button">Subscribe ($420.69/month)</button>
+            <button id="0-dollar-button">Test Payment ($0.50)</button>
+    </div>
+
     <!-- footer -->
     <footer class="footer">
         <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
@@ -226,11 +227,12 @@
         </div>
     </footer><!-- end of footer -->
 
+    <!-- jQuery -->
+    <script src="vendors/jquery/jquery-3.4.1.js"></script>
     <!-- Bootstrap -->
     <script src="vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="vendors/bootstrap/bootstrap.affix.js"></script>
     <!-- Core JavaScript -->
-    <script src="vendors/jquery/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
     <!-- Stripe -->
     <script src="payment.js"></script>

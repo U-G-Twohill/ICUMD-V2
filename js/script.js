@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionStorage.setItem('wasAffixed', 'false');
         sessionStorage.setItem('scrollPosition', '0');
     }
+
+    
 });
 
 // jQuery document ready handler for various UI interactions

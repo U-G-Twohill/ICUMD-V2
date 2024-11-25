@@ -424,6 +424,12 @@ pre code {
     font-size: 1.8rem;
   }
 
+  .header-title img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
   /* Grid adjustments */
   .row {
     margin: 0;
@@ -469,8 +475,19 @@ pre code {
     min-height: 500px;
   }
 
+  /* Update navbar styles for tablet */
+  .nav-navbar {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-navbar .nav-item {
+    padding: 0 10px; /* Reduce padding */
+  }
+
   .nav-navbar .nav-link {
-    font-size: 14px;
+    font-size: 13px; /* Reduce font size */
+    white-space: nowrap; /* Prevent text wrapping */
   }
 
   .col-md-4 {
@@ -499,28 +516,6 @@ pre code {
     max-height: 80vh;
   }
 }
-
-/* Theme selector adjustments */
-@media (max-width: 768px) {
-  .theme-selector {
-    top: auto;
-    bottom: 20px;
-    left: auto;
-    right: 20px;
-    width: auto;
-    border-radius: 50%;
-  }
-
-  .theme-selector .body {
-    display: none;
-  }
-
-  .theme-selector.show {
-    width: auto;
-    left: auto;
-  }
-}
-
 
 .container-fluid {
   width: 100%;

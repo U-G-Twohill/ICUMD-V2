@@ -11366,6 +11366,15 @@ a:hover {
   font-weight: bold;
 }
 
+.header .header-content .header-title img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 200px; /* Adjust this value as needed */
+  display: block;
+  margin: 0 auto;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .header .header-content .btn-theme-color {

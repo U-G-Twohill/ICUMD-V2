@@ -13,7 +13,7 @@
   --cyan: #17a2b8;
   --white: #fff;
   --gray: #6c757d;
-  --gray-dark: #343a40;
+  --gray-dark: #343a40bb;
   --primary: #007bff;
   --secondary: #6c757d;
   --success: #28a745;
@@ -21,6 +21,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
+  --slightlylighterdark: #2a2e3381;
   --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -29,6 +30,45 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Quicksand", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+.lighter-section {
+  background-color: rgba(255, 255, 255, 0.05); /* Slightly lighter than the dark background */
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.darker-section {
+  background-color: var(--slightlylighterdark); /* Slightly lighter than the dark background */
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+  box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.541);
+}
+
+.team-section {
+  background-color: rgba(255, 255, 255, 0.05); /* Slightly lighter than the dark background specific to the team section */
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-section .card {
+  background-color: rgba(255, 255, 255, 0.02); /* Even more subtle difference for the card */
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-section .card:hover {
+  transform: translateY(-5px);
 }
 
 li {
@@ -393,10 +433,38 @@ pre code {
 }
 
 @media (max-width: 768px) {
+
   /* Navigation adjustments */
   .page-navbar {
-    height: auto;
+    height: 150px;
   }
+
+  .nav-navbar .nav-link img{
+    height: 60px;
+    width: auto;
+    vertical-align: right;
+    object-fit: contain;
+    max-height: 60px;
+  }
+
+  .nav-logo {
+    height: 100px;  /* Initial height */
+    width: auto;
+    transition: height 0.5s ease;
+}
+
+/* Adjust the logo size when navbar is affixed */
+  .page-navbar.affix .nav-logo {
+    height: 70px;  /* Smaller height when navbar is affixed */
+}
+
+.page-navbar .nav-navbar .nav-item .nav-link .nav-logo {
+  height: 100px;
+}
+
+.page-navbar.affix .nav-navbar .nav-item .nav-link .nav-logo {
+  height: 70px;
+}
 
   .nav-navbar {
     flex-direction: column;
@@ -1054,6 +1122,37 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
+}
+
+/* Medium screens (between 768px and 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Adjust navbar container */
+    .page-navbar .nav-navbar {
+      padding: 0 5px; /* Reduce padding */
+      gap: 5px; /* Reduce space between items */
+  }
+
+  /* Adjust all nav items */
+  .page-navbar .nav-navbar .nav-item .nav-link {
+      font-size: 14px; /* Smaller font size */
+      padding: 5px; /* Reduce padding */
+  }
+
+  /* Specific logo adjustments */
+  .page-navbar .nav-navbar .nav-item .nav-link .nav-logo {
+      height: 45px;
+      display: block !important;
+  }
+
+  .page-navbar.affix .nav-navbar .nav-item .nav-link .nav-logo {
+      height: 35px;
+  }
+
+  .nav-navbar.container {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 }
 
 @media (min-width: 768px) {
@@ -11019,10 +11118,18 @@ a:hover {
   font-size: 14px;
 }
 
-/* Adjust the logo size to be consistent */
-.page-navbar .nav-navbar .nav-link img {
-  width: 150px;  /* Set a fixed width instead of using calc */
-  height: auto;
+/* Add these new, more specific rules */
+.page-navbar .nav-navbar .nav-item .nav-link .nav-logo {
+  height: 100px;  /* Initial height */
+  width: auto;
+  transition: all 0.5s ease;
+  display: block; /* Ensure proper rendering */
+  object-fit: contain; /* Maintain aspect ratio */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.page-navbar.affix .nav-navbar .nav-item .nav-link .nav-logo {
+  height: 70px;  /* Smaller height when navbar is affixed */
 }
 
 .page-navbar .nav-navbar .search {
@@ -11205,21 +11312,6 @@ a:hover {
           transition-timing-function: linear;
 }
 
-.header2 {
-  z-index: 990;
-  position: relative;
-  height: 100%;
-  min-height: 600px;
-  text-align: center;
-  color: #fff;
-  background-image: url(imgs/nerds.jpg);
-  background-size: cover;
-  background-position: center;
-  -webkit-transition: .2s;
-  transition: .2s;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-}
 
 .header .overlay {
   position: absolute;
@@ -11227,9 +11319,15 @@ a:hover {
   top: 0;
   height: 100%;
   width: 100%;
-  background-image: -webkit-radial-gradient(48% 42%, 140% 110%, rgba(33, 37, 41, 0.5), rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.8), rgba(33, 37, 41, 0.93), #212529 55%, #212529 200%);
-  background-image: radial-gradient(140% 110% at 48% 42%, rgba(33, 37, 41, 0.5), rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.8), rgba(33, 37, 41, 0.93), #212529 55%, #212529 200%);
+  background-image: -webkit-radial-gradient(48% 42%, 140% 110%, 
+  rgba(33, 37, 41, 0.3), 
+  rgba(33, 37, 41, 0.4), 
+  rgba(33, 37, 41, 0.6), 
+  rgba(33, 37, 41, 0.8), 
+  rgba(33, 37, 41, 0.97), 
+  #212529 55%, #212529 200%);
 }
+
 
 .header .header-content {
   position: absolute;
@@ -11240,6 +11338,7 @@ a:hover {
       transform: translate(-50%, -50%);
 }
 
+
 .header .header-content .header-title {
   font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1300 - 300)));
   margin-top: 15px;
@@ -11247,10 +11346,12 @@ a:hover {
   font-weight: bold;
 }
 
+
 .header .header-content .header-subtitle {
   opacity: 1;
   margin-bottom: 30px;
 }
+
 
 .header .header-content .btn-theme-color {
   padding: 8px 20px;
@@ -11264,6 +11365,7 @@ a:hover {
   font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1300 - 300)));
   font-weight: bold;
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .header .header-content .btn-theme-color {

@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastScroll = sessionStorage.getItem('scrollPosition');
     const wasAffixed = sessionStorage.getItem('wasAffixed') === 'true';
     const isCurrentlyAtTop = window.scrollY <= 100;
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navBar = document.querySelector('.nav-navbar');
 
     // Check if we're navigating to a specific section using URL hash
     const hasHash = window.location.hash !== '';
@@ -68,6 +70,22 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionStorage.setItem('scrollPosition', '0');
     }
 
+    // Only add hamburger button event listeners if the elements exist
+    if (hamburgerBtn && navBar) {
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from bubbling up
+            this.classList.toggle('active');
+            navBar.classList.toggle('show-mobile-menu');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-navbar')) {
+                hamburgerBtn.classList.remove('active');
+                navBar.classList.remove('show-mobile-menu');
+            }
+        });
+    }
     
 });
 

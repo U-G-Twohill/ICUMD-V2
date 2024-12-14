@@ -71,6 +71,7 @@
   transform: translateY(-5px);
 }
 
+
 li {
   color: #ffffff; /* Replace with your desired color */
 }
@@ -436,11 +437,13 @@ pre code {
 
   /* Navigation adjustments */
   .page-navbar {
-    height: 150px;
+    height: auto;
+    min-height: 70px;
   }
 
   .nav-navbar .nav-link img{
-    height: 60px;
+    height: auto;
+    max-height: 70px;
     width: auto;
     vertical-align: right;
     object-fit: contain;
@@ -469,6 +472,22 @@ pre code {
   .nav-navbar {
     flex-direction: column;
     padding: 10px 0;
+    align-items: center; /* Ensure items are vertically centered */
+    align-content: center;
+    justify-content: center;
+  }
+
+  /* Hide all nav items except the logo */
+  .nav-navbar .nav-item:not(:first-child) {
+    display: none; /* Hides all nav items except the first one (logo) */
+  }
+
+  /* Style the logo container */
+  .nav-navbar .nav-item:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    width: auto; /* Don't take full width */
   }
 
   .nav-navbar .nav-item {

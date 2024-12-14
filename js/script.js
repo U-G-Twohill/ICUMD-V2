@@ -68,32 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionStorage.setItem('scrollPosition', '0');
     }
 
-    // Add hamburger menu functionality here
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    const mobileLinks = document.querySelectorAll('.mobile-menu a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        }
-    });
-
     
 });
 

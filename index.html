@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home | ICU Media Design</title>
+    
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
@@ -24,12 +25,42 @@
             </li>
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            
+            <!-- FIXED Services dropdown -->
+            <li class="nav-item dropdown">
+                <a href="services.html" class="nav-link">Services</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="design.html" class="dropdown-item">Web & Design</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="design.html#design" class="dropdown-item">Design</a></li>
+                            <li><a href="design.html#maintainence" class="dropdown-item">Maintenance</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
+                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <!-- Work dropdown - keeping your existing structure -->
+            <li class="nav-item dropdown">
+                <a href="work.html" class="nav-link">Work</a>
+                <ul class="dropdown-menu">
+                    <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
+                    <li><a href="blog.html" class="dropdown-item">Blog</a></li>
+                </ul>
+            </li>
+            
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
-    </nav><!-- end of page navbar -->
+    </nav>
 
     <!-- page header -->
     <header class="header">
@@ -51,12 +82,12 @@
     <!-- page container -->
     <div class="container page-container">
         <div class="lighter-section">
-            <h6 class="title mb-4">What do we offer?</h6>
-            <p class="mb-5">Welcome to ICU Media Design, we specialize in website design, maintenance, and evolution. Our expert team crafts visually stunning and user-friendly designs tailored 
-                to your businesses' unique identity, ensuring an engaging and seamless experience for your visitors.
+            <h6 class="title mb-4 offer-title">What do we offer?</h6>
+            <div class="heading-divider"></div>
+            <p class="mb-5">At ICU Media Design, we believe every small business deserves a powerful online presence without the complexity. We combine stunning web design with intelligent business solutions to create digital experiences that work as hard as you do.
                 <br><br>
-                We offer comprehensive maintenance packages to keep your site running smoothly, addressing updates, security, and 
-                performance enhancements. 
+                From crafting beautiful, responsive websites that capture your brand's essence, to implementing smart automations that streamline your operations - we handle the technology so you can focus on what you do best. Our comprehensive services include 
+                custom web design, reliable hosting, ongoing maintenance, SEO optimization, system integrations, and cutting-edge automation solutions tailored to your unique needs.
                 <br><br>
 
                 <!-- row -->
@@ -97,8 +128,7 @@
                     
                     <div class="col-md-10 col-lg-8 m-auto" style="display: flex; justify-content: center; align-items: center; padding-top: 40px;">
                         <p class="mb-5">
-                            Beyond just upkeep, we drive your website's growth and transformation with innovative features and cutting-edge technologies, ensuring your online presence evolves to meet the 
-                            ever-changing demands of the digital landscape. 
+                            Whether you're launching your first website or ready to transform how your business operates online, we're here to make technology work for you, not against you. Let's build something remarkable together.
                             <br><br>
                             Trust us to be your partner in creating, sustaining, and advancing your digital footprint.</p>
                         </p>       
@@ -109,36 +139,8 @@
         </div>  
 
 
-        <div class="darker-section">
-            <h6 class="title mb-4 ">Our Work</h6>
-            <p class="mb-5">We strive for work that everyone is happy with, both you as a client, and us as a provider, check out our portfolios and testimonials below.</p>
-            <!-- row -->
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <a href="portfolio.html" class="card">
-                        <img src="imgs/portfolio.jpg" class="card-img" alt="Portfolio">
-                        <div class="card-body">
-                            <h6 class="card-subtitle">Website</h6>
-                            <h3 class="card-title">Portfolio</h3>
-                            <p>Check out our growing roster of clients and testimonials.</p>
-                        </div>                  
-                    </a>
-                </div>  
-                <div class="col-md-6">
-                    <a href="blog.html" class="card">
-                        <img src="imgs/blog.jpg" class="card-img" alt="Testimonials">
-                        <div class="card-body">
-                            <h6 class="card-subtitle">Monthly</h6>
-                            <h3 class="card-title">Blog Posts</h3>
-                            <p>Keep up with our blog for fresh new ideas on how we can improve your website and digital footprint.</p>
-                        </div>                  
-                    </a>
-                </div>  
-            </div><!-- end of row -->
-        </div>
+        
 
-
-        <a href="#">Testimonials still to come<i class="ti-angle-double-right angle"></i></a>
 
     </div> <!-- end of page container -->
 
@@ -182,35 +184,6 @@
     <script src="js/script.js"></script>
 
 
-
-
-    <!-- Custom JavaScript to change header image 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var header = document.getElementById('page-header');
-            var path = window.location.pathname;
-            var page = path.split("/").pop();
-
-            switch(page) {
-                case 'about.html':
-                    header.style.backgroundImage = "url('imgs/about-header.jpg')";
-                    break;
-                case 'services.html':
-                    header.style.backgroundImage = "url('imgs/services-header.jpg')";
-                    break;
-                case 'portfolio.html':
-                    header.style.backgroundImage = "url('imgs/portfolio-header.jpg')";
-                    break;
-                case 'blog.html':
-                    header.style.backgroundImage = "url('imgs/blog-header.jpg')";
-                    break;
-                case 'contact.html':
-                    header.style.backgroundImage = "url('imgs/contact-header.jpg')";
-                    break;
-                default:
-                    header.style.backgroundImage = "url('imgs/default-header.jpg')";
-            }
-        }); -->
     </script>
 </body>
 </html>

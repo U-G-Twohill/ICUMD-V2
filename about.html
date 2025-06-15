@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | ICU Media Design</title>
+    
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
@@ -17,21 +18,56 @@
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
             <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/logo2.png" alt="No Picture to display" class="nav-logo"></a></li>
+            <li class="nav-item mobile-menu-btn">
+                <button class="hamburger-btn">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </li>
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            
+            <!-- FIXED Services dropdown -->
+            <li class="nav-item dropdown">
+                <a href="services.html" class="nav-link">Services</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="design.html" class="dropdown-item">Web & Design</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="design.html#design" class="dropdown-item">Design</a></li>
+                            <li><a href="design.html#maintainence" class="dropdown-item">Maintenance</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
+                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <!-- Work dropdown - keeping your existing structure -->
+            <li class="nav-item dropdown">
+                <a href="work.html" class="nav-link">Work</a>
+                <ul class="dropdown-menu">
+                    <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
+                    <li><a href="blog.html" class="dropdown-item">Blog</a></li>
+                </ul>
+            </li>
+            
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
-    </nav><!-- end of page navbar -->
+    </nav>
 
     <!-- Header Section -->
 <header class="header">
     <div class="overlay"></div>
     <div class="header-content">
         <h2 class="header-title">About Us</h2>
-        <p class="header-subtitle">Crafting Our Digital Narrative</p>
+        <p class="header-subtitle">Real People, Real Solutions, Real Results</p>
     </div>
 </header>
 
@@ -40,25 +76,26 @@
     <!-- Company Overview -->
     <div class="lighter-section">
         <h6 class="title mb-4">Our Story</h6>
-        <p class="mb-5">ICU Media Design was founded in July 2024 with a singular mission: to empower small businesses across New Zealand with exceptional, user-friendly websites, services and solutions. 
-            As a locally-based company, we understand the unique challenges and opportunities faced by small Kiwi businesses whether local or international, and we are dedicated to helping them succeed 
-            in the digital landscape.</p>
-        <p class="mb-5">Our vision is to be the go-to web development and enhancement agency for small businesses in New Zealand, known for our innovative solutions, reliable service, and 
-            customer-centric approach. We believe in integrity, inovation, and excellence, and these values are at the core of everything we do.</p>
+        <div class="heading-divider"></div>
+        <p class="mb-5">ICU Media Design began in July 2024 with a simple belief: every small business deserves a powerful online presence without the overwhelming complexity. As a locally-owned Kiwi company, we understand the unique challenges small businesses face - from tight budgets to wearing multiple hats to simply not having time to figure out "all this tech stuff."
+            <br><br>We're not your typical web agency. We believe in honest conversations about what's possible. While we're experts in many areas, we're also constantly learning and expanding our capabilities. If something's outside our current scope, we'll tell you upfront - then either partner with trusted specialists or develop the skills needed. This approach means you always get realistic timelines, fair pricing, and solutions that actually work, not empty promises.
+            <br><br>Our vision is simple: to be the trusted digital partner for small businesses across New Zealand and beyond. We measure our success by your success, taking pride in every website launched, every process automated, and every business transformed through smart technology.
     </div>
 
 
     <!-- Values Section -->
     <div class="darker-section">
         <h6 class="title mb-4">Our Values</h6>
+        <div class="heading-divider"></div>
         <div class="row mb-4">
             <div class="col-md-4">
                 <a class="overlay-img">
                     <img src="imgs/integrity.jpg" alt="Integrity">  
                     <div class="overlay"></div> 
                     <div class="des">
-                        <h1 class="title">Integrity</h1>
-                        <p>Building trust through honest and transparent relationships with our clients.</p>
+                        <h1 class="title">Clarity</h1>
+                        <p><i>Making technology simple and understandable</i>
+                            We translate tech-speak into plain English. No jargon, no confusion - just clear explanations of how we can help your business grow online.</p>
                     </div>          
                 </a>
             </div>
@@ -67,8 +104,9 @@
                     <img src="imgs/innovation.jpg" alt="Innovation">  
                     <div class="overlay"></div> 
                     <div class="des">
-                        <h1 class="title">Innovation </h1>
-                        <p>Staying ahead with cutting-edge solutions and creative approaches.</p>
+                        <h1 class="title">Partnership </h1>
+                        <p><i>We succeed when you succeed</i>
+                            Your wins are our wins. We're invested in your long-term success, not just project completion. That's why we build solutions that grow with you.</p>
                     </div>          
                 </a>
             </div>
@@ -77,8 +115,9 @@
                     <img src="imgs/excellence.jpg" alt="Excellence">  
                     <div class="overlay"></div> 
                     <div class="des">
-                        <h1 class="title">Excellence</h1>
-                        <p>Delivering outstanding results that exceed expectations.</p>
+                        <h1 class="title">Craftsmanship</h1>
+                        <p><i>Every project gets our full attention</i>
+                            Whether you're a sole trader or established business, your project receives the same dedication, creativity, and meticulous attention to detail.</p>
                     </div>          
                 </a>
             </div>          
@@ -91,7 +130,9 @@
     <div class="team-section">
         <div class="col-md-9 m-auto">
             <h6 class="title mb-4">Our Team</h6>
-            <p class="mb-5">Although we are a small team, we are dedicated to providing the best possible service to our clients with a taylored and personalised approach.</p>
+            <div class="heading-divider"></div>
+            <p class="header-subtitle">Small Team, Big Impact</p>
+            <p class="mb-5">Being a small team isn't a limitation - it's our superpower. It means you get personal service, direct communication, and someone who genuinely cares about your business outcomes..</p>
         </div>
 
         <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;">
@@ -106,21 +147,21 @@
             </div>
         </div>
         <div class="col-md-12" style="display: flex; justify-content: center; align-items: center;">
-            <p class="col-md-10 mb-5">As the CEO, Founder, and Lead Developer of ICU Media Design, Uriah brings a unique, hands-on approach to every project. With a vision to streamline web solutions
-                for small businesses, Uriah's direct involvement in all facets of the company ensures a seamless, efficient process from concept to completion. His dedication to 
-                quality and innovation drives ICU's mission to empower local entrepreneurs, making each website not just a project, but a personal endeavor.</p>
+            <p class="col-md-10 mb-5">As the driving force behind ICU Media Design, Uriah brings a rare combination of technical expertise and business understanding to every project. But more importantly, he brings genuine enthusiasm for helping small businesses thrive online.
+                <br><br>Working directly with each client, Uriah ensures nothing gets lost in translation between sales promises and technical delivery. His hands-on approach means faster decisions, clearer communication, and solutions perfectly tailored to your needs. When you 
+                work with ICU, you're not just another ticket number - you're working directly with someone invested in your success.</p>
         </div>
     </div>
 
 
     <!-- Work So Far -->
     <div class="darker-section">
-        <h6 class="title mb-4">Our Work So Far</h6>
+        <h6 class="title mb-4">Our Journey So Far</h6>
+        <div class="heading-divider"></div>
         <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;">
             <div class="col-md-11">
-                <p>We've already had the privilege of working with small businesses in the logistics and homeopathic industries, helping them establish a strong online presence that resonates with 
-                    their customers. Our websites facilitate easy outreach, contact, and collaboration, allowing business owners to focus on their core operations rather than technical obstacles. 
-                    This seamless digital experience not only enhances customer interaction but also supports internal efficiency and growth.</p>
+                <p>Since launching, we've had the privilege of partnering with innovative small businesses across logistics, wellness, and professional services. Each project has taught us something new and reinforced our belief that small businesses deserve better than one-size-fits-all solutions.
+                    <br><br>We've helped clients establish professional online presences, streamline their operations through smart automations, and connect with customers in meaningful ways. But beyond the technical achievements, we're most proud of the relationships we've built and the trust our clients place in us.</p>
             </div>
         </div>
     </div>
@@ -129,14 +170,13 @@
 
     <!-- Future Plans -->
     <div class="lighter-section">
-        <h6 class="title mb-4">Where are we going?</h6>
+        <h6 class="title mb-4">Growing Together</h6>
+        <div class="heading-divider"></div>
         <div class="row mb-5">
             <div class="col-md-12">
-                <p>As we grow, our commitment extends beyond our own development to the growth of our clients. We aim to bring our customers along on this journey by continuously expanding our service offerings. 
-                    This includes advanced SEO strategies, ongoing site maintenance, and pioneering web solutions that align with the latest digital trends. Our focus will increasingly be on integrating 
-                    state-of-the-art technologies such as AI-powered chatbots and sophisticated system integrations. These innovations are designed to enhance user interaction, streamline operations, 
-                    and maintain the modernity and efficiency of your online presence. At [Your Company Name], we're not just keeping pace with technology; we're setting the pace, ensuring our clients 
-                    benefit from the most cutting-edge solutions available.</p>
+                <p>As technology evolves, so do we. Our commitment to continuous learning means your business benefits from the latest innovations without the growing pains. We're expanding our services to include advanced AI integrations, sophisticated automation systems, 
+                    and cutting-edge features that were once only available to enterprise clients. <br><br>But growth isn't just about adding services - it's about deepening our understanding of what makes small businesses successful online. Every client teaches us something new, 
+                    and every project makes us better at what we do. <br><br>We believe in growing alongside our clients, ensuring that as your business scales, your digital presence and systems scale with you - seamlessly, affordably, and effectively.</p>
             </div>
         </div>
     </div>
@@ -144,10 +184,11 @@
     <!-- Contact Us -->
     <div class="darker-section">
         <h6 class="title mb-4">Sounds like a good fit?</h6>
+        <div class="heading-divider"></div>
         <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;">
             <div class="col-md-11">
-                <p>Like what you've heard so far? At ICU, we're ready to partner with you to elevate your digital presence. Whether you're looking to revamp your current 
-                    site, start fresh or add some state of the art features, our team is here to guide you through every step. 
+                <p>If you value honest communication, personal service, and technology that actually makes your life easier, we should talk. We're here to be your trusted guide through the digital landscape, turning complexity into clarity and challenges into opportunities.
+                    <br><br>Let's have a real conversation about where you are, where you want to be, and how we can help you get there - no pressure, no jargon, just honest advice about your best path forward.
                     <br><br>
                     Contact us today for a free consultation where we'll discuss your vision, explore potential solutions tailored to 
                     your needs, and start crafting a digital strategy that stands out. Let's collaborate to create something truly remarkable together. Reach out now to 

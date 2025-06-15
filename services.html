@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | ICU Media Design</title>
+    
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
@@ -17,196 +18,95 @@
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
             <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/logo2.png" alt="No Picture to display" class="nav-logo"></a></li>
+            <li class="nav-item mobile-menu-btn">
+                <button class="hamburger-btn">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </li>
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            
+            <!-- FIXED Services dropdown -->
+            <li class="nav-item dropdown">
+                <a href="services.html" class="nav-link">Services</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="design.html" class="dropdown-item">Web & Design</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="design.html#design" class="dropdown-item">Design</a></li>
+                            <li><a href="design.html#maintainence" class="dropdown-item">Maintenance</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
+                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <!-- Work dropdown - keeping your existing structure -->
+            <li class="nav-item dropdown">
+                <a href="work.html" class="nav-link">Work</a>
+                <ul class="dropdown-menu">
+                    <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
+                    <li><a href="blog.html" class="dropdown-item">Blog</a></li>
+                </ul>
+            </li>
+            
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
-    </nav><!-- end of page navbar -->
+    </nav>
 
     <!-- Header Section -->
-    <header class="header" id="page-header">
-        <div class="overlay"></div>
-        <div class="header-content">
-            <h1 class="header-title">Services</h1>
-            <p class="header-subtitle">At ICU Media Design, we offer a range of services designed to meet the unique needs of small & medium businesses in New Zealand. Our focus areas include web design, maintenance, and additional features that enhance your online presence.</p>
-        </div>
-    </header>
+    <div class="header-container">
+        <header class="header" id="page-header">
+            <div class="overlay"></div>
+            <div class="header-content">
+                <h1 class="header-title">Services</h1>
+                <p class="header-subtitle">At ICU Media Design, we offer a range of services designed to meet the unique needs of small & medium businesses in New Zealand. 
+                    Our focus areas include web design, maintenance, and additional features that enhance your online presence.</p>
+            </div>
+        </header>
+
+        
+    </div>
+
+    
 
     <!-- page container -->
     <!-- Design Section -->
-    <div id="design" class="container page-container">
-        <div class="lighter-section">
-            <h6 class="title mb-4">Our Approach</h6>
-            <p class="mb-5">Our approach is both straightforward and personalized; we listen to your needs and understand your business to create visually stunning, 
-                user-friendly websites that reflect your brand's unique identity. From concept to launch, we focus on clear communication, delivering engaging digital 
-                experiences that captivate your audience. Our hosting solutions ensure your site remains secure and fast, standing out in the online landscape.</p>
-        </div>  
-
-        <div class="darker-section">
-            <h6 class="title mb-5">Design</h6>    
-            <p class="mb-5">We adhere to the following design principles to ensure your website stands out:</p> 
-            <!-- row -->
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="overlay-img">
-                        <img src="imgs/design1.jpg" alt="Usabillity">  
-                        <div class="overlay"></div> 
-                        <div class="des">
-                            <h1 class="title">Usability</h1>
-                            <p>Ensuring ease of use and navigation for all users.</p>
-                        </div>          
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="overlay-img">
-                        <img src="imgs/design2.jpg" alt="Responsiveness">  
-                        <div class="overlay"></div> 
-                        <div class="des">
-                            <h1 class="title">Responsiveness </h1>
-                            <p>Creating designs that look great on all devices.</p>
-                        </div>          
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="overlay-img">
-                        <img src="imgs/design4.jpg" alt="Aesthetics">  
-                        <div class="overlay"></div> 
-                        <div class="des">
-                            <h1 class="title">Aesthetics</h1>
-                            <p>Crafting visually appealing and brand-consistent designs.</p>
-                        </div>          
-                    </a>
-                </div>          
-            </div><!-- end of row -->
+    <div class="container page-container">      
+        <div class="side-by-side">
+            <div class="side-by-side-left">
+                <h6 class="title mb-4">Web & Design</h6>
+                <div class="heading-divider"></div>
+                <p class="mb-5">Transform your online presence with our comprehensive web services. We create stunning, responsive websites from concept to launch, complete 
+                    with professional hosting and ongoing maintenance. Our packages include everything you need to succeed online - from custom branding and visual design to 
+                    SEO optimization, analytics integration, and fully-featured e-commerce stores. Whether you're starting fresh or refreshing your existing site, we handle 
+                    the technical details so you can focus on your business.</p>
+            </div>
+            <div class="side-by-side-right">
+                <h6 class="title mb-4">Solutions</h6>
+                <div class="heading-divider"></div>
+                <p class="mb-5">Streamline your business operations with intelligent automation solutions tailored to your needs. From simple time-savers like automated lead 
+                    capture and calendar scheduling to sophisticated custom-built systems, we help eliminate repetitive tasks and improve efficiency. Our solutions range from 
+                    connecting your existing tools to work seamlessly together, to developing cutting-edge features like AI-powered chatbots that enhance customer experience. 
+                    Let technology work smarter for you, not harder.</p>
+            </div>    
         </div>
 
-
-
-
-
-   <!-- Maintenance Section -->
-        <div id="maintainence" class="lighter-section">
-            <h6 class="title mb-4 ">Maintainence</h6>
-            <p class="mb-5">Keep your website running smoothly with our reliable maintenance services. We handle regular updates, security enhancements, and performance optimizations to ensure your site remains fast, secure, 
-                and functional. Our proactive approach to maintenance means you can focus on your business while we take care of your website’s health.</p>
-                
-            <p>We have multiple plans to help keep your business mordern, and seemelesly available to your client, check out our competitiive pricing options below.</p>
-
-            <!-- row -->
-            <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="card">
-                        <img src="imgs/maintainence1.jpg" class="card-img" alt="Portfolio">
-                        <div class="card-body">
-                            <h3 class="card-title">Basic plan</h3>
-                            <h6 class="card-subtitle">$200 p/m</h6>
-                            <p>Our Basic Plan is designed for small businesses that require essential website maintenance to ensure their online presence remains secure and functional.</p>
-                        </div>                  
-                    </a>
-                </div>  
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="card">
-                        <img src="imgs/maintainence2.jpg" class="card-img" alt="Portfolio">
-                        <div class="card-body">
-                            <h3 class="card-title">Medium plan</h3>
-                            <h6 class="card-subtitle">$300 p/m</h6>
-                            <p>The Medium Plan is perfect for businesses that require more frequent updates and optimizations to keep their website in top shape.</p>
-                        </div>                  
-                    </a>
-                </div>  
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="card">
-                        <img src="imgs/maintainence3.jpg" class="card-img" alt="Portfolio">
-                        <div class="card-body">
-                            <h3 class="card-title">Professional plan</h3>
-                            <h6 class="card-subtitle">$500 p/m</h6>
-                            <p>Our Professional Plan offers the most comprehensive maintenance service, tailored for businesses that demand top performance, security, and continuous improvements.</p>
-                        </div>                  
-                    </a>
-                </div>  
-                <div class="col-md-4">
-                    <a href="javascript:void(0)" class="card">
-                        <img src="imgs/maintainence4.jpg" class="card-img" alt="Portfolio">
-                        <div class="card-body">
-                            <h3 class="card-title">Custom plan</h3>
-                            <h6 class="card-subtitle">$? p/m</h6>
-                            <p>Work with us to devise the perfect plan and pricing option for you for a truely personal experience.</p>
-                        </div>                  
-                    </a>
-                </div>  
-            </div><!-- end of row -->
-        </div>
-
-
-    <!-- Additional Features Section -->
-        <div id="evolution" class="darker-section">
-            <h6 class="title mb-4">Additional Features</h6>
-            <p class="mb-5">Stay ahead of the curve with our cutting-edge enhancements and continuous improvement services. We help your website evolve by integrating the latest technologies and features, ensuring it meets the 
-                ever-changing demands of the digital world. Whether it's adding new functionalities or revamping existing ones, we ensure your site remains dynamic and competitive.</p>
-                <!-- row -->
-                <div class="row mb-3" style="display: flex; justify-content: center; align-items: center;">
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/evolution1.jpg" alt="Design Site">  
-                           <div class="overlay"></div> 
-                           <div class="des">
-                               <h1 class="title">eCommerce Intergration</h1>
-                               <h6 class="subtitle">Retail Businesses:</p>
-                               <p>Set up an online store to sell your products and services.</p>
-                               
-                               <p>Enhance your online store with seamless eCommerce integration.</p>
-                           </div>          
-                       </a>
-                   </div>
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/evolution2.jpg" alt="Maintaine Site">  
-                           <div class="overlay"></div> 
-                           <div class="des">
-                               <h1 class="title">SEO Optimization</h1>
-                               <h6 class="subtitle">Service Providers:</p>
-                               <p>Improve your website's visibility on search engines.</p>
-                               <p>Optimize your website for better search engine rankings. </p>
-                           </div>          
-                       </a>
-                   </div>
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/evolution3.jpg" alt="Evolve Site">  
-                           <div class="overlay"></div> 
-                           <div class="des">
-                               <h1 class="title">Analytics Integration</h1>
-                               <h6 class="subtitle">All Businesses:</p>
-                               <p>Track and analyze your website’s performance.</p>
-                               <p>Integrate analytics to make data-driven decisions.</p>
-                           </div>          
-                       </a>
-                   </div>      
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/evolution4.jpg" alt="Evolve Site">  
-                           <div class="overlay"></div> 
-                           <div class="des">
-                               <h1 class="title">Custom Plugins</h1>
-                               <h6 class="subtitle">Content Creators:</p>
-                               <p>Develop custom functionalities tailored to your specific needs.</p>
-                               <p>Add custom plugins to improve user engagement    </p>
-                           </div>          
-                       </a>
-                   </div>      
-               </div><!-- end of row -->
-        </div>
-
-
-   <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;"></div>
+        
 
    <div class="lighter-section">
         <!-- CTA Section -->
         <section class="cta-section container">
-            <h2>Sound Like a Good Fit?</h2>
+            <h2>Ready to Start Your Digital Journey?</h2>
+            <div class="heading-divider"></div>
             <p class="header-subtitle">Please get in touch!</p>
             <p>We're here to help you achieve your online goals. Whether you're looking for a new website, want to improve your existing one, or need assistance with maintenance, we're here to support you.</p>
             <a href="contact.html" class="btn btn-primary">Contact Us</a>

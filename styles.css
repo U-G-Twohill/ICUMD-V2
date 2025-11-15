@@ -204,6 +204,12 @@ img {
 /* Forms */
 .form-group {
   margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Hide labels by default */
+.form-group label {
+  visibility: hidden;
 }
 
 .form-control {

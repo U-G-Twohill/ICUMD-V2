@@ -2056,10 +2056,10 @@
     - logo2.png
     - logo2.webp
     - logo2bg.webp
-    - maintainence1.jpg
-    - maintainence2.jpg
-    - maintainence3.jpg
-    - maintainence4.jpg
+    - maintenance1.jpg
+    - maintenance2.jpg
+    - maintenance3.jpg
+    - maintenance4.jpg
     - nakilong.jpg
     - nerds.jpg
     - portfolio.jpg
@@ -5156,7 +5156,7 @@
 - contact.html
 - design.html
 - index.html
-- maintainence.html
+- maintenance.html
 - package-lock.json
 - package.json
 - payment.js
@@ -5171,4 +5171,5 @@
 - under-construction.html
 - update-directory.ps1
 
-`
+`
+

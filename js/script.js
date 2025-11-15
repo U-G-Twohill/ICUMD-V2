@@ -29,21 +29,9 @@ class ExpandingCard {
         this.isAnimating = false;
         this.originalPosition = null;
 
-        // Check for required elements and log errors
-        if (!this.trigger) {
-            console.error(`ExpandingCard: Missing .expanding-card-trigger in card with ID ${this.card.dataset.cardId || 'unknown'}`);
-            return;
-        }
-        if (!this.closeBtn) {
-            console.error(`ExpandingCard: Missing .expanding-card-close in card with ID ${this.card.dataset.cardId || 'unknown'}`);
-            return;
-        }
-        if (!this.content) {
-            console.error(`ExpandingCard: Missing .expanding-card-content in card with ID ${this.card.dataset.cardId || 'unknown'}`);
-            return;
-        }
-        if (!this.overlay) {
-            console.error('ExpandingCard: Missing #cardOverlay element in the DOM');
+        // Check for required elements
+        if (!this.trigger || !this.closeBtn || !this.content || !this.overlay) {
+            console.error(`ExpandingCard: Missing required elements in card with ID ${this.card.dataset.cardId || 'unknown'}`);
             return;
         }
 
@@ -51,42 +39,31 @@ class ExpandingCard {
     }
 
     init() {
-        // Log initialization for debugging
-        console.log(`Initializing ExpandingCard with ID ${this.card.dataset.cardId || 'unknown'}`);
-
         this.trigger.addEventListener('click', (e) => {
             e.preventDefault();
             if (!this.isAnimating && !this.isExpanded) {
-                console.log(`Trigger clicked for card ID ${this.card.dataset.cardId || 'unknown'}`);
                 this.expand();
             }
         });
 
-        // Ensure close button is clickable
         this.closeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            console.log(`Close button clicked for card ID ${this.card.dataset.cardId || 'unknown'}`);
             if (!this.isAnimating && this.isExpanded) {
                 this.collapse();
             }
         });
 
-        // Only collapse if clicking outside the card
         this.overlay.addEventListener('click', (e) => {
             if (e.target === this.overlay && !this.isAnimating && this.isExpanded) {
-                console.log(`Overlay clicked for card ID ${this.card.dataset.cardId || 'unknown'}`);
                 this.collapse();
             }
         });
 
-        // Prevent clicks on content from closing the card
         this.content.addEventListener('click', (e) => {
             e.stopPropagation();
-            console.log(`Content clicked for card ID ${this.card.dataset.cardId || 'unknown'}, preventing overlay close`);
         });
 
-        // Prevent card hover effect when expanded
         this.card.addEventListener('mouseenter', () => {
             if (this.isExpanded) {
                 this.card.querySelector('.card').style.transform = 'none';
@@ -100,6 +77,9 @@ class ExpandingCard {
         this.isAnimating = true;
         this.isExpanded = true;
     
+        // Compensate for scrollbar before disabling scroll
+        this.compensateForScrollbar();
+        
         // Disable page scrolling
         document.body.classList.add('card-expanded');
     
@@ -122,6 +102,14 @@ class ExpandingCard {
         cardClone.style.margin = '0';
         cardClone.style.zIndex = '1001';
         cardClone.classList.add('card-clone');
+        
+        // Fade out paragraph text in the clone
+        const cloneParagraphs = cardClone.querySelectorAll('.card-body p');
+        cloneParagraphs.forEach(p => {
+            p.style.transition = 'opacity 0.2s ease-out';
+            p.style.opacity = '1';
+        });
+        
         document.body.appendChild(cardClone);
     
         // Hide original card
@@ -134,8 +122,8 @@ class ExpandingCard {
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         const navbarHeight = getNavbarHeight();
-        const topGap = 20; // Gap below navbar
-        const bottomGap = 20; // Gap above bottom
+        const topGap = 20;
+        const bottomGap = 20;
         const availableHeight = viewportHeight - navbarHeight - topGap - bottomGap;
         const targetWidth = Math.min(viewportWidth * 0.9, 800);
     
@@ -146,64 +134,70 @@ class ExpandingCard {
         this.card.style.opacity = '0';
         this.card.style.top = '0px';
         this.content.style.display = 'block';
-        const cardHeaderHeight = this.card.querySelector('.card-img').offsetHeight + this.card.querySelector('.card-body').offsetHeight; // Measure image + header
+        const cardHeaderHeight = this.card.querySelector('.card-img').offsetHeight + this.card.querySelector('.card-body').offsetHeight;
         const fullCardHeight = this.card.offsetHeight;
         this.card.style.opacity = '0';
         this.card.style.top = '';
         this.content.style.display = '';
     
-        // Calculate target height with navbar and gaps
+        // Calculate target height and position
         const targetHeight = Math.min(fullCardHeight, availableHeight);
         const targetTop = navbarHeight + topGap + (availableHeight - targetHeight) / 2;
     
         // Set CSS custom property for navbar height
         document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
     
-        // Animate clone to target position
+        // Start animation sequence
         requestAnimationFrame(() => {
-            cardClone.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-            cardClone.style.top = `${targetTop}px`;
-            cardClone.style.left = `${(viewportWidth - targetWidth) / 2}px`;
-            cardClone.style.width = `${targetWidth}px`;
-            cardClone.style.height = `${targetHeight}px`;
+            cloneParagraphs.forEach(p => {
+                p.style.opacity = '0';
+            });
             
-            // Set up the real expanded card
-            this.card.style.position = 'fixed';
-            this.card.style.top = `${targetTop}px`;
-            this.card.style.left = `${(viewportWidth - targetWidth) / 2}px`;
-            this.card.style.width = `${targetWidth}px`;
-            this.card.style.height = 'auto';
-            this.card.style.maxHeight = `${targetHeight}px`;
-            this.card.style.overflow = 'hidden'; // Prevent content from spilling out
-            
-            this.content.style.display = 'block';
-            this.content.style.maxHeight = `${targetHeight - cardHeaderHeight}px`; // Dynamic content height
-            this.content.style.overflowY = 'auto'; // Scroll only the content
-    
             setTimeout(() => {
-                // Remove clone and show real card
-                cardClone.remove();
-                this.card.style.opacity = '1';
-                this.card.classList.add('animate-in');
+                // Animate clone to target position
+                cardClone.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                cardClone.style.top = `${targetTop}px`;
+                cardClone.style.left = `${(viewportWidth - targetWidth) / 2}px`;
+                cardClone.style.width = `${targetWidth}px`;
+                cardClone.style.height = `${targetHeight}px`;
                 
-                // Log dimensions for debugging
-                console.log(`Expanded card ID ${this.card.dataset.cardId || 'unknown'}: ` +
-                    `Viewport height=${viewportHeight}px, ` +
-                    `Full card height=${fullCardHeight}px, ` +
-                    `Header height=${cardHeaderHeight}px, ` +
-                    `Content height=${this.content.scrollHeight}px, ` +
-                    `Card max-height=${targetHeight}px, ` +
-                    `Available height=${availableHeight}px, ` +
-                    `Navbar height=${navbarHeight}px, ` +
-                    `Top gap=${topGap}px, ` +
-                    `Bottom gap=${bottomGap}px, ` +
-                    `Top position=${targetTop}px`);
+                // Set up the real expanded card
+                this.card.style.position = 'fixed';
+                this.card.style.top = `${targetTop}px`;
+                this.card.style.left = `${(viewportWidth - targetWidth) / 2}px`;
+                this.card.style.width = `${targetWidth}px`;
+                this.card.style.height = 'auto';
+                this.card.style.maxHeight = `${targetHeight}px`;
+                this.card.style.overflow = 'hidden';
                 
-                this.isAnimating = false;
+                // Initially hide paragraph text
+                const realParagraphs = this.card.querySelectorAll('.card-body p');
+                realParagraphs.forEach(p => {
+                    p.style.opacity = '0';
+                    p.style.transition = 'opacity 0.3s ease-in';
+                });
                 
-                // Focus on close button for accessibility
-                this.closeBtn.focus();
-            }, 400);
+                this.content.style.display = 'block';
+                this.content.style.maxHeight = `${targetHeight - cardHeaderHeight}px`;
+                this.content.style.overflowY = 'auto';
+    
+                setTimeout(() => {
+                    // Remove clone and show real card
+                    cardClone.remove();
+                    this.card.style.opacity = '1';
+                    this.card.classList.add('animate-in');
+                    
+                    // Fade in paragraph text
+                    setTimeout(() => {
+                        realParagraphs.forEach(p => {
+                            p.style.opacity = '1';
+                        });
+                    }, 50);
+                    
+                    this.isAnimating = false;
+                    this.closeBtn.focus();
+                }, 400);
+            }, 200);
         });
     }
 
@@ -213,108 +207,214 @@ class ExpandingCard {
         this.isAnimating = true;
         this.isExpanded = false;
     
-        // Re-enable page scrolling
+        // Re-enable page scrolling and remove scrollbar compensation
+        this.removeScrollbarCompensation();
         document.body.classList.remove('card-expanded');
     
-        // Hide content first
+        // Trigger fade-out animation
         this.card.classList.remove('animate-in');
-        this.card.style.overflow = 'hidden';
-    
-        // Create collapsing clone
-        const rect = this.card.getBoundingClientRect();
-        const cardClone = this.card.cloneNode(true);
-        cardClone.style.position = 'fixed';
-        cardClone.style.top = `${rect.top}px`;
-        cardClone.style.left = `${rect.left}px`;
-        cardClone.style.width = `${rect.width}px`;
-        cardClone.style.height = `${rect.height}px`;
-        cardClone.style.margin = '0';
-        cardClone.style.zIndex = '1001';
-        cardClone.classList.add('card-clone');
-        cardClone.querySelector('.expanding-card-content').style.display = 'none';
-        cardClone.querySelector('.expanding-card-close').style.opacity = '0';
-        document.body.appendChild(cardClone);
-    
-        // Hide original
-        this.card.style.opacity = '0';
-    
-        // Animate back to original position
-        requestAnimationFrame(() => {
-            cardClone.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-            cardClone.style.top = `${this.originalPosition.top}px`;
-            cardClone.style.left = `${this.originalPosition.left}px`;
-            cardClone.style.width = `${this.originalPosition.width}px`;
-            cardClone.style.height = `${this.originalPosition.height}px`;
-            
-            // Hide overlay
-            this.overlay.classList.remove('active');
-            
-            setTimeout(() => {
-                // Reset card to original state
-                this.card.classList.remove('is-expanded');
-                this.card.style.position = '';
-                this.card.style.top = '';
-                this.card.style.left = '';
-                this.card.style.width = '';
-                this.card.style.height = '';
-                this.card.style.maxHeight = '';
-                this.card.style.overflow = '';
-                this.card.style.opacity = '1';
-                this.card.style.transform = ''; // Reset any transform from hover
-                this.content.style.display = '';
-                this.content.style.maxHeight = '';
-                this.content.style.overflowY = '';
-                
-                // Remove clone
-                cardClone.remove();
-                
-                // Force reflow to fix layout
-                this.card.offsetHeight; // Trigger reflow
-                
-                this.isAnimating = false;
-                
-                // Return focus to trigger
-                this.trigger.focus();
-            }, 400);
+        this.card.classList.add('animate-out');
+        
+        // Fade out paragraph text
+        const paragraphs = this.card.querySelectorAll('.card-body p');
+        paragraphs.forEach(p => {
+            p.style.transition = 'opacity 0.2s ease-out';
+            p.style.opacity = '0';
         });
+        
+        // Force reflow
+        this.card.offsetHeight;
+        
+        // Wait for content fade-out animation
+        setTimeout(() => {
+            // Ensure all animations have settled before measuring
+            this.card.style.overflow = 'hidden';
+            
+            // Force a reflow to ensure stable positioning
+            this.card.offsetHeight;
+            
+            // Get position after reflow
+            const rect = this.card.getBoundingClientRect();
+            
+            // Validate that we have a reasonable position
+            if (rect.width <= 0 || rect.height <= 0 || rect.top < 0) {
+                console.warn('Invalid card position detected, skipping transform animation');
+                // Fallback: just reset the card directly
+                this.resetCardToOriginal();
+                return;
+            }
+            
+            const cardClone = this.card.cloneNode(true);
+            cardClone.style.position = 'fixed';
+            cardClone.style.top = `${rect.top}px`;
+            cardClone.style.left = `${rect.left}px`;
+            cardClone.style.width = `${rect.width}px`;
+            cardClone.style.height = `${rect.height}px`;
+            cardClone.style.margin = '0';
+            cardClone.style.zIndex = '1001';
+            cardClone.classList.add('card-clone');
+            
+            // Hide expanded content in clone
+            const cloneContent = cardClone.querySelector('.expanding-card-content');
+            if (cloneContent) {
+                cloneContent.style.opacity = '0';
+                cloneContent.style.display = 'none';
+            }
+            cardClone.querySelector('.expanding-card-close').style.opacity = '0';
+            
+            // Hide paragraph text in clone
+            const cloneParagraphs = cardClone.querySelectorAll('.card-body p');
+            cloneParagraphs.forEach(p => {
+                p.style.opacity = '0';
+            });
+            
+            document.body.appendChild(cardClone);
+            this.card.style.opacity = '0';
+        
+            // Animate back to original position
+            requestAnimationFrame(() => {
+                cardClone.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                cardClone.style.top = `${this.originalPosition.top}px`;
+                cardClone.style.left = `${this.originalPosition.left}px`;
+                cardClone.style.width = `${this.originalPosition.width}px`;
+                cardClone.style.height = `${this.originalPosition.height}px`;
+                
+                // Fade in paragraph text during collapse
+                setTimeout(() => {
+                    cloneParagraphs.forEach(p => {
+                        p.style.transition = 'opacity 0.3s ease-in';
+                        p.style.opacity = '1';
+                    });
+                }, 200);
+                
+                // Hide overlay
+                this.overlay.classList.remove('active');
+                
+                // Clean up after animation
+                setTimeout(() => {
+                    // Reset card to original state
+                    this.card.classList.remove('is-expanded', 'animate-out');
+                    this.card.style.position = '';
+                    this.card.style.top = '';
+                    this.card.style.left = '';
+                    this.card.style.width = '';
+                    this.card.style.height = '';
+                    this.card.style.maxHeight = '';
+                    this.card.style.overflow = '';
+                    this.card.style.opacity = '1';
+                    this.card.style.transform = '';
+                    this.content.style.display = '';
+                    this.content.style.maxHeight = '';
+                    this.content.style.overflowY = '';
+                    this.content.style.transition = '';
+                    this.content.style.opacity = '';
+                    
+                    // Reset paragraph styles
+                    paragraphs.forEach(p => {
+                        p.style.transition = '';
+                        p.style.opacity = '1';
+                    });
+                    
+                    // Remove clone
+                    cardClone.remove();
+                    
+                    // Force reflow
+                    this.card.offsetHeight;
+                    
+                    this.isAnimating = false;
+                    this.trigger.focus();
+                }, 400);
+            });
+        }, 250); // Increased from 200ms to give CSS animation more time to complete
+    }
+
+    // Helper method for resetting card when transform fails
+    resetCardToOriginal() {
+        this.card.classList.remove('is-expanded', 'animate-out');
+        this.card.style.position = '';
+        this.card.style.top = '';
+        this.card.style.left = '';
+        this.card.style.width = '';
+        this.card.style.height = '';
+        this.card.style.maxHeight = '';
+        this.card.style.overflow = '';
+        this.card.style.opacity = '1';
+        this.card.style.transform = '';
+        this.content.style.display = '';
+        this.content.style.maxHeight = '';
+        this.content.style.overflowY = '';
+        this.content.style.transition = '';
+        this.content.style.opacity = '';
+        
+        const paragraphs = this.card.querySelectorAll('.card-body p');
+        paragraphs.forEach(p => {
+            p.style.transition = '';
+            p.style.opacity = '1';
+        });
+        
+        this.overlay.classList.remove('active');
+        this.card.offsetHeight; // Force reflow
+        this.isAnimating = false;
+        this.trigger.focus();
+    }
+
+    // Scrollbar compensation methods
+    compensateForScrollbar() {
+        // Calculate scrollbar width
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        
+        if (scrollbarWidth > 0) {
+            // Add padding to body to compensate for missing scrollbar
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+            
+            // Also compensate fixed elements like navbar
+            const navbar = document.querySelector('.page-navbar');
+            if (navbar) {
+                navbar.style.paddingRight = `${scrollbarWidth}px`;
+            }
+        }
+    }
+
+    removeScrollbarCompensation() {
+        // Remove scrollbar compensation
+        document.body.style.paddingRight = '';
+        
+        // Remove navbar compensation
+        const navbar = document.querySelector('.page-navbar');
+        if (navbar) {
+            navbar.style.paddingRight = '';
+        }
     }
 }
 
-// Wait for DOM to be fully loaded before running script
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all expanding cards
+    // Initialize expanding cards
     const cards = document.querySelectorAll('.expanding-card');
-    if (cards.length === 0) {
-        console.warn('No .expanding-card elements found in the DOM');
-    }
     cards.forEach(card => {
         new ExpandingCard(card);
-        console.log(`Found expanding card with ID ${card.dataset.cardId || 'unknown'}`);
     });
 
-    // Handle escape key for expanding cards
+    // Handle escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             const expandedCard = document.querySelector('.expanding-card.is-expanded');
             if (expandedCard) {
                 const closeBtn = expandedCard.querySelector('.expanding-card-close');
-                console.log('Escape key pressed, triggering close button');
                 closeBtn.click();
             }
         }
     });
 
-    // Get reference to the navigation bar
+    // Navbar functionality
     const navbar = document.querySelector('.page-navbar');
     
-    // Listen for scroll events and update navbar state
     window.addEventListener('scroll', function() {
         sessionStorage.setItem('scrollPosition', window.scrollY);
         sessionStorage.setItem('wasAffixed', window.scrollY > 100);
         updateNavbar();
     });
 
-    // Function to update navbar appearance based on scroll position
     function updateNavbar() {
         if (window.scrollY > 100) {
             navbar.classList.add('affix');
@@ -323,23 +423,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize navbar state
     updateNavbar();
-
-    // Mobile Menu Functionality
     initMobileMenu();
-    
-    // Page transition functionality
     initPageTransitions();
-    
-    // Handle page load fade in
     handlePageLoadFadeIn();
-
-    // Initialize smooth scroll with navbar offset
     initSmoothScrollWithOffset();
 });
 
-// Function to initialize mobile menu
+// Mobile menu functionality
 function initMobileMenu() {
     const hamburgerBtn = document.querySelector('.hamburger-btn');
     const navBar = document.querySelector('.nav-navbar');
@@ -347,7 +438,6 @@ function initMobileMenu() {
     
     if (!hamburgerBtn || !navBar) return;
     
-    // Toggle mobile menu
     hamburgerBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
@@ -355,7 +445,6 @@ function initMobileMenu() {
         document.body.classList.toggle('mobile-menu-open');
     });
     
-    // Handle mobile dropdown toggles
     dropdownItems.forEach(item => {
         item.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
@@ -365,34 +454,29 @@ function initMobileMenu() {
                 const submenu = this.nextElementSibling;
                 const parent = this.parentElement;
                 
-                // Close other submenus
                 document.querySelectorAll('.dropdown-submenu').forEach(sub => {
                     if (sub !== parent) {
                         sub.classList.remove('active');
                     }
                 });
                 
-                // Toggle current submenu
                 parent.classList.toggle('active');
             }
         });
     });
     
-    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.nav-navbar') && !e.target.closest('.hamburger-btn')) {
             hamburgerBtn.classList.remove('active');
             navBar.classList.remove('show-mobile-menu');
             document.body.classList.remove('mobile-menu-open');
             
-            // Close all submenus
             document.querySelectorAll('.dropdown-submenu').forEach(sub => {
                 sub.classList.remove('active');
             });
         }
     });
     
-    // Close menu when clicking on a link (except dropdown toggles)
     document.querySelectorAll('.nav-link:not(.dropdown-item)').forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 768) {
@@ -403,7 +487,6 @@ function initMobileMenu() {
         });
     });
     
-    // Handle window resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
             hamburgerBtn.classList.remove('active');
@@ -416,7 +499,7 @@ function initMobileMenu() {
     });
 }
 
-// Function to initialize page transitions
+// Page transitions
 function initPageTransitions() {
     const allLinks = document.querySelectorAll('a[href]');
     
@@ -424,12 +507,10 @@ function initPageTransitions() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Skip if it's a same-page anchor link
             if (href && href.startsWith('#')) {
                 return;
             }
             
-            // Check if it's an internal page link
             if (href && 
                 href.includes('.html') && 
                 !href.startsWith('http') && 
@@ -451,7 +532,6 @@ function initPageTransitions() {
     });
 }
 
-// Function to handle page transitions
 function handlePageTransition(targetUrl) {
     const body = document.body;
     const currentScrollY = window.scrollY;
@@ -481,7 +561,6 @@ function handlePageTransition(targetUrl) {
     }
 }
 
-// Function to start fade transition
 function startFadeTransition(targetUrl) {
     const body = document.body;
     
@@ -495,7 +574,6 @@ function startFadeTransition(targetUrl) {
     }, 300);
 }
 
-// Function to handle page load fade in
 function handlePageLoadFadeIn() {
     const body = document.body;
     const html = document.documentElement;
@@ -514,7 +592,6 @@ function handlePageLoadFadeIn() {
     }
 }
 
-// Function to get navbar height
 function getNavbarHeight() {
     const navbar = document.querySelector('.page-navbar');
     if (!navbar) return 0;
@@ -526,7 +603,6 @@ function getNavbarHeight() {
     }
 }
 
-// Function to initialize smooth scroll
 function initSmoothScrollWithOffset() {
     document.addEventListener('click', function(e) {
         const target = e.target.closest('a[href]');
@@ -590,7 +666,6 @@ function initSmoothScrollWithOffset() {
         }, 700);
     });
 
-    // Handle cross-page anchors
     if (window.location.hash) {
         setTimeout(() => {
             const targetElement = document.querySelector(window.location.hash);
@@ -607,7 +682,7 @@ function initSmoothScrollWithOffset() {
     }
 }
 
-// jQuery functionality (only if jQuery is loaded)
+// jQuery functionality (if available)
 if (typeof jQuery !== 'undefined') {
     $(document).ready(function(){
         $('.search-toggle').click(function(){

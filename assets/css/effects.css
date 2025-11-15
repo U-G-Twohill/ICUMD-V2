@@ -1,0 +1,97 @@
+/* effects.css */
+:root {
+  --spectral-white:#fff; --spectral-silver:#a1a1aa;
+  --spectral-charcoal:#27272a; --spectral-void:#09090b;
+
+  --vivid-ruby:#e11d48; --vivid-flame:#ea580c; --vivid-gold:#facc15;
+  --vivid-jade:#16a34a; --vivid-azure:#0ea5e9; --vivid-indigo:#6366f1; --vivid-orchid:#a855f7;
+
+  /* common tunables */
+  --fx-speed:1;                /* global speed multiplier */
+  --fx-opacity:1;              /* overall opacity */
+}
+
+/* Generic host */
+.fx-host {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;          /* so effect layers don't escape */
+}
+
+/* Layer that sits behind content but inside .fx-host */
+/* ---------- Shared Layer ---------- */
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* sits behind content */
+}
+
+/* -------- Effect: Chroma Shift (CSS-only) -------- */
+.fx--chromaShift .fx-layer {
+  background: var(--vivid-ruby);
+  animation: chroma-cycle calc(10s / var(--fx-speed)) ease infinite;
+}
+@keyframes chroma-cycle {
+  0%,100% { background: var(--vivid-ruby); filter:hue-rotate(0deg); }
+  25% { background: var(--vivid-flame); filter:hue-rotate(90deg); }
+  50% { background: var(--vivid-jade);  filter:hue-rotate(180deg); }
+  75% { background: var(--vivid-azure); filter:hue-rotate(270deg); }
+}
+
+/* -------- Effect: Gradient River (CSS-only) -------- */
+.fx--gradientRiver .fx-layer {
+  background: linear-gradient(90deg,
+    var(--vivid-ruby), var(--vivid-flame), var(--vivid-gold),
+    var(--vivid-jade), var(--vivid-azure), var(--vivid-indigo),
+    var(--vivid-orchid), var(--vivid-ruby));
+  background-size: 200% 100%;
+  animation: river-flow calc(10s / var(--fx-speed)) linear infinite;
+}
+@keyframes river-flow { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+
+/* -------- Effect: Aurora Wave (needs JS to create bands) -------- */
+.fx--aurora {}
+.fx--aurora .fx-layer { background: linear-gradient(0deg, var(--spectral-void), #001); filter: blur(0) }
+.fx--aurora .aurora-band {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  will-change: transform, filter, opacity;
+  opacity: 0.5;
+  filter: blur(30px);
+  animation: aurora-dance calc(15s / var(--fx-speed)) ease-in-out infinite;
+}
+
+@keyframes aurora-dance {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%     { transform: translateY(-50px) scale(1.2); }
+}
+
+/* -------- Effect: Bubbles (needs JS to spawn) -------- */
+.fx--bubbles { }
+.fx--bubbles {
+  overflow: hidden; /* keeps bubbles inside host */
+}
+
+.fx--bubbles .bubble {
+  position: absolute;
+  bottom: 0;              /* start from bottom */
+  border-radius: 50%;
+  will-change: transform, opacity;
+  animation: float-up calc(8s / var(--fx-speed)) linear forwards;
+  mix-blend-mode: screen; /* makes colors glow on dark bg */
+  opacity: 0.85;
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(100%) scale(0); opacity: 0; }
+  10%  { transform: translateY(80%) scale(1); opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-120%) scale(1.5); opacity: 0; }
+}
+
+/* Users can define per-host variables like:
+   --bubble-min: 12px; --bubble-max: 40px; --bubble-interval: 800ms; --colors: #e11d48,#0ea5e9,#a855f7; */

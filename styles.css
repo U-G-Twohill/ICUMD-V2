@@ -336,7 +336,7 @@ textarea.form-control {
   flex: 1 1 auto;
   padding: 1.5rem;
   width: 100%;
-  background: rgba(33, 37, 41, 0.5);
+  background: rgba(33, 37, 41, 0.95);
   text-align: center;
 }
 
@@ -464,7 +464,7 @@ textarea.form-control {
   max-height: calc(100vh - var(--navbar-height, 110px) - 40px - 250px); /* Navbar + gaps + image/header */
   height: auto;
   overflow-y: auto;
-  background: rgba(33, 37, 41, 0.5);
+  background: rgba(33, 37, 41, 0.95);
   z-index: 1001;
   pointer-events: auto;
   text-align: center;
@@ -507,13 +507,15 @@ textarea.form-control {
 
 .expanding-card-content ul {
   margin: 1.5rem 0;
-  padding-left: 0;
+  padding-left: 5.5vw;
   list-style-position: inside;
+  text-align: left;
 }
 
 .expanding-card-content li {
   margin-bottom: 0.8rem;
-  opacity: 0.9;
+  opacity: 1;
+  color: #d3d8dd;
 }
 
 /* Animation classes */
@@ -527,10 +529,25 @@ textarea.form-control {
   animation-delay: 0.3s;
 }
 
+.expanding-card.is-expanded.animate-out .expanding-card-content {
+  animation: fadeOutContent 0.4s ease forwards;
+}
+
 @keyframes fadeInContent {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutContent {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
   }
 }
 
@@ -556,6 +573,8 @@ textarea.form-control {
 /* Sections */
 .lighter-section,
 .darker-section,
+.services-darker-section,
+.services-lighter-section,
 .team-section,
 .side-by-side-left,
 .side-by-side-right {
@@ -572,9 +591,23 @@ textarea.form-control {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
+.services-lighter-section{
+  margin-top: 10vw;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
 .darker-section {
   background-color: var(--slightlylighterdark);
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+.services-darker-section{
+  margin-top: 15vw;
+  background-color: var(--slightlylighterdark);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+  justify-items: center;
+  max-width: 2000px;
 }
 
 .team-section {
@@ -586,12 +619,17 @@ textarea.form-control {
   display: flex;
   flex-direction: row;
   gap: 0 20px;
+  max-width: 100%;
 }
 
 .side-by-side-left,
 .side-by-side-right {
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.side-by-side .card-img{
+  height : 100%;
 }
 
 /* Navbar */
@@ -767,10 +805,24 @@ textarea.form-control {
 /* Nested dropdown */
 .dropdown-submenu .dropdown-menu {
   top: 0;
-  left: 100%;
-  margin-left: 5px;
+  left: calc(100% + 5px); /* Your original 5px gap */
+  margin-left: 0;
   min-width: 200px;
+  z-index: 1001;
 }
+
+.dropdown-submenu .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5px; /* Covers the 5px gap */
+  width: 5px; /* Width of the gap */
+  height: 100%; /* Full height of submenu */
+  background: transparent;
+  pointer-events: auto; /* This is key - makes it hoverable */
+  z-index: 1002;
+}
+
 
 /* Show submenu on hover (desktop only) */
 @media (min-width: 769px) {

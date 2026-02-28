@@ -6,20 +6,95 @@
     <meta name="description" content="Solutions & automations by ICU Media Design: connect your tools, reduce manual work and build smarter systems that save time and support growth.">
 
     <title>Solutions & Automations | ICU Media Design</title>
-    
+
+    <link rel="canonical" href="https://icumediadesign.com/solutions.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Solutions & Automations | ICU Media Design">
+    <meta property="og:description" content="Solutions & automations by ICU Media Design: connect your tools, reduce manual work and build smarter systems that save time and support growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://icumediadesign.com/solutions.html">
+    <meta property="og:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+    <meta property="og:locale" content="en_NZ">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Solutions & Automations | ICU Media Design">
+    <meta name="twitter:description" content="Solutions & automations by ICU Media Design: connect your tools, reduce manual work and build smarter systems that save time and support growth.">
+    <meta name="twitter:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Solutions & Automations",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "ICU Media Design"
+            },
+            "description": "Business integrations, workflow automations, and smart digital tools for New Zealand small businesses.",
+            "areaServed": "New Zealand",
+            "url": "https://icumediadesign.com/solutions.html"
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What kinds of business tasks can you automate?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Lead follow-ups, booking confirmations, email campaigns, content scheduling, invoice reminders, data syncing between tools, and much more."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need a new website to use your solutions service?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Our solutions work with any existing website or can be paired with a new build."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much do your solutions cost?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Simple integrations start from $300 setup, automations from $500. Monthly management is also available."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What tools and platforms do you integrate with?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Google Workspace, Mailchimp, HubSpot, Calendly, Stripe, Xero, Slack, Notion, Zapier, Make, and many more."
+                    }
+                }
+            ]
+        }
+    ]
+    </script>
+
     <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="services" class="dark-theme">
+
+    <div class="ambient-bg ambient-solutions">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
-            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="No Picture to display" class="nav-logo"></a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="ICU Media Design" class="nav-logo"></a></li>
             <li class="nav-item mobile-menu-btn">
                 <button class="hamburger-btn">
                     <span class="hamburger-icon"></span>
@@ -35,8 +110,8 @@
                         <a href="design.html" class="dropdown-item">Web & Design</a>
                         <ul class="dropdown-menu">
                             <li><a href="design.html#design" class="dropdown-item">Design</a></li>
-                            <li><a href="design.html#maintenance" class="dropdown-item">maintenance</a></li>
-                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                            <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Growth Add-Ons</a></li>
                         </ul>
                     </li>
                     
@@ -44,20 +119,13 @@
                     <li class="dropdown-submenu">
                         <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
-                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
-                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a href="work.html" class="nav-link">Work</a>
-                <ul class="dropdown-menu">
-                    <li class="nav-item"><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
-                    <li class="nav-item"><a href="blog.html" class="dropdown-item">Blog</a></li>
-                </ul>
-            </li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
     </nav><!-- end of page navbar -->
@@ -67,196 +135,218 @@
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="header-title">Solutions & Automations</h1>
-            <p class="header-subtitle">At ICU Media Design, we offer a range of services designed to meet the unique needs of small & medium businesses in New Zealand. Our focus areas include web design, maintenance, and additional features that enhance your online presence.</p>
+            <p class="header-subtitle">Connect your tools, automate your workflows, and let technology do the heavy lifting.</p>
         </div>
     </header>
 
     <!-- page container -->
-    <!-- Solutions Section -->
     <div class="container page-container">
-        <div id="solutions" class="lighter-section">
-            <h6 class="title mb-4">Smarter Business. Less Manual Work.</h6>
+        <!-- Bridge Callout: Cross-link to Design -->
+        <div class="bridge-callout">
+            <p>Don't have a website yet? Start with our <a href="design.html">Web & Design</a> service to build your foundation, then come back here when you're ready to make it work harder. <a href="design.html">Start with Web & Design &rarr;</a></p>
+        </div>
+        <div id="solutions" class="lighter-section reveal">
+            <h2 class="title mb-4">Our Process</h2>
             <div class="heading-divider"></div>
+            <p class="header-subtitle">From Discovery to Delivery</p>
             <p class="mb-5">
-              We help businesses run more smoothly with smart solutions tailored to their unique needs.
-              From discovering bottlenecks to building powerful automations and integrations,
-              our step-by-step process ensures you get results — not just tools.
+              Every engagement follows the same proven path: we learn how your business works, choose the right tools,
+              build the connections, and stick around to make sure everything keeps running smoothly.
             </p>
 
             <!-- Solutions Process Cards -->
             <div class="row mb-5">
               <div class="col-md-4">
-                <a href="javascript:void(0)" class="overlay-img">
+                <div class="overlay-img">
                   <img src="imgs/discovery.jpg" alt="Discovery">
                   <div class="overlay"></div>
                   <div class="des">
                     <h2 class="title">Discovery & Planning</h2>
                     <p>We learn how your business works and where it can improve.</p>
                   </div>
-                </a>
+                </div>
               </div>
               <div class="col-md-4">
-                <a href="javascript:void(0)" class="overlay-img">
+                <div class="overlay-img">
                   <img src="imgs/tools.jpg" alt="Setup">
                   <div class="overlay"></div>
                   <div class="des">
                     <h2 class="title">Tool Selection & Setup</h2>
                     <p>We find the right tools, connect them, and build the right automations.</p>
                   </div>
-                </a>
+                </div>
               </div>
               <div class="col-md-4">
-                <a href="javascript:void(0)" class="overlay-img">
+                <div class="overlay-img">
                   <img src="imgs/optimization.jpg" alt="Support">
                   <div class="overlay"></div>
                   <div class="des">
                     <h2 class="title">Ongoing Support</h2>
                     <p>We help you improve and adapt as your business evolves.</p>
                   </div>
-                </a>
+                </div>
             </div>
           </div>
       </div>
 
-    <!-- Integrations Section -->
-    <div id="integrations" class="darker-section">
-      <h6 class="title mb-4">Integrations</h6>
+    <!-- Our Solutions Section -->
+    <div id="integrations" class="darker-section reveal">
+      <h2 class="title mb-4">Our Solutions</h2>
       <div class="heading-divider"></div>
       <p class="mb-5">
-        Connect your tools and eliminate busywork. We integrate your website and business systems with
-        the platforms you already use — from calendars and CRMs to marketing tools and chatbots.
-        That means smoother operations and no more double-handling.
+        Every solution is built around an outcome — not a technology. We combine integrations, automations,
+        and smart tools into packages that solve real problems and free up your time.
       </p>
 
       <div class="row mb-4">
         <div class="col-md-4">
-          <a href="javascript:void(0)" class="overlay-img">
-            <img src="imgs/calendar.jpg" alt="Calendar Integration">
+          <div class="overlay-img">
+            <img src="imgs/automation-leads.jpg" alt="Automated Lead Capture">
             <div class="overlay"></div>
             <div class="des">
-              <h2 class="title">Calendar & Booking</h2>
-              <p>Sync your website forms with Google Calendar, Calendly, or other tools.</p>
+              <h2 class="title">Automated Lead Capture</h2>
+              <p>Forms, CRM updates, and email sequences — all on autopilot from the moment someone reaches out.</p>
             </div>
-          </a>
+          </div>
         </div>
         <div class="col-md-4">
-          <a href="javascript:void(0)" class="overlay-img">
-            <img src="imgs/crmemail.jpg" alt="CRM Integration">
+          <div class="overlay-img">
+            <img src="imgs/calendar.jpg" alt="Smart Scheduling">
             <div class="overlay"></div>
             <div class="des">
-              <h2 class="title">CRM & Email Platforms</h2>
-              <p>Connect your website with Mailchimp, HubSpot, Notion, or ConvertKit.</p>
+              <h2 class="title">Smart Scheduling</h2>
+              <p>Online booking, calendar sync, and automatic confirmations so you never double-book again.</p>
             </div>
-          </a>
+          </div>
         </div>
         <div class="col-md-4">
-          <a href="javascript:void(0)" class="overlay-img">
-            <img src="imgs/sheets.jpg" alt="Spreadsheets">
+          <div class="overlay-img">
+            <img src="imgs/crmemail.jpg" alt="Customer Nurture Flows">
             <div class="overlay"></div>
             <div class="des">
-              <h2 class="title">Spreadsheets & Forms</h2>
-              <p>Auto-fill Google Sheets from site forms or sync with databases.</p>
+              <h2 class="title">Customer Nurture Flows</h2>
+              <p>Automated email campaigns, follow-ups, and re-engagement that keep customers coming back.</p>
             </div>
-          </a>
+          </div>
         </div>
         <div class="col-md-4">
-          <a href="javascript:void(0)" class="overlay-img">
-            <img src="imgs/chatbot.jpg" alt="Chatbots">
+          <div class="overlay-img">
+            <img src="imgs/sheets.jpg" alt="Connected Business Tools">
             <div class="overlay"></div>
             <div class="des">
-              <h2 class="title">Custom Chatbots</h2>
-              <p>Deploy on-site chatbots that answer questions or guide users intelligently.</p>
+              <h2 class="title">Connected Business Tools</h2>
+              <p>Sync your systems — Google Workspace, Xero, Slack, Notion — so data flows where it needs to.</p>
             </div>
-          </a>
+          </div>
         </div>
         <div class="col-md-4">
-          <a href="javascript:void(0)" class="overlay-img">
-            <img src="imgs/socials.jpg" alt="Marketing Tools">
+          <div class="overlay-img">
+            <img src="imgs/documents.jpg" alt="Content & Reporting">
             <div class="overlay"></div>
             <div class="des">
-              <h2 class="title">Marketing & Social Tools</h2>
-              <p>Connect signup forms to email campaigns or automate social content posting.</p>
+              <h2 class="title">Content & Reporting</h2>
+              <p>Blog publishing, newsletters, social scheduling, and automated reports — handled for you.</p>
             </div>
-          </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="overlay-img">
+            <img src="imgs/agents.jpg" alt="AI-Powered Assistants">
+            <div class="overlay"></div>
+            <div class="des">
+              <h2 class="title">AI-Powered Assistants</h2>
+              <p>Chatbots and AI agents that handle routine tasks, answer questions, and support your team.</p>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
-
-    <!-- Automations Section -->
-    <div id="automations" class="lighter-section">
-    <h6 class="title mb-4">Automations</h6>
-    <div class="heading-divider"></div>
-    <p class="mb-5">
-      Let technology do the heavy lifting. We design custom automations that streamline your
-      business processes — from lead capture to notifications, scheduling, content generation,
-      and more. Free up time and reduce errors with workflows that run themselves.
-    </p>
-
-    <div class="row mb-4">
-      <div class="col-md-4">
-        <a href="javascript:void(0)" class="overlay-img">
-          <img src="imgs/automation-leads.jpg" alt="Lead Automation">
-          <div class="overlay"></div>
-          <div class="des">
-            <h2 class="title">Lead Capture Flows</h2>
-            <p>Automatically send follow-ups and update your CRM when someone contacts you.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="javascript:void(0)" class="overlay-img">
-          <img src="imgs/automation-booking.jpg" alt="Booking Flows">
-          <div class="overlay"></div>
-          <div class="des">
-            <h2 class="title">Booking Confirmations</h2>
-            <p>Trigger emails, tasks, or Slack alerts whenever a new booking is made.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="javascript:void(0)" class="overlay-img">
-          <img src="imgs/documents.jpg" alt="Content Automation">
-          <div class="overlay"></div>
-          <div class="des">
-            <h2 class="title">Content Automation</h2>
-            <p>Automatically publish blog posts, newsletters, or generate content summaries.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="javascript:void(0)" class="overlay-img">
-          <img src="imgs/reminders.jpg" alt="Task Reminders">
-          <div class="overlay"></div>
-          <div class="des">
-            <h2 class="title">Task Reminders</h2>
-            <p>Set up automations to handle recurring tasks, reminders, and admin work.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="javascript:void(0)" class="overlay-img">
-          <img src="imgs/agents.jpg" alt="AI Agents">
-          <div class="overlay"></div>
-          <div class="des">
-            <h2 class="title">AI Agents</h2>
-            <p>Use intelligent AI assistants to summarize, suggest, or automate workflows.</p>
-          </div>
-        </a>
-      </div>
-    </div><!-- end of row -->
-        </div>
+    </div>
 
 
-   <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;"></div>
-
-   <div class="lighter-section">
-        <!-- CTA Section -->
-        <section class="cta-section container">
-            <h2>Sound Like a Good Fit?</h2>
+   <!-- Engagement Models -->
+   <div class="darker-section reveal">
+        <section class="container">
+            <h2 class="title mb-4">How We Work Together</h2>
             <div class="heading-divider"></div>
-            <p class="header-subtitle">Please get in touch!</p>
-            <p>We're here to help you achieve your online goals. Whether you're looking for a new website, want to improve your existing one, or need assistance with maintenance, we're here to support you.</p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="row mb-4 reveal-stagger">
+                <div class="col-md-4 reveal">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <span class="ti ti-package" class="card-icon"></span>
+                            <h3 class="card-title">One-Off Setup</h3>
+                            <p>We build and hand over. You own it.</p>
+                            <p><strong>Starting from $300</strong> for simple integrations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <span class="ti ti-loop" class="card-icon"></span>
+                            <h3 class="card-title">Monthly Management</h3>
+                            <p>We manage and optimise your automations on an ongoing basis.</p>
+                            <p><strong>Plans from $150/month.</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <span class="ti ti-ruler-pencil" class="card-icon"></span>
+                            <h3 class="card-title">Project-Based</h3>
+                            <p>For bigger builds — custom software, complex workflows, AI agents.</p>
+                            <p><strong>Scoped and quoted per project.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center" style="opacity: 0.8;">Every engagement starts with a free discovery call. No surprises.</p>
+        </section>
+   </div>
+
+   <!-- Inline FAQ: Common Solutions Questions -->
+   <div class="lighter-section reveal">
+        <section class="container">
+            <h2 class="title mb-4">Common Questions About Solutions & Automations</h2>
+            <div class="heading-divider"></div>
+            <div class="inline-faq">
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">What kinds of business tasks can you automate?</div>
+                    <div class="inline-faq-answer">
+                        <p>Lead follow-ups, booking confirmations, email campaigns, content scheduling, invoice reminders, data syncing between tools, and much more. If you're doing it manually and repeatedly, there's probably a smarter way.</p>
+                    </div>
+                </div>
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">Do I need a new website to use your solutions service?</div>
+                    <div class="inline-faq-answer">
+                        <p>No. Our solutions work with any existing website. We can also pair them with a new build if you're starting from scratch — that's where Design and Solutions work best together.</p>
+                    </div>
+                </div>
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">How much do your solutions cost?</div>
+                    <div class="inline-faq-answer">
+                        <p>It depends on complexity. Simple integrations start from $300 setup, automations from $500. Monthly management is also available. We'll scope everything in a free discovery call — no surprises.</p>
+                    </div>
+                </div>
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">What tools and platforms do you integrate with?</div>
+                    <div class="inline-faq-answer">
+                        <p>Google Workspace, Mailchimp, HubSpot, Calendly, Stripe, Xero, Slack, Notion, Zapier, Make, and many more. If it has an API, we can probably connect it.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-4 text-center"><a href="faq.html" class="btn btn-primary">More Questions? Visit Our Full FAQ</a></p>
+        </section>
+   </div>
+
+   <!-- CTA Section -->
+   <div class="darker-section reveal">
+        <section class="cta-section container">
+            <h2>Let's Make Your Business Smarter</h2>
+            <div class="heading-divider"></div>
+            <p class="header-subtitle">Free discovery call — no obligations.</p>
+            <p>Tell us about your workflow and we'll show you what's possible. No obligations, no jargon.</p>
+            <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
         </section>
    </div>
     
@@ -267,9 +357,9 @@
         <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
         <span>|</span>  
         <div class="links">
-            <a href="#">About</a>
-            <a href="#">Explore</a>
-            <a href="#">Journal</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer><!-- end of footer -->
 
@@ -280,7 +370,5 @@
     <script src="vendors/bootstrap/bootstrap.affix.js"></script>
     <!-- Core JavaScript -->
     <script src="js/script.js"></script>
-    <!-- Stripe -->
-    <script src="payment.js"></script>
 </body>
 </html>

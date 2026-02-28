@@ -6,21 +6,98 @@
     <meta name="description" content="Web & Design services from ICU Media Design: modern, mobile-friendly websites, branding and UX that reflect your business and convert visitors.">
 
     <title>Web & Design | ICU Media Design</title>
-    
+
+    <link rel="canonical" href="https://icumediadesign.com/design.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Web & Design | ICU Media Design">
+    <meta property="og:description" content="Web & Design services from ICU Media Design: modern, mobile-friendly websites, branding and UX that reflect your business and convert visitors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://icumediadesign.com/design.html">
+    <meta property="og:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+    <meta property="og:locale" content="en_NZ">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Web & Design | ICU Media Design">
+    <meta name="twitter:description" content="Web & Design services from ICU Media Design: modern, mobile-friendly websites, branding and UX that reflect your business and convert visitors.">
+    <meta name="twitter:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Web Design & Development",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "ICU Media Design"
+            },
+            "description": "Custom website design, responsive development, branding, SEO, and ongoing maintenance plans for New Zealand small businesses.",
+            "areaServed": "New Zealand",
+            "url": "https://icumediadesign.com/design.html"
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How long does it take to build a website?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "A simple one-page or starter site takes 1\u20133 weeks, a business or service site 3\u20135 weeks, and online stores or custom projects 4\u20138+ weeks."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does a website cost?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Starter sites begin around $1,500 NZD. Business and service websites typically range from $2,500\u2013$6,000, while e-commerce sites start from $4,000+."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will I be able to update my site myself?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We build on platforms like WordPress, Webflow, or Shopify and provide full training so you can make updates yourself."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What's included in a maintenance plan?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Security updates, backups, performance monitoring, and support \u2014 starting at $200/month for Basic, $400/month for Medium, and $750/month for Professional."
+                    }
+                }
+            ]
+        }
+    ]
+    </script>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="services" class="dark-theme">
+
+    <div class="ambient-bg ambient-design">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
     <!-- Overlay background for expanding cards -->
     <div class="card-overlay-background" id="cardOverlay"></div>
     
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
-            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="No Picture to display" class="nav-logo"></a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="ICU Media Design" class="nav-logo"></a></li>
             <li class="nav-item mobile-menu-btn">
                 <button class="hamburger-btn">
                     <span class="hamburger-icon"></span>
@@ -38,28 +115,20 @@
                         <ul class="dropdown-menu">
                             <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                             <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
-                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Growth Add-Ons</a></li>
                         </ul>
                     </li>
                     <li class="dropdown-submenu">
                         <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
-                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
-                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             
-            <!-- Work dropdown - keeping your existing structure -->
-            <li class="nav-item dropdown">
-                <a href="work.html" class="nav-link">Work</a>
-                <ul class="dropdown-menu">
-                    <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
-                    <li><a href="blog.html" class="dropdown-item">Blog</a></li>
-                </ul>
-            </li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
@@ -70,72 +139,52 @@
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="header-title">Web & Design</h1>
-            <br/>
-            <p class="header-subtitle">At ICU Media Design, we offer a range of services designed to meet the unique needs of small & medium businesses in New Zealand. <br/><br/>Our focus areas include web design, maintenance, and additional features that enhance your online presence.</p>
+            <p class="header-subtitle">Custom websites, ongoing maintenance, and features that grow with your business.</p>
         </div>
     </header>
 
     <!-- page container -->
     <!-- Design Section -->
     <div class="container page-container">
-        <div class="lighter-section">
-            <h6 class="title mb-4">Our Approach</h6>
-            <div class="heading-divider"></div>
-            <p class="mb-5">Our approach is both straightforward and personalized; we listen to your needs and understand your business to create visually stunning, 
-                user-friendly websites that reflect your brand's unique identity. From concept to launch, we focus on clear communication, delivering engaging digital 
-                experiences that captivate your audience. Our hosting solutions ensure your site remains secure and fast, standing out in the online landscape.</p>
-        </div>  
-
-        <div id="design" class="darker-section">
-            <h6 class="title mb-5">Design</h6> 
+        <div id="design" class="darker-section reveal">
+            <h2 class="title mb-5">Design</h2> 
             <div class="heading-divider"></div> 
             <p class="header-subtitle">Creating Digital Experiences That Connect</p>  
             <br/>
             <!-- row -->
             <div class="row mb-4">
                 <div class="col-md-4">
-                    <a href="javascript:void(0)" class="overlay-img">
-                        <img src="imgs/useability2.jpg" alt="Usability">  
-                        <div class="overlay"></div> 
+                    <div class="overlay-img">
+                        <img src="imgs/useability2.jpg" alt="Usability">
+                        <div class="overlay"></div>
                         <div class="des">
-                            <h2 class="title">Usability</h2>
+                            <h3 class="title">Usability</h3>
                             <p>Ensuring ease of use and navigation for all users.</p>
-                        </div>          
-                    </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <a href="javascript:void(0)" class="overlay-img">
-                        <img src="imgs/responsiveness.jpg" alt="Responsiveness">  
-                        <div class="overlay"></div> 
+                    <div class="overlay-img">
+                        <img src="imgs/responsiveness.jpg" alt="Responsiveness">
+                        <div class="overlay"></div>
                         <div class="des">
-                            <h2 class="title">Responsiveness </h2>
+                            <h3 class="title">Responsiveness</h3>
                             <p>Creating designs that look great on all devices.</p>
-                        </div>          
-                    </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <a href="javascript:void(0)" class="overlay-img">
-                        <img src="imgs/aesthetics6.jpg" alt="Aesthetics">  
-                        <div class="overlay"></div> 
+                    <div class="overlay-img">
+                        <img src="imgs/aesthetics6.jpg" alt="Aesthetics">
+                        <div class="overlay"></div>
                         <div class="des">
-                            <h2 class="title">Aesthetics</h2>
+                            <h3 class="title">Aesthetics</h3>
                             <p>Crafting visually appealing and brand-consistent designs.</p>
-                        </div>          
-                    </a>
+                        </div>
+                    </div>
                 </div>          
             </div><!-- end of row -->
-            <p class="mb-5">Your website is often the first interaction customers have with your business. We craft custom websites that not only look stunning but work seamlessly 
-                across all devices. Our design process begins with understanding your brand story, target audience, and business goals. We then translate these insights into a 
-                digital experience that captures attention and drives results. 
-                <br/><br/>
-                Every design decision is purposeful - from color psychology that evokes the right emotions, to intuitive 
-                navigation that guides visitors effortlessly through your content. We incorporate modern design trends while ensuring timeless appeal, creating websites that feel fresh 
-                years after launch. Whether you need a simple brochure site, a complex service portal, or a full e-commerce platform, we build with scalability in mind so your website 
-                can grow alongside your business.
-                <br/><br/>
-                Our designs include professional photography sourcing, custom graphics, and brand consistency across all pages. We also ensure your site 
-                is optimized for search engines from day one, with proper structure, meta descriptions, and content hierarchy that helps you get found online.</p> 
-            
+            <p class="mb-5">Your website is often the first interaction customers have with your business. Every design decision is purposeful — from responsive layouts to SEO-ready structure, we build with scalability in mind.</p>
         </div>
 
 
@@ -143,32 +192,15 @@
 
 
    <!-- Maintenance Section -->
-        <div id="maintenance" class="lighter-section">
-            <h6 class="title mb-4">Maintenance</h6>
+        <div id="maintenance" class="lighter-section reveal">
+            <h2 class="title mb-4">Maintenance</h2>
             <div class="heading-divider"></div>
         
             <p class="header-subtitle">Keeping Your Digital Asset Performing at Its Peak</p>
-        
-            <p class="mb-5">
-            A website is a living asset that requires regular care to remain effective and secure.
-            Our maintenance services ensure your site stays fast, secure, and fully functional
-            while you focus on running your business.
-            </p>
-        
-            <p class="mb-5">
-            We handle routine updates, security patches, backups, performance tuning, and small
-            content changes. Regular maintenance prevents small issues from becoming costly
-            problems and keeps your online presence aligned with your business goals.
-            </p>
-        
-            <p class="mb-5">
-            We offer flexible plans to keep your website modern and seamlessly available to your
-            clients, along with one-off or ongoing analytics reports and SEO audits.
-            Check out our competitive maintenance package options below.
-            </p>
+            <p class="mb-5">Your website needs regular care to stay fast, secure, and effective. We handle updates, backups, and performance tuning so you can focus on running your business. Explore our plans below.</p>
         
             <!-- row -->
-            <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;">
+            <div class="row mb-5 flex-center">
                 <!-- Basic Plan (Expanding Card) -->
                 <div class="col-md-4">
                     <div class="expanding-card" data-card-id="basic-plan">
@@ -397,70 +429,101 @@
 
 
     <!-- Additional Features Section -->
-        <div id="evolution" class="darker-section">
-            <h6 class="title mb-4">Additional Features</h6>
+        <div id="evolution" class="darker-section reveal">
+            <h2 class="title mb-4">Growth Add-Ons</h2>
             <div class="heading-divider"></div>
-            <p class="header-subtitle">Evolving Your Website Beyond the Basics</p> 
-            <p class="mb-5">As your business grows, your website should evolve to meet new challenges and opportunities. Our additional features transform your basic website into a powerful business 
-                tool that works harder for you. We stay ahead of digital trends to bring you features that give you a competitive edge. From implementing sophisticated e-commerce capabilities that 
-                turn browsers into buyers, to advanced SEO strategies that improve your visibility in local and global searches, we enhance your site's functionality based on your specific needs. 
-                We can integrate booking systems that fill your calendar automatically, add multi-language support for international audiences, or implement membership portals that create recurring revenue streams.
-                Every feature we add is carefully selected and customized to align with your business objectives. We don't believe in unnecessary complexity - instead, we focus on features that provide real value, 
-                improve user experience, and contribute to your bottom line. Whether it's adding live chat for instant customer support, implementing email marketing automation, or creating custom calculators and 
-                tools that showcase your expertise, we ensure each addition integrates seamlessly with your existing site.</p>
+            <p class="header-subtitle">Power Up Your Website With Built-In Growth Tools</p>
+            <p class="mb-5">As your business grows, your website should too. These add-ons extend what your site can do — from selling online and ranking on Google to tracking performance. Ready for full workflow automation? That's where our <a href="solutions.html" style="color: var(--primary);">Solutions</a> come in.</p>
                 <!-- row -->
-                <div class="row mb-3" style="display: flex; justify-content: center; align-items: center;">
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/eCommerce.jpg" alt="eCommerce">  
-                           <div class="overlay"></div> 
+                <div class="row mb-3 flex-center reveal-stagger">
+                   <div class="col-md-4 reveal">
+                       <div class="overlay-img">
+                           <img src="imgs/eCommerce.jpg" alt="eCommerce">
+                           <div class="overlay"></div>
                            <div class="des">
-                               <h2 class="title">eCommerce Integration</h2>
-                               <h6 class="subtitle">Retail Businesses:</h6>
+                               <h3 class="title">eCommerce Integration</h3>
                                <p>Set up an online store to sell your products and services.</p>
-                               
-                               <p>Enhance your online store with seamless eCommerce integration.</p>
-                           </div>          
-                       </a>
+                           </div>
+                       </div>
                    </div>
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/seo1.jpg" alt="seo">  
-                           <div class="overlay"></div> 
+                   <div class="col-md-4 reveal">
+                       <div class="overlay-img">
+                           <img src="imgs/seo1.jpg" alt="seo">
+                           <div class="overlay"></div>
                            <div class="des">
-                               <h2 class="title">SEO Optimization</h2>
-                               <h6 class="subtitle">Service Providers:</h6>
-                               <p>Improve your website's visibility on search engines.</p>
-                               <p>Optimize your website for better search engine rankings. </p>
-                           </div>          
-                       </a>
+                               <h3 class="title">SEO Optimization</h3>
+                               <p>Improve your website’s visibility on search engines.</p>
+                           </div>
+                       </div>
                    </div>
-                   <div class="col-md-4">
-                       <a href="javascript:void(0)" class="overlay-img">
-                           <img src="imgs/analytics1.jpg" alt="Analytics">  
-                           <div class="overlay"></div> 
+                   <div class="col-md-4 reveal">
+                       <div class="overlay-img">
+                           <img src="imgs/analytics1.jpg" alt="Analytics">
+                           <div class="overlay"></div>
                            <div class="des">
-                               <h2 class="title">Analytics Integration</h2>
-                               <h6 class="subtitle">All Businesses:</h6>
-                               <p>Track and analyze your website’s performance.</p>
-                               <p>Integrate analytics to make data-driven decisions.</p>
-                           </div>          
-                       </a>
-                   </div>           
+                               <h3 class="title">Analytics Integration</h3>
+                               <p>Track and analyse your website’s performance.</p>
+                           </div>
+                       </div>
+                   </div>
                </div><!-- end of row -->
         </div>
 
 
-   <div class="row mb-5" style="display: flex; justify-content: center; align-items: center;"></div>
-
-   <div class="lighter-section">
-        <!-- CTA Section -->
-        <section class="cta-section container">
-            <h2>Sound Like a Good Fit?</h2>
+   <!-- Bridge Section: Cross-link to Solutions -->
+   <div class="lighter-section reveal">
+        <section class="container text-center">
+            <h2 class="title mb-4">Ready to Go Further?</h2>
             <div class="heading-divider"></div>
-            <p class="header-subtitle">Please get in touch!</p>
-            <p>We're here to help you achieve your online goals. Whether you're looking for a new website, want to improve your existing one, or need assistance with maintenance, we're here to support you.</p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <p class="mb-3">Growth Add-Ons give your website extra muscle — but they're just the start. Our Solutions service connects your site to the systems that run your business: CRM, calendar, email campaigns, accounting, and more.</p>
+            <p class="mb-4">Think of it as the difference between a sharp website and a fully automated business machine. When you're ready to make everything work together, we're ready to build it.</p>
+            <a href="solutions.html" class="btn btn-primary">Explore Solutions & Automations</a>
+        </section>
+   </div>
+
+   <!-- Inline FAQ: Common Design Questions -->
+   <div class="darker-section reveal">
+        <section class="container">
+            <h2 class="title mb-4">Common Questions About Web Design</h2>
+            <div class="heading-divider"></div>
+            <div class="inline-faq">
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">How long does it take to build a website?</div>
+                    <div class="inline-faq-answer">
+                        <p>It depends on complexity. A simple one-page or starter site takes 1–3 weeks, a business or service site 3–5 weeks, and online stores or custom projects 4–8+ weeks. We'll give you a clear timeline after our initial discovery call.</p>
+                    </div>
+                </div>
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">How much does a website cost?</div>
+                    <div class="inline-faq-answer">
+                        <p>Starter sites begin around $1,500 NZD. Business and service websites typically range from $2,500–$6,000, while e-commerce sites start from $4,000+. Custom projects are quoted individually. All prices exclude GST.</p>
+                    </div>
+                </div>
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">Will I be able to update my site myself?</div>
+                    <div class="inline-faq-answer">
+                        <p>Yes. We build on platforms like WordPress, Webflow, or Shopify and provide full training so you can make updates yourself. You'll also get documentation and video guides.</p>
+                    </div>
+                </div>
+                <div class="inline-faq-item">
+                    <div class="inline-faq-question">What's included in a maintenance plan?</div>
+                    <div class="inline-faq-answer">
+                        <p>Our maintenance plans cover security updates, backups, performance monitoring, and support — starting at $200/month for Basic, $400/month for Medium, and $750/month for Professional. Check out the plans above for full details.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-4 text-center"><a href="faq.html" class="btn btn-primary">More Questions? Visit Our Full FAQ</a></p>
+        </section>
+   </div>
+
+   <!-- CTA Section -->
+   <div class="lighter-section reveal">
+        <section class="cta-section container">
+            <h2>Ready to Build Your Website?</h2>
+            <div class="heading-divider"></div>
+            <p class="header-subtitle">Let's chat about your project.</p>
+            <p>Whether you need a brand new site, a refresh of your current one, or ongoing maintenance — we'd love to chat about how we can help.</p>
+            <a href="contact.html" class="btn btn-primary">Let's Talk Design</a>
         </section>
    </div>
     
@@ -471,9 +534,9 @@
         <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
         <span>|</span>  
         <div class="links">
-            <a href="#">About</a>
-            <a href="#">Explore</a>
-            <a href="#">Journal</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer><!-- end of footer -->
 

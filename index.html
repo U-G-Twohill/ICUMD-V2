@@ -6,25 +6,59 @@
         <meta name="description" content="ICU Media Design builds fast, responsive websites and digital solutions for small businesses in Nelson and across New Zealand.">
 
         <title>Home | ICU Media Design</title>
-        
+        <link rel="canonical" href="https://icumediadesign.com/index.html">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Home | ICU Media Design">
+        <meta property="og:description" content="ICU Media Design builds fast, responsive websites and digital solutions for small businesses in Nelson and across New Zealand.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://icumediadesign.com/index.html">
+        <meta property="og:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+        <meta property="og:locale" content="en_NZ">
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Home | ICU Media Design">
+        <meta name="twitter:description" content="ICU Media Design builds fast, responsive websites and digital solutions for small businesses in Nelson and across New Zealand.">
+        <meta name="twitter:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ICU Media Design",
+            "description": "Web design and digital solutions for New Zealand small businesses",
+            "url": "https://icumediadesign.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nelson",
+                "addressCountry": "NZ"
+            },
+            "email": "hello@icumediadesign.com",
+            "priceRange": "$$",
+            "areaServed": "New Zealand"
+        }
+        </script>
+
         <!-- font icons -->
-        <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
         <!-- Bootstrap + CSS main styles -->
         <link rel="stylesheet" href="styles.css">
-        <!-- Neon Grid -->
-        <link rel="stylesheet" href="effects/neon-grid.css">
-        <!-- Particles -->
-        <link rel="stylesheet" href="effects/particles.css">
 
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
 
+    <div class="ambient-bg ambient-home">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
 
         <!-- page navbar -->
         <nav class="page-navbar" data-spy="affix" data-offset-top="10">
             <ul class="nav-navbar container">
-                <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="No Picture to display" class="nav-logo"></a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="ICU Media Design" class="nav-logo"></a></li>
                 <li class="nav-item mobile-menu-btn">
                     <button class="hamburger-btn">
                         <span class="hamburger-icon"></span>
@@ -42,28 +76,20 @@
                             <ul class="dropdown-menu">
                                 <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                                 <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
-                                <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                                <li><a href="design.html#evolution" class="dropdown-item">Growth Add-Ons</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
                             <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
                             <ul class="dropdown-menu">
-                                <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
-                                <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
-                                <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                                <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
+                                <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 
-                <!-- Work dropdown - keeping your existing structure -->
-                <li class="nav-item dropdown">
-                    <a href="work.html" class="nav-link">Work</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
-                        <li><a href="blog.html" class="dropdown-item">Blog</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                 
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
             </ul>
@@ -73,109 +99,169 @@
         <header class="header">
             <div class="overlay"></div>
             <div class="header-content">
-                <h1 class="header-title"><img src="imgs/enhancedbanner.png" alt="ICU Media Design – Web design and digital solutions"></h1>
-                <p class="header-subtitle">Empowering New Zealand's Small Businesses with Digital Excellence.</p>
+                <h1 class="sr-only">ICU Media Design — Web Design and Digital Solutions for New Zealand Small Businesses</h1>
+                <img src="imgs/enhancedbanner.png" alt="ICU Media Design – Web design and digital solutions" class="header-title">
+                <p class="header-subtitle">
+                    <span class="stagger-word">Empowering</span>
+                    <span class="stagger-word">New Zealand's</span>
+                    <span class="stagger-word">Small Businesses</span>
+                    <span class="stagger-word">with</span>
+                    <span class="stagger-word">Digital Excellence.</span>
+                </p>
+                <div class="scroll-prompt"><span class="ti ti-arrow-down"></span></div>
             </div>
         </header><!-- end of page header -->
 
-        <!-- modal -->
-        <div class="modalBox">
-            <div class="modalBox-body">
-                <iframe width="100%" height="450px" src="https://www.youtube.com/embed/Tjvlrf0OM3M?si=srDskOygi-apu7V7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>          
-        </div><!-- end of modal -->
-
         <!-- page container -->
-        <div class="container page-container" >
-            <div class="lighter-section">
-                <h6 class="title mb-4 offer-title">What do we offer?</h6>
+        <div class="container page-container">
+
+            <!-- Value Proposition -->
+            <div class="lighter-section reveal">
+                <h2 class="title mb-4">Why ICU Media Design?</h2>
                 <div class="heading-divider"></div>
-                <p class="mb-5">At ICU Media Design, we believe every small business deserves a powerful online presence without the complexity. We combine stunning web design with intelligent business solutions to create digital experiences that work as hard as you do.
-                    <br><br>
-                    From crafting beautiful, responsive websites that capture your brand's essence, to implementing smart automations that streamline your operations - we handle the technology so you can focus on what you do best. Our comprehensive services include 
-                    custom web design, reliable hosting, ongoing maintenance, SEO optimization, system integrations, and cutting-edge automation solutions tailored to your unique needs.
-                    <br><br>
-
-                    <!-- row -->
-                    <div class="row mb-4">
-                        <div class="col-md-4">
-                            <a href="design.html#design" class="overlay-img">
-                                <img src="imgs/design9.jpg" alt="Design Site">  
-                                <div class="overlay"></div> 
-                                <div class="des">
-                                    <h2 class="title">Design</h2>
-                                    <h6 class="subtitle">Tailored Visual Experiences</p>
-                                    <p>Our design team creates visually stunning and user-centric websites tailored to your brand's unique identity.</p>
-                                </div>          
-                            </a>
+                <p class="text-center mb-5">We handle the technology so you can focus on what you do best.</p>
+                <div class="row reveal-stagger">
+                    <div class="col-md-4 reveal">
+                        <div class="icon-stat">
+                            <span class="ti ti-flag-alt"></span>
+                            <h3>NZ-Owned</h3>
+                            <p>Local studio, global standards</p>
                         </div>
-                        <div class="col-md-4">
-                            <a href="design.html#maintenance" class="overlay-img">
-                                <img src="imgs/maintainance11.jpg" alt="Maintain Site">  
-                                <div class="overlay"></div> 
-                                <div class="des">
-                                        <h2 class="title">Maintenance </h2>
-                                        <h6 class="subtitle">Comprehensive Website Care</p>
-                                        <p>Keep your website running smoothly with our reliable maintenance services.</p>
-                                </div>          
-                            </a>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="icon-stat">
+                            <span class="ti ti-pencil-alt"></span>
+                            <h3>100% Custom</h3>
+                            <p>No templates, no shortcuts</p>
                         </div>
-                        <div class="col-md-4">
-                            <a href="design.html#evolution" class="overlay-img">
-                                <img src="imgs/evolution6.jpg" alt="Evolve Site">  
-                                <div class="overlay"></div> 
-                                <div class="des">
-                                    <h2 class="title">Additional Features</h2>
-                                    <h6 class="subtitle">Future-Proof Your Site</p>
-                                    <p>Stay ahead of the curve with our cutting-edge enhancements and continuous improvement services.</p>
-                                </div>          
-                            </a>
-                        </div>   
-                        
-                        <div class="col-md-10 col-lg-8 m-auto" style="display: flex; justify-content: center; align-items: center; padding-top: 40px;">
-                            <p class="mb-5">
-                                Whether you're launching your first website or ready to transform how your business operates online, we're here to make technology work for you, not against you. Let's build something remarkable together.
-                                <br><br>
-                                Trust us to be your partner in creating, sustaining, and advancing your digital footprint.</p>
-                            </p>       
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="icon-stat">
+                            <span class="ti ti-headphone-alt"></span>
+                            <h3>Ongoing Support</h3>
+                            <p>We're with you after launch</p>
                         </div>
-                    </div><!-- end of row -->
-                <a href="services.html" class="btn btn-primary">Check out our full range of services here!</a>
-            </div>  
-        </div> <!-- end of page container -->
-
-
-
-
-        <!--footer & pre footer -->
-        <div class="contact-section">
-            <div class="overlay"></div>
-            <!-- container -->
-            <div class="container">
-                <div class="col-md-10 col-lg-8 m-auto">
-                    <h6 class="title mb-2">Contact Us</h6>
-                    <p class="mb-5">Feel free to contact us for a consultation.</p>
-                    <form action="send_email.php" method="POST" class="form-group">
-                        <input type="text" name="name" size="50" class="form-control" placeholder="Your Name" required>
-                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
-                        <textarea name="message" id="message" rows="6" class="form-control" placeholder="Write Something" required></textarea>
-                        <input type="submit" value="Send Message" class="form-control">
-                    </form>
+                    </div>
                 </div>
             </div>
 
-                <!-- footer -->
-                <footer class="footer">
-                    <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
-                    <span>|</span>  
-                    <div class="links">
-                        <a href="#">About</a>
-                        <a href="#">Explore</a>
-                        <a href="#">Journal</a>
+            <!-- Services Overview -->
+            <div class="darker-section reveal">
+                <h2 class="title mb-4">What We Do</h2>
+                <div class="heading-divider"></div>
+                <div class="row mb-4">
+                    <div class="col-md-6 reveal">
+                        <a href="design.html" class="card">
+                            <img src="imgs/web&design.jpg" class="card-img" alt="Web design services">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Web & Design</h3>
+                                <p>Custom websites, branding, and maintenance plans that grow with your business.</p>
+                            </div>
+                        </a>
                     </div>
-                </footer><!-- end of footer -->
-            </div><!-- end of container -->
-        </div><!-- end of pre footer -->
+                    <div class="col-md-6 reveal">
+                        <a href="solutions.html" class="card">
+                            <img src="imgs/solutions.jpg" class="card-img" alt="Business automation solutions">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Solutions & Automations</h3>
+                                <p>Connect your tools, automate workflows, and let technology do the heavy lifting.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="services.html" class="btn btn-primary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- How We Work -->
+            <div class="lighter-section reveal">
+                <h2 class="title mb-4">How We Work</h2>
+                <div class="heading-divider"></div>
+                <div class="row reveal-stagger">
+                    <div class="col-md-3 reveal">
+                        <div class="process-step">
+                            <div class="process-step-number"><span class="ti ti-search"></span></div>
+                            <h3>Discover</h3>
+                            <p>We learn your business, goals, and audience.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 reveal">
+                        <div class="process-step">
+                            <div class="process-step-number"><span class="ti ti-layout"></span></div>
+                            <h3>Design</h3>
+                            <p>We craft a look and experience that fits your brand.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 reveal">
+                        <div class="process-step">
+                            <div class="process-step-number"><span class="ti ti-settings"></span></div>
+                            <h3>Build</h3>
+                            <p>We develop, test, and launch your project.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 reveal">
+                        <div class="process-step">
+                            <div class="process-step-number"><span class="ti ti-headphone-alt"></span></div>
+                            <h3>Support</h3>
+                            <p>We maintain, optimise, and grow with you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Proof / Stats -->
+            <div class="darker-section reveal">
+                <h2 class="title mb-4">By the Numbers</h2>
+                <div class="heading-divider"></div>
+                <div class="row reveal-stagger">
+                    <div class="col-md-3 reveal">
+                        <div class="icon-stat">
+                            <span class="counter-value" data-target="100" data-suffix="%">0</span>
+                            <p>Custom Builds</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 reveal">
+                        <div class="icon-stat">
+                            <span class="counter-value" data-target="24" data-suffix="hr">0</span>
+                            <p>Response Time</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 reveal">
+                        <div class="icon-stat">
+                            <span class="counter-value" data-target="5" data-suffix="+">0</span>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 reveal">
+                        <div class="icon-stat">
+                            <span class="counter-value" data-target="2024" data-suffix="">0</span>
+                            <p>Est. in NZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="lighter-section reveal text-center">
+                <h2 class="title mb-4">Let's Build Something Together</h2>
+                <div class="heading-divider"></div>
+                <p class="mb-4">Ready to take your business online or make it work smarter? Start with a free conversation.</p>
+                <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+            </div>
+
+        </div> <!-- end of page container -->
+
+        <!-- footer -->
+        <footer class="footer">
+            <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>
+            <span>|</span>
+            <div class="links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </footer><!-- end of footer -->
 
         <!-- jQuery -->
         <script src="vendors/jquery/jquery-3.4.1.js"></script>
@@ -184,15 +270,5 @@
         <script src="vendors/bootstrap/bootstrap.affix.js"></script>
         <!-- Core JavaScript -->
         <script src="js/script.js"></script>
-        <!-- Loader -->
-        <script src="effects/loader.js" defer></script>
-        <!-- Presets -->
-        <script src="effects/presets.js" defer></script>
-        <!-- Neon Grid -->
-        <script src="effects/neon-grid.js" defer></script>
-        <!-- Particles -->
-        <script src="effects/particles.js" defer></script>
-        
-        
     </body>
     </html>

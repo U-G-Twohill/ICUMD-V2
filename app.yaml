@@ -1,10 +1,12 @@
-runtime: php81  # This runtime setting is fine even if your main file is HTML
+runtime: php81  # Used as a static file server on App Engine (no PHP code required)
 
 handlers:
-- url: /(.*\.(gif|png|jpg|css|js|html))$
+# Serve static assets directly
+- url: /(.*\.(gif|png|jpg|jpeg|webp|svg|ico|css|js|html|woff|woff2|ttf|eot))$
   static_files: \1
-  upload: .*\.(gif|png|jpg|css|js|html)$
+  upload: .*\.(gif|png|jpg|jpeg|webp|svg|ico|css|js|html|woff|woff2|ttf|eot)$
 
+# All other routes fall back to index.html
 - url: /.*
   static_files: index.html
   upload: index.html

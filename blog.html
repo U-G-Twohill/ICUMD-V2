@@ -6,9 +6,23 @@
     <meta name="description" content="Read ICU Media Design’s blog for practical tips on web design, digital strategy and automation tailored to small businesses in New Zealand.">
 
     <title>Blog | ICU Media Design</title>
-    
+
+    <link rel="canonical" href="https://icumediadesign.com/blog.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog | ICU Media Design">
+    <meta property="og:description" content="Read ICU Media Design's blog for practical tips on web design, digital strategy and automation tailored to small businesses in New Zealand.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://icumediadesign.com/blog.html">
+    <meta property="og:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+    <meta property="og:locale" content="en_NZ">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blog | ICU Media Design">
+    <meta name="twitter:description" content="Read ICU Media Design's blog for practical tips on web design, digital strategy and automation tailored to small businesses in New Zealand.">
+    <meta name="twitter:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+
     <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
 
@@ -16,10 +30,17 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+
+    <div class="ambient-bg ambient-home">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
-            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="No Picture to display" class="nav-logo"></a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="ICU Media Design" class="nav-logo"></a></li>
             <li class="nav-item mobile-menu-btn">
                 <button class="hamburger-btn">
                     <span class="hamburger-icon"></span>
@@ -37,28 +58,20 @@
                         <ul class="dropdown-menu">
                             <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                             <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
-                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Growth Add-Ons</a></li>
                         </ul>
                     </li>
                     <li class="dropdown-submenu">
                         <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
-                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
-                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             
-            <!-- Work dropdown - keeping your existing structure -->
-            <li class="nav-item dropdown">
-                <a href="work.html" class="nav-link">Work</a>
-                <ul class="dropdown-menu">
-                    <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
-                    <li><a href="blog.html" class="dropdown-item">Blog</a></li>
-                </ul>
-            </li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
@@ -69,23 +82,33 @@
     <header class="header">
         <div class="overlay"></div>
         <div class="header-content">
-            <h1 class="header-title">Coming soon...</h1>
+            <h1 class="header-title">Blog</h1>
+            <p class="header-subtitle">Insights, tips and stories from ICU Media Design</p>
         </div>
     </header><!-- end of page header -->
 
-            <!-- footer -->
-            <footer class="footer">
-                <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
-                <span>|</span>  
-                <div class="links">
-                    <a href="#">About</a>
-                    <a href="#">Explore</a>
-                    <a href="#">Journal</a>
-                </div>
-            </footer><!-- end of footer -->
+    <!-- coming soon -->
+    <div class="container page-container">
+        <div class="lighter-section">
+            <div class="coming-soon-section">
+                <h2>Coming Soon</h2>
+                <div class="heading-divider"></div>
+                <p>We're working on fresh content covering web design best practices, digital strategy for small businesses, and automation tips to help you work smarter. Check back soon for our first posts.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
 
-        </div><!-- end of container -->
-    </div><!-- end of pre footer -->
+    <!-- footer -->
+    <footer class="footer">
+        <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>
+        <span>|</span>
+        <div class="links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer><!-- end of footer -->
 
     <!-- core  -->
     <script src="vendors/jquery/jquery-3.4.1.js"></script>

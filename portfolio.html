@@ -6,9 +6,23 @@
     <meta name="description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. Full case studies coming soon.">
 
     <title>Portfolio | ICU Media Design</title>
-    
+
+    <link rel="canonical" href="https://icumediadesign.com/portfolio.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio | ICU Media Design">
+    <meta property="og:description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. Full case studies coming soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://icumediadesign.com/portfolio.html">
+    <meta property="og:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+    <meta property="og:locale" content="en_NZ">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Portfolio | ICU Media Design">
+    <meta name="twitter:description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. Full case studies coming soon.">
+    <meta name="twitter:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
+
     <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
 
@@ -16,10 +30,17 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+
+    <div class="ambient-bg ambient-portfolio">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
     <!-- page navbar -->
     <nav class="page-navbar" data-spy="affix" data-offset-top="10">
         <ul class="nav-navbar container">
-            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="No Picture to display" class="nav-logo"></a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link"><img src="imgs/enhancedlogo.png" alt="ICU Media Design" class="nav-logo"></a></li>
             <li class="nav-item mobile-menu-btn">
                 <button class="hamburger-btn">
                     <span class="hamburger-icon"></span>
@@ -37,62 +58,81 @@
                         <ul class="dropdown-menu">
                             <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                             <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
-                            <li><a href="design.html#evolution" class="dropdown-item">Additional Features</a></li>
+                            <li><a href="design.html#evolution" class="dropdown-item">Growth Add-Ons</a></li>
                         </ul>
                     </li>
                     <li class="dropdown-submenu">
                         <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
                         <ul class="dropdown-menu">
-                            <li><a href="solutions.html#solutions" class="dropdown-item">Solutions</a></li>
-                            <li><a href="solutions.html#integrations" class="dropdown-item">Integrations</a></li>
-                            <li><a href="solutions.html#automations" class="dropdown-item">Automations</a></li>
+                            <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
+                            <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             
-            <!-- Work dropdown - keeping your existing structure -->
-            <li class="nav-item dropdown">
-                <a href="work.html" class="nav-link">Work</a>
-                <ul class="dropdown-menu">
-                    <li><a href="portfolio.html" class="dropdown-item">Portfolio</a></li>
-                    <li><a href="blog.html" class="dropdown-item">Blog</a></li>
-                </ul>
-            </li>
+            <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
     </nav>
 
-    <div class="theme-selector">
-        <a href="javascript:void(0)" class="spinner">
-            <i class="ti-paint-bucket"></i>
-        </a>
-        <div class="body">
-            <a href="javascript:void(0)" class="light"></a>
-            <a href="javascript:void(0)" class="dark"></a>
-        </div>
-    </div>  
-
     <!-- page header -->
     <header class="header">
         <div class="overlay"></div>
         <div class="header-content">
-            <h1 class="header-title">Coming Soon</h1>
+            <h1 class="header-title">Portfolio</h1>
+            <p class="header-subtitle">Projects we're proud of</p>
         </div>
     </header><!-- end of page header -->
 
-            <!-- footer -->
-            <footer class="footer">
-                <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
-                <span>|</span>  
-                <div class="links">
-                    <a href="#">About</a>
-                    <a href="#">Explore</a>
-                    <a href="#">Journal</a>
+    <!-- coming soon -->
+    <div class="container page-container">
+        <div class="lighter-section reveal">
+            <div class="coming-soon-section">
+                <h2>Coming Soon</h2>
+                <div class="heading-divider"></div>
+                <p class="mb-5">We're putting the finishing touches on our project showcase. Here's what's on the way.</p>
+                <div class="row reveal-stagger">
+                    <div class="col-md-4 reveal">
+                        <div class="icon-stat">
+                            <span class="ti ti-image"></span>
+                            <h3>Case Studies</h3>
+                            <p>Real projects, real results</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="icon-stat">
+                            <span class="ti ti-desktop"></span>
+                            <h3>Screenshots</h3>
+                            <p>Before & after transformations</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="icon-stat">
+                            <span class="ti ti-comments"></span>
+                            <h3>Testimonials</h3>
+                            <p>What our clients say</p>
+                        </div>
+                    </div>
                 </div>
-            </footer><!-- end of footer -->
-    </div><!-- end of pre footer -->
+                <div class="mt-1-5">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>
+        <span>|</span>
+        <div class="links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer><!-- end of footer -->
 
     <!-- core  -->
     <script src="vendors/jquery/jquery-3.4.1.js"></script>

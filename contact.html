@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
+    <script>if(sessionStorage.getItem('isTransitioning')==='true')document.documentElement.classList.add('transitioning');</script>
 
 
 </head>
@@ -83,13 +84,13 @@
             </li>
             
             <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            
+            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
     </nav>
 
         <!-- page header -->
-        <header class="header">
+        <header class="header" data-shader='{"overallSpeed":0.15,"lineCount":12,"lineColor":[0.0,0.48,1.0,0.4],"warpAmplitude":0.9,"maxOffsetSpread":1.8}'>
             <div class="overlay"></div>
             <div class="header-content">
                 <h1 class="header-title">Let's Talk</h1>
@@ -155,6 +156,7 @@
         <script src="vendors/bootstrap/bootstrap.affix.js"></script>
         <!-- Core JavaScript -->
         <script src="js/script.js"></script>
+        <script src="js/shader-bg.js"></script>
 
     </body>
     </html>

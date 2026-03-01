@@ -44,6 +44,7 @@
         <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
         <!-- Bootstrap + CSS main styles -->
         <link rel="stylesheet" href="styles.css">
+        <script>if(sessionStorage.getItem('isTransitioning')==='true')document.documentElement.classList.add('transitioning');</script>
 
     </head>
 
@@ -90,13 +91,13 @@
                 </li>
                 
                 <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
             </ul>
         </nav>
 
         <!-- page header -->
-        <header class="header">
+        <header class="header" data-shader='{"overallSpeed":0.2,"lineCount":16,"lineColor":[0.0,0.48,1.0,0.6],"scale":5.0}'>
             <div class="overlay"></div>
             <div class="header-content">
                 <h1 class="sr-only">ICU Media Design — Web Design and Digital Solutions for New Zealand Small Businesses</h1>
@@ -270,5 +271,7 @@
         <script src="vendors/bootstrap/bootstrap.affix.js"></script>
         <!-- Core JavaScript -->
         <script src="js/script.js"></script>
+        <!-- WebGL Shader Background -->
+        <script src="js/shader-bg.js"></script>
     </body>
     </html>

@@ -81,6 +81,7 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
+    <script>if(sessionStorage.getItem('isTransitioning')==='true')document.documentElement.classList.add('transitioning');</script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="services" class="dark-theme">
@@ -126,12 +127,13 @@
                 </ul>
             </li>
             <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
     </nav><!-- end of page navbar -->
 
     <!-- Header Section -->
-    <header class="header" id="page-header">
+    <header class="header" id="page-header" data-shader='{"overallSpeed":0.25,"lineCount":18,"lineColor":[0.05,0.55,1.0,0.5],"warpAmplitude":1.3,"lineFrequency":0.25}'>
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="header-title">Solutions & Automations</h1>
@@ -370,5 +372,6 @@
     <script src="vendors/bootstrap/bootstrap.affix.js"></script>
     <!-- Core JavaScript -->
     <script src="js/script.js"></script>
+    <script src="js/shader-bg.js"></script>
 </body>
 </html>

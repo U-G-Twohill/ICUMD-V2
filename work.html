@@ -25,8 +25,9 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
+    <script>if(sessionStorage.getItem('isTransitioning')==='true')document.documentElement.classList.add('transitioning');</script>
 
-    
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
@@ -72,14 +73,14 @@
             </li>
             
             <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            
+            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
     </nav>
 
     <!-- page header -->
     <div class="header-container">
-        <header class="header">
+        <header class="header" data-shader='{"overallSpeed":0.18,"lineCount":12,"lineColor":[0.0,0.48,1.0,0.45],"warpAmplitude":0.8}'>
             <div class="overlay"></div>
             <div class="darker-section">
                 <h1 class="title mb-4 ">Our Work</h1>
@@ -133,6 +134,7 @@
 
     <!-- Dorang js -->
     <script src="js/script.js"></script>
+    <script src="js/shader-bg.js"></script>
 
 </body>
 </html>

@@ -20,8 +20,8 @@ I don't have much metrics at present because I haven't actually launched adn my 
 | Metric | Current Value | Target | Notes |
 | ------ | ------------- | ------ | ----- |
 | Website pages complete | 8/11 | 11/11 | Portfolio, blog, work are placeholders |
-| Stripe integration | Broken | Functional | Env vars not wired, placeholders in code |
-| Form handling | Not implemented | Working | data-integration="email" exists, no handler |
+| Stripe integration | Hardened (test mode) | Functional | CORS restricted, rate-limited, generic error responses, helmet headers |
+| Form handling | Formspree (placeholder ID) | Working | Client-side handler with feedback UI, needs Formspree account ID |
 | SCSS build pipeline | None | Automated | Manual compilation only |
 | Custom code lines | ~2,650 | — | HTML + CSS + JS combined |
 | Vendor payload | ~650KB | Reduce | jQuery + Bootstrap, mostly unused |

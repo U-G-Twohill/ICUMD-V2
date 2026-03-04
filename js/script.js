@@ -14,6 +14,20 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Failsafe: if page load takes too long or tab was closed mid-transition,
+        // clear the flag and show content after 2 seconds
+        setTimeout(function() {
+            if (sessionStorage.getItem('isTransitioning') === 'true') {
+                sessionStorage.removeItem('isTransitioning');
+                sessionStorage.removeItem('transitionTarget');
+                document.documentElement.classList.remove('transitioning');
+                document.body.classList.add('page-fade-in');
+                setTimeout(function() {
+                    document.body.classList.remove('page-fade-in');
+                }, 300);
+            }
+        }, 2000);
     }
 })();
 
@@ -58,12 +72,6 @@ class ExpandingCard {
             }
         });
 
-        this.overlay.addEventListener('click', (e) => {
-            if (e.target === this.overlay && !this.isAnimating && this.isExpanded) {
-                this.collapse();
-            }
-        });
-
         this.content.addEventListener('click', (e) => {
             e.stopPropagation();
         });
@@ -103,7 +111,7 @@ class ExpandingCard {
         this.card.style.left = `${rect.left}px`;
         this.card.style.width = `${rect.width}px`;
         this.card.style.margin = '0';
-        this.card.style.zIndex = '1001';
+        this.card.style.zIndex = '400';
 
         // Show overlay
         this.overlay.classList.add('active');
@@ -279,11 +287,29 @@ class ExpandingCard {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    // Copyright year
+    document.querySelectorAll('.copyright-year').forEach(function(el) {
+        el.textContent = new Date().getFullYear();
+    });
+
     // Initialize expanding cards
     const cards = document.querySelectorAll('.expanding-card');
     cards.forEach(card => {
         new ExpandingCard(card);
     });
+
+    // Overlay click to close expanded card (single delegated listener)
+    const cardOverlay = document.getElementById('cardOverlay');
+    if (cardOverlay) {
+        cardOverlay.addEventListener('click', function(e) {
+            if (e.target === cardOverlay) {
+                const expandedCard = document.querySelector('.expanding-card.is-expanded');
+                if (expandedCard) {
+                    expandedCard.querySelector('.expanding-card-close').click();
+                }
+            }
+        });
+    }
 
     // Handle escape key
     document.addEventListener('keydown', (e) => {
@@ -291,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const expandedCard = document.querySelector('.expanding-card.is-expanded');
             if (expandedCard) {
                 const closeBtn = expandedCard.querySelector('.expanding-card-close');
-                closeBtn.click();
+                if (closeBtn) closeBtn.click();
             }
         }
     });
@@ -300,8 +326,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.page-navbar');
     
     window.addEventListener('scroll', function() {
-        sessionStorage.setItem('scrollPosition', window.scrollY);
-        sessionStorage.setItem('wasAffixed', window.scrollY > 100);
         updateNavbar();
     });
 
@@ -323,6 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollReveal();
     initCounters();
     initHeroStagger();
+    initContactForm();
 });
 
 // Mobile menu functionality
@@ -455,7 +480,12 @@ function initPageTransitions() {
     });
 }
 
+var isNavigating = false;
+
 function handlePageTransition(targetUrl) {
+    if (isNavigating) return;
+    isNavigating = true;
+
     const body = document.body;
     const currentScrollY = window.scrollY;
     
@@ -467,6 +497,7 @@ function handlePageTransition(targetUrl) {
             top: 0,
             behavior: 'smooth'
         });
+        isNavigating = false;
         return;
     }
     
@@ -475,10 +506,17 @@ function handlePageTransition(targetUrl) {
             top: 0,
             behavior: 'smooth'
         });
-        
-        setTimeout(() => {
-            startFadeTransition(targetUrl);
-        }, 800);
+
+        if ('onscrollend' in window) {
+            window.addEventListener('scrollend', function onScrollEnd() {
+                window.removeEventListener('scrollend', onScrollEnd);
+                startFadeTransition(targetUrl);
+            });
+        } else {
+            setTimeout(() => {
+                startFadeTransition(targetUrl);
+            }, 1000);
+        }
     } else {
         startFadeTransition(targetUrl);
     }
@@ -627,10 +665,12 @@ function initInlineFAQ() {
                     parent.querySelectorAll('.inline-faq-item.active').forEach(activeItem => {
                         if (activeItem !== item) {
                             activeItem.classList.remove('active');
+                            activeItem.querySelector('.inline-faq-question').setAttribute('aria-expanded', 'false');
                         }
                     });
                 }
                 item.classList.toggle('active');
+                question.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
             });
         }
     });
@@ -728,6 +768,49 @@ function initHeroStagger() {
     var words = document.querySelectorAll('.stagger-word');
     words.forEach(function(word, i) {
         word.style.animationDelay = (i * 0.1) + 's';
+    });
+}
+
+// Contact form handler
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const feedback = document.getElementById('form-feedback');
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        feedback.style.display = 'none';
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' },
+            });
+
+            if (response.ok) {
+                form.style.display = 'none';
+                feedback.textContent = 'Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
+                feedback.className = 'form-feedback form-feedback-success';
+                feedback.style.display = 'block';
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            feedback.textContent = 'Something went wrong. Please try again or email us directly at hello@icumediadesign.com';
+            feedback.className = 'form-feedback form-feedback-error';
+            feedback.style.display = 'block';
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
     });
 }
 

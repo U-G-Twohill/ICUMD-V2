@@ -5,8 +5,20 @@ handlers:
 - url: /(.*\.(gif|png|jpg|jpeg|webp|svg|ico|css|js|html|woff|woff2|ttf|eot))$
   static_files: \1
   upload: .*\.(gif|png|jpg|jpeg|webp|svg|ico|css|js|html|woff|woff2|ttf|eot)$
+  http_headers:
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: camera=(), microphone=(), geolocation=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 # All other routes fall back to index.html
 - url: /.*
   static_files: index.html
   upload: index.html
+  http_headers:
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: camera=(), microphone=(), geolocation=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains

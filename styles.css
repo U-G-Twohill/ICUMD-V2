@@ -33,7 +33,7 @@ body.page-fade-out .page-navbar,
 body.page-fade-in .page-navbar,
 .transitioning .page-navbar {
   opacity: 1 !important;
-  transition: all 0.5s ease !important;
+  transition: opacity 0.5s ease !important;
 }
 
 body.page-fade-out .page-navbar *,
@@ -345,7 +345,7 @@ button[type="submit"].form-control {
   cursor: pointer;
   padding: 0.75rem 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control[type="submit"]:hover,
@@ -364,6 +364,27 @@ textarea.form-control {
   resize: vertical;
 }
 
+/* Form Feedback */
+.form-feedback {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-feedback-success {
+  background: rgba(40, 167, 69, 0.15);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  color: #5cb85c;
+}
+
+.form-feedback-error {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #e74c3c;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
@@ -377,7 +398,7 @@ textarea.form-control {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -497,9 +518,18 @@ textarea.form-control {
   color: inherit;
 }
 
+button.expanding-card-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
 .expanding-card.is-expanded {
   position: fixed !important;
-  z-index: 1001;
+  z-index: 400;
   pointer-events: auto;
 }
 
@@ -523,7 +553,7 @@ textarea.form-control {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0);
-  z-index: 999;
+  z-index: 300;
   pointer-events: none;
   transition: background 0.4s ease;
 }
@@ -546,8 +576,8 @@ textarea.form-control {
   cursor: pointer;
   opacity: 0;
   transform: scale(0.8);
-  transition: all 0.3s ease;
-  z-index: 1002;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  z-index: 500;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -592,7 +622,7 @@ textarea.form-control {
   width: 100%;
   box-sizing: border-box;
   background: rgba(33, 37, 41, 0.95);
-  z-index: 1001;
+  z-index: 400;
   pointer-events: auto;
   text-align: center;
   position: relative;
@@ -800,14 +830,14 @@ textarea.form-control {
 
 /* Navbar */
 .page-navbar {
-  z-index: 999;
+  z-index: 100;
   position: fixed;
   width: 100%;
   top: 0;
   display: flex;
   align-items: center;
   height: 110px;
-  transition: all 0.5s ease;
+  transition: height 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
   background: transparent;
 }
 
@@ -889,7 +919,7 @@ textarea.form-control {
 .nav-logo {
   height: 100px;
   width: auto;
-  transition: all 0.5s ease;
+  transition: height 0.5s ease;
   display: block;
   object-fit: contain;
   max-width: 100%;
@@ -928,7 +958,7 @@ textarea.form-control {
   border: 1px solid rgba(173, 181, 189, 0.1);
   border-radius: 0.5rem;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  z-index: 200;
   list-style: none;
   padding: 0.5rem 0;
   margin: 0;
@@ -956,7 +986,7 @@ textarea.form-control {
   color: #f8f9fa;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 14px;
@@ -1002,7 +1032,7 @@ textarea.form-control {
   left: calc(100% + 5px); /* Your original 5px gap */
   margin-left: 0;
   min-width: 200px;
-  z-index: 1001;
+  z-index: 200;
 }
 
 .dropdown-submenu .dropdown-menu::before {
@@ -1014,7 +1044,7 @@ textarea.form-control {
   height: 100%; /* Full height of submenu */
   background: transparent;
   pointer-events: auto; /* This is key - makes it hoverable */
-  z-index: 1002;
+  z-index: 200;
 }
 
 
@@ -1061,7 +1091,7 @@ textarea.form-control {
   height: 2px;
   background-color: #fff;
   position: relative;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .hamburger-icon::before,
@@ -1072,7 +1102,7 @@ textarea.form-control {
   height: 2px;
   background-color: #fff;
   left: 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
 }
 
 .hamburger-icon::before { top: -8px; }
@@ -1094,7 +1124,7 @@ textarea.form-control {
 
 /* Header */
 .header {
-  z-index: 990;
+  z-index: 10;
   position: relative;
   height: 100vh;
   min-height: 600px;
@@ -1300,7 +1330,7 @@ textarea.form-control {
   width: 100%;
   height: 100%;
   background: rgba(52, 58, 64, 0.5);
-  transition: all 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 .overlay-img .des {
@@ -1310,7 +1340,7 @@ textarea.form-control {
   width: 100%;
   height: 100%;
   padding: 0 20px;
-  transition: all 0.5s ease;
+  transition: top 0.5s ease;
   color: #fff;
 }
 
@@ -1330,7 +1360,7 @@ textarea.form-control {
   margin-top: 100px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease, margin-top 0.5s ease;
   font-size: 14px;
 }
 
@@ -1354,40 +1384,38 @@ textarea.form-control {
 /* Modal */
 .modalBox {
   position: fixed;
-  width: 0%;
-  height: 0%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: block;
-  z-index: 1000;
+  z-index: 600;
   opacity: 0;
   visibility: hidden;
   background: rgba(0, 0, 0, 0.8);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .modalBox-body {
-  width: 0%;
-  height: 0%;
-  transition: all 0.4s ease;
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
   overflow: hidden;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   border-radius: 0.5rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modalBox.show {
   opacity: 1;
   visibility: visible;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .modalBox.show .modalBox-body {
-  width: 80%;
-  max-width: 800px;
-  height: 450px;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modalBox-body iframe {
@@ -1397,7 +1425,7 @@ textarea.form-control {
 /* Contact Section */
 .contact-section {
   padding: 120px 0 0;
-  z-index: 990;
+  z-index: 10;
   position: relative;
   text-align: center;
   color: #fff;
@@ -1448,7 +1476,7 @@ textarea.form-control {
 .footer {
   position: relative;
   width: 100%;
-  z-index: 999;
+  z-index: 10;
   display: flex;
   padding: 30px 20px;
   margin-top: 50px;
@@ -1578,7 +1606,7 @@ textarea.form-control {
     grid-row: 1;
     justify-self: start;
     position: relative;
-    z-index: 1001;
+    z-index: 100;
   }
 
   .nav-navbar .nav-item:not(:first-child):not(.mobile-menu-btn) {
@@ -1595,7 +1623,7 @@ textarea.form-control {
     margin: 0;
     height: 100%;
     position: relative;
-    z-index: 1001;
+    z-index: 100;
   }
   
   .nav-logo {
@@ -1635,7 +1663,7 @@ textarea.form-control {
     width: 100%;
     height: calc(100vh - 70px);
     background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
+    z-index: 99;
     opacity: 0;
     animation: fadeIn 0.3s forwards;
   }
@@ -1652,7 +1680,7 @@ textarea.form-control {
     background-color: rgba(52, 58, 64, 0.98);
     backdrop-filter: blur(10px);
     text-align: center;
-    z-index: 999;
+    z-index: 200;
     transform: translateX(-100%);
     animation: slideIn 0.3s forwards;
     border-bottom: 1px solid rgba(173, 181, 189, 0.1);
@@ -1712,7 +1740,7 @@ textarea.form-control {
     background-color: rgba(52, 58, 64, 0.98);
     backdrop-filter: blur(10px);
     text-align: center;
-    z-index: 999;
+    z-index: 200;
     transform: translateX(0);
     animation: slideOut 0.25s forwards;
     border-bottom: 1px solid rgba(173, 181, 189, 0.1);
@@ -2196,7 +2224,7 @@ img {
   border-radius: 2rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .faq-pill:hover {
@@ -2234,6 +2262,12 @@ img {
 }
 
 .inline-faq-question {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  font: inherit;
+  text-align: left;
   padding: 1.25rem 2.5rem 1.25rem 1rem;
   cursor: pointer;
   position: relative;
@@ -2387,21 +2421,18 @@ img {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  will-change: opacity, transform;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal-left {
   opacity: 0;
   transform: translateX(-30px);
-  will-change: opacity, transform;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal-right {
   opacity: 0;
   transform: translateX(30px);
-  will-change: opacity, transform;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 

@@ -123,7 +123,7 @@
                         <p style="opacity: 0.7;">We typically respond within 24 hours.</p>
                     </div>
                     <div class="col-md-7">
-                        <form action="#" method="POST" class="form-group" data-integration="email">
+                        <form id="contact-form" class="form-group" data-integration="email">
                             <label for="contact-name">Name:</label>
                             <input id="contact-name" name="name" type="text" class="form-control" placeholder="Your Name" required>
                             <label for="contact-email">Email:</label>
@@ -132,6 +132,7 @@
                             <textarea id="contact-message" name="message" rows="6" class="form-control" placeholder="Tell us about your inquiry or business." required></textarea>
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
+                        <div id="form-feedback" class="form-feedback" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -140,7 +141,7 @@
 
                 <!-- footer -->
             <footer class="footer">
-                <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made by <a>ICU Media Design</a></p>       
+                <p class="infos">&copy; <span class="copyright-year"></span>, Made by <span>ICU Media Design</span></p>       
                 <span>|</span>  
                 <div class="links">
                     <a href="about.html">About</a>

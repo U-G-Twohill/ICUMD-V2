@@ -347,6 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollReveal();
     initCounters();
     initHeroStagger();
+    initScrollPrompt();
     initContactForm();
     initTypingEffect();
     initCursorGlow();
@@ -729,42 +730,85 @@ function initScrollReveal() {
 }
 
 // Animated Counters
+// Counters in viewport on first paint render their target value directly (no
+// 0 -> N flicker). Counters that come into view on scroll animate from 0.
 function initCounters() {
     const counters = document.querySelectorAll('.counter-value');
     if (!counters.length) return;
 
+    var pageJustLoaded = true;
+    setTimeout(function() { pageJustLoaded = false; }, 500);
+
+    function setFinal(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = target + suffix;
+    }
+
+    function animate(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 2000;
+        var startTime = null;
+
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            // Ease-out cubic
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.floor(eased * target);
+            el.textContent = current + suffix;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target + suffix;
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                var el = entry.target;
-                var target = parseFloat(el.getAttribute('data-target'));
-                var suffix = el.getAttribute('data-suffix') || '';
-                var duration = 2000;
-                var start = 0;
-                var startTime = null;
-
-                function step(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    var progress = Math.min((timestamp - startTime) / duration, 1);
-                    // Ease-out cubic
-                    var eased = 1 - Math.pow(1 - progress, 3);
-                    var current = Math.floor(eased * target);
-                    el.textContent = current + suffix;
-                    if (progress < 1) {
-                        requestAnimationFrame(step);
-                    } else {
-                        el.textContent = target + suffix;
-                    }
+                if (pageJustLoaded) {
+                    setFinal(entry.target);
+                } else {
+                    animate(entry.target);
                 }
-
-                requestAnimationFrame(step);
-                observer.unobserve(el);
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
     counters.forEach(function(el) {
         observer.observe(el);
+    });
+}
+
+// Scroll prompt — clicking the down-arrow scrolls to the first content section
+function initScrollPrompt() {
+    var prompt = document.querySelector('.scroll-prompt');
+    if (!prompt) return;
+    prompt.style.cursor = 'pointer';
+    prompt.setAttribute('role', 'button');
+    prompt.setAttribute('tabindex', '0');
+    prompt.setAttribute('aria-label', 'Scroll to next section');
+
+    function scrollToNext() {
+        var firstSection = document.querySelector('.page-container .lighter-section, .page-container .darker-section');
+        if (!firstSection) return;
+        var navbarHeight = (typeof getNavbarHeight === 'function') ? getNavbarHeight() : 70;
+        var targetPosition = firstSection.offsetTop - navbarHeight - 20;
+        window.scrollTo({ top: Math.max(0, targetPosition), behavior: 'smooth' });
+    }
+
+    prompt.addEventListener('click', scrollToNext);
+    prompt.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            scrollToNext();
+        }
     });
 }
 
@@ -810,7 +854,7 @@ function initContactForm() {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
-            feedback.textContent = 'Something went wrong. Please try again or email us directly at hello@icumediadesign.co.nz';
+            feedback.textContent = 'Something went wrong. Please try again or email us directly at uriah@icumediadesign.co.nz';
             feedback.className = 'form-feedback form-feedback-error';
             feedback.style.display = 'block';
             submitBtn.textContent = originalText;

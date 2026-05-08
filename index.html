@@ -48,7 +48,7 @@
 
     </head>
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme home-page">
 
     <div class="ambient-bg ambient-home">
       <div class="blob blob-1"></div>
@@ -70,10 +70,10 @@
                 
                 <!-- FIXED Services dropdown -->
                 <li class="nav-item dropdown">
-                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="services.html" class="nav-link">Services</a><button type="button" class="dropdown-chevron" aria-label="Expand Services menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                            <a href="design.html" class="dropdown-item">Web & Design</a>
+                            <a href="design.html" class="dropdown-item">Web & Design</a><button type="button" class="dropdown-chevron" aria-label="Expand Web and Design menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                                 <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
@@ -81,7 +81,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
+                            <a href="solutions.html" class="dropdown-item">Solutions & Automations</a><button type="button" class="dropdown-chevron" aria-label="Expand Solutions and Automations menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
                                 <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
@@ -97,7 +97,7 @@
         </nav>
 
         <!-- page header -->
-        <header class="header" data-shader='{"overallSpeed":0.2,"lineCount":16,"lineColor":[0.0,0.48,1.0,0.6],"scale":5.0}'>
+        <header class="header header-overlap" data-shader='{"overallSpeed":0.2,"lineCount":16,"lineColor":[0.0,0.48,1.0,0.6],"scale":5.0}'>
             <div class="overlay"></div>
             <div class="header-content">
                 <h1 class="sr-only">ICU Media Design — Web Design and Digital Solutions for New Zealand Small Businesses</h1>
@@ -112,6 +112,24 @@
                 <p class="typed-tagline" style="opacity:0.7; font-size: 1rem; margin-bottom: 0;">
                     We build <span class="typed-text" data-strings='["custom websites","smart automations","digital solutions","business growth tools"]'></span><span class="typing-cursor"></span>
                 </p>
+                <div class="hero-stats-strip">
+                    <div class="stat-item">
+                        <span class="counter-value" data-target="100" data-suffix="%">0</span>
+                        <p class="stat-label">Custom Builds</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="counter-value" data-target="24" data-suffix="hr">0</span>
+                        <p class="stat-label">Response Time</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="counter-value" data-target="3" data-suffix="+">0</span>
+                        <p class="stat-label">Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="counter-value" data-target="2024" data-suffix="">0</span>
+                        <p class="stat-label">Est. in NZ</p>
+                    </div>
+                </div>
                 <div class="scroll-prompt"><span class="ti ti-arrow-down"></span></div>
             </div>
         </header><!-- end of page header -->
@@ -119,12 +137,12 @@
         <!-- page container -->
         <div class="container page-container">
 
-            <!-- Value Proposition -->
-            <div class="lighter-section reveal">
-                <h2 class="title mb-4">Why <span class="gradient-text">ICU Media Design</span>?</h2>
+            <!-- Two Ways We Help (Why ICUMD + What We Do merged) -->
+            <div class="darker-section reveal">
+                <h2 class="title mb-4">Two Ways We <span class="gradient-text">Help</span></h2>
                 <div class="heading-divider"></div>
-                <p class="text-center mb-5">We handle the technology so you can focus on what you do best.</p>
-                <div class="row reveal-stagger">
+                <p class="text-center mb-5">NZ-owned, custom-built, and supported beyond launch — pick the path that fits your business.</p>
+                <div class="row reveal-stagger mb-5">
                     <div class="col-md-4 reveal">
                         <div class="icon-stat">
                             <span class="ti ti-flag-alt"></span>
@@ -147,12 +165,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Services Overview -->
-            <div class="darker-section reveal">
-                <h2 class="title mb-4">What We Do</h2>
-                <div class="heading-divider"></div>
                 <div class="row mb-4">
                     <div class="col-md-6 reveal">
                         <a href="design.html" class="card">
@@ -211,55 +223,6 @@
                             <p>We maintain, optimise, and grow with you.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Social Proof / Stats -->
-            <div class="darker-section reveal">
-                <h2 class="title mb-4">By the Numbers</h2>
-                <div class="heading-divider"></div>
-                <div class="row reveal-stagger">
-                    <div class="col-md-3 reveal">
-                        <div class="icon-stat">
-                            <span class="counter-value" data-target="100" data-suffix="%">0</span>
-                            <p>Custom Builds</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 reveal">
-                        <div class="icon-stat">
-                            <span class="counter-value" data-target="24" data-suffix="hr">0</span>
-                            <p>Response Time</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 reveal">
-                        <div class="icon-stat">
-                            <span class="counter-value" data-target="3" data-suffix="+">0</span>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 reveal">
-                        <div class="icon-stat">
-                            <span class="counter-value" data-target="2024" data-suffix="">0</span>
-                            <p>Est. in NZ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tools & Platforms -->
-            <div class="lighter-section reveal">
-                <h2 class="title mb-4">Tools We Work With</h2>
-                <div class="heading-divider"></div>
-                <p class="text-center mb-4">Modern platforms and technologies, chosen to fit your business.</p>
-                <div class="tech-stack reveal-stagger">
-                    <div class="tech-icon reveal" title="WordPress"><span class="ti ti-wordpress"></span></div>
-                    <div class="tech-icon reveal" title="Shopify"><span class="ti ti-shopping-cart"></span></div>
-                    <div class="tech-icon reveal" title="Google Workspace"><span class="ti ti-google"></span></div>
-                    <div class="tech-icon reveal" title="Analytics"><span class="ti ti-bar-chart"></span></div>
-                    <div class="tech-icon reveal" title="Stripe"><span class="ti ti-credit-card"></span></div>
-                    <div class="tech-icon reveal" title="Email"><span class="ti ti-email"></span></div>
-                    <div class="tech-icon reveal" title="Calendar"><span class="ti ti-calendar"></span></div>
-                    <div class="tech-icon reveal" title="Custom Code"><span class="ti ti-shortcode"></span></div>
                 </div>
             </div>
 

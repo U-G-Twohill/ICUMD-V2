@@ -76,7 +76,9 @@
   };
 
   function init() {
-    var header = document.querySelector('.header');
+    // Attach to the first element with a data-shader attribute, or fall back
+    // to .header for pages that haven't moved the shader off the hero element.
+    var header = document.querySelector('[data-shader]') || document.querySelector('.header');
     if (!header) return;
 
     // Parse per-page settings from data-shader attribute

@@ -63,10 +63,10 @@
             
             <!-- FIXED Services dropdown -->
             <li class="nav-item dropdown">
-                <a href="services.html" class="nav-link">Services</a>
+                <a href="services.html" class="nav-link">Services</a><button type="button" class="dropdown-chevron" aria-label="Expand Services menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-submenu">
-                        <a href="design.html" class="dropdown-item">Web & Design</a>
+                        <a href="design.html" class="dropdown-item">Web & Design</a><button type="button" class="dropdown-chevron" aria-label="Expand Web and Design menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                             <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
@@ -74,7 +74,7 @@
                         </ul>
                     </li>
                     <li class="dropdown-submenu">
-                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
+                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a><button type="button" class="dropdown-chevron" aria-label="Expand Solutions and Automations menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
                             <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
@@ -89,18 +89,15 @@
         </ul>
     </nav>
 
-        <!-- page header -->
-        <header class="header" data-shader='{"overallSpeed":0.2,"lineCount":12,"lineColor":[0.96,0.42,0.24,0.55],"warpAmplitude":1.0,"glowSpread":0.6}'>
+        <!-- page header — empty content; the form section overlays this hero, sharing the shader
+             as its background like the other compact-hero pages. -->
+        <header class="header header-overlap" data-shader='{"overallSpeed":0.2,"lineCount":12,"lineColor":[0.96,0.42,0.24,0.55],"warpAmplitude":1.0,"glowSpread":0.6}'>
             <div class="overlay"></div>
-            <div class="header-content">
-                <h1 class="header-title">Let's Talk</h1>
-                <p class="header-subtitle">Start a conversation about your next project.</p>
-            </div>
         </header>
 
         <!-- Content -->
         <div class="container page-container">
-            <div class="lighter-section reveal">
+            <div class="lighter-section contact-form-section reveal">
                 <div class="row">
                     <div class="col-md-5 mb-4">
                         <h2 class="title mb-4">Get in <span class="gradient-text">Touch</span></h2>

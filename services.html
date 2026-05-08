@@ -61,10 +61,10 @@
             
             <!-- FIXED Services dropdown -->
             <li class="nav-item dropdown">
-                <a href="services.html" class="nav-link">Services</a>
+                <a href="services.html" class="nav-link">Services</a><button type="button" class="dropdown-chevron" aria-label="Expand Services menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-submenu">
-                        <a href="design.html" class="dropdown-item">Web & Design</a>
+                        <a href="design.html" class="dropdown-item">Web & Design</a><button type="button" class="dropdown-chevron" aria-label="Expand Web and Design menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="design.html#design" class="dropdown-item">Design</a></li>
                             <li><a href="design.html#maintenance" class="dropdown-item">Maintenance</a></li>
@@ -72,7 +72,7 @@
                         </ul>
                     </li>
                     <li class="dropdown-submenu">
-                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a>
+                        <a href="solutions.html" class="dropdown-item">Solutions & Automations</a><button type="button" class="dropdown-chevron" aria-label="Expand Solutions and Automations menu" aria-expanded="false"><span class="ti ti-angle-down"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="solutions.html#solutions" class="dropdown-item">Our Process</a></li>
                             <li><a href="solutions.html#integrations" class="dropdown-item">Our Solutions</a></li>
@@ -88,7 +88,7 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="header" id="page-header" data-shader='{"overallSpeed":0.18,"lineCount":14,"lineColor":[0.0,0.48,1.0,0.55],"scale":4.5}'>
+    <header class="header header-overlap" id="page-header" data-shader='{"overallSpeed":0.18,"lineCount":14,"lineColor":[0.0,0.48,1.0,0.55],"scale":4.5}'>
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="header-title">Services</h1>
@@ -99,28 +99,31 @@
     <!-- page container -->
     <div class="container page-container">
 
-        <!-- Section 1: How We Help -->
+        <!-- Section 1: What do you need? (upfront self-segmenter — replaces old How We Help journey) -->
         <div class="lighter-section reveal">
-            <h2 class="title mb-4">How We <span class="gradient-text">Help</span></h2>
+            <h2 class="title mb-4">What do you <span class="gradient-text">need</span>?</h2>
             <div class="heading-divider"></div>
-            <p class="mb-5 text-center">Whether you need a professional online presence, smarter business operations, or both — we've got you covered.</p>
-            <div class="journey-pathway">
-                <div class="journey-step">
-                    <div class="journey-step-number">1</div>
-                    <h3>Your Brand</h3>
-                    <p>You bring the vision and the business knowledge.</p>
+            <p class="mb-5 text-center">Two paths, one studio. Start with whichever matches where you are right now.</p>
+            <div class="row reveal-stagger">
+                <div class="col-md-6 reveal mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <span class="ti ti-layout card-icon"></span>
+                            <h3 class="card-title">Need to get online or refresh how you look?</h3>
+                            <p>Custom websites, branding, and maintenance plans built around your business.</p>
+                            <a href="design.html" class="btn btn-primary mt-3">Explore Web &amp; Design</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="journey-connector"></div>
-                <div class="journey-step">
-                    <div class="journey-step-number">2</div>
-                    <h3>We Build</h3>
-                    <p>We design your website and connect the right tools.</p>
-                </div>
-                <div class="journey-connector"></div>
-                <div class="journey-step">
-                    <div class="journey-step-number">3</div>
-                    <h3>You Grow</h3>
-                    <p>Your digital presence works for you, not the other way around.</p>
+                <div class="col-md-6 reveal mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <span class="ti ti-bolt card-icon"></span>
+                            <h3 class="card-title">Already online and want it to work harder?</h3>
+                            <p>We connect your tools, automate your workflows, and build smarter systems that save you time.</p>
+                            <a href="solutions.html" class="btn btn-primary mt-3">Explore Solutions</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

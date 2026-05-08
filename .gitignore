@@ -4,3 +4,4 @@ vendor/
 *.xcf
 .DS_Store
 Thumbs.db
+screenshots/

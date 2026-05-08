@@ -371,6 +371,31 @@ textarea.form-control {
   resize: vertical;
 }
 
+/* Contact form section — overlays the hero shader (header has data-shader; this
+   section is a regular compact-hero overlap section, getting the standard near-
+   opaque bg + -65vh overlap from the rule above). Slight tweaks to form fields
+   for a roomier feel on contact specifically. */
+.contact-form-section > .row {
+  width: 100%;
+  align-items: stretch;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.contact-form-section .form-control {
+  padding: 0.875rem 1.125rem;
+  margin-bottom: 0.875rem;
+}
+
+.contact-form-section textarea.form-control {
+  min-height: 140px;
+}
+
+.contact-form-section button[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.875rem 2rem;
+}
+
 /* Form Feedback */
 .form-feedback {
   padding: 1rem 1.5rem;
@@ -900,6 +925,11 @@ button.expanding-card-trigger {
   position: relative;
 }
 
+/* Chevron button — hidden on desktop, surfaced via mobile rules below */
+.dropdown-chevron {
+  display: none;
+}
+
 .nav-navbar > .nav-item > .nav-link {
   position: relative;
 }
@@ -1273,6 +1303,118 @@ button.expanding-card-trigger {
   25% { transform: translate(15px, -20px) rotate(5deg); }
   50% { transform: translate(-10px, 15px) rotate(-3deg); }
   75% { transform: translate(20px, 10px) rotate(4deg); }
+}
+
+/* Header - Compact variant for inner pages (design/solutions/portfolio/faq/contact)
+   Hero stays at full dimensions so the navbar offset to content is unchanged.
+   The heading content block shrinks visually, sits high in the hero, and the
+   first content section pulls UP with negative margin to overlap the lower
+   portion of the hero (where the existing mask-image fade already softens the
+   transition). On Contact, the heading content is empty — only the overlap
+   matters, so the form section rises into the hero space. */
+.header.header-compact {
+  align-items: flex-start;
+  padding-top: 18vh;
+}
+
+.header.header-compact .header-content {
+  padding: 1rem 1.5rem;
+  max-width: 600px;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(15, 19, 24, .15) 0%, rgba(15, 19, 24, .55) 55%, transparent 100%);
+}
+
+.header.header-compact .header-title {
+  font-size: calc(20px + (32 - 20) * ((100vw - 300px) / (1300 - 300)));
+  margin-bottom: 10px;
+}
+
+.header.header-compact .header-subtitle {
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1300 - 300)));
+  margin-bottom: 0;
+}
+
+/* `.header-overlap` triggers the first-section-overlaps-the-hero pattern. Page-
+   container's stacking context bumps above the header (z-index:10) so its
+   children render on top of the hero rather than behind it. Pages that ALSO
+   want a shrunken heading add `.header-compact` (decoupled — see the rule
+   block above this one).
+   Heading content is anchored to the top of the hero so it stays visible above
+   the overlapping section (default flex centering would put it at 50vh, where
+   the section's -65vh overlap covers it). */
+.header.header-overlap {
+  align-items: flex-start;
+  padding-top: 18vh;
+}
+
+.header.header-overlap ~ .container.page-container {
+  position: relative;
+  z-index: 15;
+  /* Drop the 100vh min-height — with first section pulled up via negative
+     margin, content takes less vertical space; min-height creates dead gap
+     before the footer. Footer should hug the natural content end. */
+  min-height: auto;
+  /* Kill the page-container's bottom padding too — combined with the footer's
+     50px margin-top below, it creates a ~100px dead band before the footer
+     that reads as the footer being detached. */
+  padding-bottom: 0;
+}
+
+/* Same for footer — no top margin on overlap pages so it hugs the last section. */
+.header.header-overlap ~ .footer-enhanced {
+  margin-top: 0;
+}
+
+/* First content section sits inside the hero band, sharing the shader as its
+   visual background. Section bg is near-opaque so content reads as cleanly as
+   the heading; the shader stays visible above the section (around the heading
+   area) and in the .container gutters.
+   Default -45vh suits full-heading pages (Home/About/Services) where the
+   heading content can be tall — leaves enough room above the section for the
+   heading + subtitle to land without being covered. */
+.header.header-overlap ~ .container.page-container > :first-child {
+  margin-top: -45vh;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(135deg, rgba(20, 24, 32, 0.94) 0%, rgba(14, 18, 26, 0.97) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Compact-heading pages (design/solutions/portfolio/faq) have a constrained
+   heading box so the section can sit much closer — deeper overlap. */
+.header.header-compact.header-overlap ~ .container.page-container > :first-child {
+  margin-top: -65vh;
+}
+
+/* Home has the richest hero content (logo + subtitle + tagline + stats strip +
+   scroll arrow) — needs the lightest overlap so the section sits below the
+   down-arrow with breathing room, not flush against it. */
+body.home-page .header.header-overlap ~ .container.page-container > :first-child {
+  margin-top: -20vh;
+}
+
+/* Contact form sits highest of all — at the position where heading text would
+   appear on other pages, so the visitor lands directly on the form. */
+.header.header-overlap ~ .container.page-container > .contact-form-section {
+  margin-top: -82vh;
+}
+
+@media (max-width: 768px) {
+  .header.header-compact {
+    padding-top: 14vh;
+  }
+  .header.header-overlap ~ .container.page-container > :first-child {
+    margin-top: -38vh;
+  }
+  .header.header-compact.header-overlap ~ .container.page-container > :first-child {
+    margin-top: -55vh;
+  }
+  body.home-page .header.header-overlap ~ .container.page-container > :first-child {
+    margin-top: -15vh;
+  }
+  .header.header-overlap ~ .container.page-container > .contact-form-section {
+    margin-top: -72vh;
+  }
 }
 
 /* Header - Contact page variant */
@@ -1850,6 +1992,62 @@ button.expanding-card-trigger {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Mobile chevron-split: real button replaces ::after pseudo-chevron as tappable expander */
+  .nav-navbar.show-mobile-menu .dropdown-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 0;
+    z-index: 3;
+  }
+
+  .nav-navbar.show-mobile-menu .dropdown-chevron .ti {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .nav-navbar.show-mobile-menu .dropdown-submenu.active > .dropdown-chevron .ti,
+  .nav-navbar.show-mobile-menu .nav-item.dropdown.active > .dropdown-chevron .ti {
+    transform: rotate(180deg);
+  }
+
+  /* Hide the ::after pseudo-chevron — chevron button supersedes it on mobile */
+  .nav-navbar.show-mobile-menu .dropdown-submenu > .dropdown-item::after {
+    display: none !important;
+  }
+
+  /* Expand the top-level Services dropdown when its chevron toggles .nav-item.dropdown.active.
+     Mobile nav-items are position:fixed at hard-coded top values, so an in-flow dropdown
+     would render BEHIND the next nav-item (sibling siblings stack later → above). Two-part fix:
+     (1) bump the active nav-item's z-index above peer nav-items so its stacking context wins;
+     (2) float the dropdown as position:absolute at top:100% so it overlays the items below. */
+  .nav-navbar.show-mobile-menu .nav-item.dropdown.active {
+    z-index: 250 !important;
+  }
+
+  .nav-navbar.show-mobile-menu .nav-item.dropdown.active > .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 600px;
+    display: block !important;
+    background-color: rgba(33, 37, 41, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
   
   /* Header adjustments */
@@ -2596,6 +2794,50 @@ img {
 @keyframes bounceDown {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
+}
+
+/* ========================================
+   Hero Stats Strip
+   ======================================== */
+.hero-stats-strip {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.hero-stats-strip .stat-item {
+  flex: 1 1 auto;
+  min-width: 100px;
+  text-align: center;
+}
+
+.hero-stats-strip .counter-value {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-stats-strip .stat-label {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .hero-stats-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .hero-stats-strip .counter-value {
+    font-size: 1.5rem;
+  }
 }
 
 /* ========================================

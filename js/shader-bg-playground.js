@@ -16,7 +16,7 @@
 (function() {
   'use strict';
 
-  // Default shader config — all 13+ tunable parameters
+  // Default shader config — all tunable parameters
   var DEFAULTS = {
     bgColor1:        [0.059, 0.075, 0.094, 1.0],
     bgColor2:        [0.06,  0.14,  0.28,  1.0],
@@ -32,7 +32,11 @@
     offsetFrequency: 0.5,
     minOffsetSpread: 0.6,
     maxOffsetSpread: 2.0,
-    scale:           5.0
+    scale:           5.0,
+    glowSpread:      0.5,
+    circleRadius:    0.01,
+    circleBrightness: 4.0,
+    circleSpacing:   25.0
   };
 
   // Initialise global config (preserves any pre-set values)
@@ -81,6 +85,10 @@
       'uniform float u_offsetFrequency;',
       'uniform float u_minOffsetSpread;',
       'uniform float u_maxOffsetSpread;',
+      'uniform float u_glowSpread;',
+      'uniform float u_circleRadius;',
+      'uniform float u_circleBrightness;',
+      'uniform float u_circleSpacing;',
       '',
       'const float gridSmoothWidth = 0.015;',
       'const int linesPerGroup = ' + Math.max(1, Math.round(lineCount)) + ';',
@@ -122,11 +130,11 @@
       '    float halfWidth = mix(u_minLineWidth, u_maxLineWidth, rand * horizontalFade) / 2.0;',
       '    float offset = random(offsetPosition + offsetTime * (1.0 + normalizedLineIndex)) * mix(u_minOffsetSpread, u_maxOffsetSpread, horizontalFade);',
       '    float linePosition = getPlasmaY(space.x, horizontalFade, offset);',
-      '    float line = drawSmoothLine(linePosition, halfWidth, space.y) / 2.0 + drawCrispLine(linePosition, halfWidth * 0.15, space.y);',
+      '    float line = drawSmoothLine(linePosition, halfWidth, space.y) * u_glowSpread + drawCrispLine(linePosition, halfWidth * 0.15, space.y);',
       '',
-      '    float circleX = mod(float(l) + u_time * lineSpeed, 25.0) - 12.0;',
+      '    float circleX = mod(float(l) + u_time * lineSpeed, u_circleSpacing) - u_circleSpacing * 0.48;',
       '    vec2 circlePosition = vec2(circleX, getPlasmaY(circleX, horizontalFade, offset));',
-      '    float circle = drawCircle(circlePosition, 0.01, space) * 4.0;',
+      '    float circle = drawCircle(circlePosition, u_circleRadius, space) * u_circleBrightness;',
       '',
       '    line = line + circle;',
       '    lines += line * u_lineColor * rand;',
@@ -191,6 +199,10 @@
     uniforms.offsetFrequency = gl.getUniformLocation(program, 'u_offsetFrequency');
     uniforms.minOffsetSpread = gl.getUniformLocation(program, 'u_minOffsetSpread');
     uniforms.maxOffsetSpread = gl.getUniformLocation(program, 'u_maxOffsetSpread');
+    uniforms.glowSpread       = gl.getUniformLocation(program, 'u_glowSpread');
+    uniforms.circleRadius     = gl.getUniformLocation(program, 'u_circleRadius');
+    uniforms.circleBrightness = gl.getUniformLocation(program, 'u_circleBrightness');
+    uniforms.circleSpacing    = gl.getUniformLocation(program, 'u_circleSpacing');
 
     return true;
   }
@@ -234,6 +246,10 @@
     gl.uniform1f(uniforms.offsetFrequency, cfg.offsetFrequency);
     gl.uniform1f(uniforms.minOffsetSpread, cfg.minOffsetSpread);
     gl.uniform1f(uniforms.maxOffsetSpread, cfg.maxOffsetSpread);
+    gl.uniform1f(uniforms.glowSpread,       cfg.glowSpread);
+    gl.uniform1f(uniforms.circleRadius,     cfg.circleRadius);
+    gl.uniform1f(uniforms.circleBrightness, cfg.circleBrightness);
+    gl.uniform1f(uniforms.circleSpacing,    cfg.circleSpacing);
 
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
     gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 0, 0);

@@ -68,7 +68,11 @@
     offsetFrequency: 0.5,
     minOffsetSpread: 0.6,
     maxOffsetSpread: 2.0,
-    scale:           5.0
+    scale:           5.0,
+    glowSpread:      0.5,
+    circleRadius:    0.01,
+    circleBrightness: isMobile ? 3.0 : 4.0,
+    circleSpacing:   25.0
   };
 
   function init() {
@@ -133,6 +137,10 @@
       'const float offsetSpeed = 1.33 * overallSpeed;',
       'const float minOffsetSpread = ' + s.minOffsetSpread.toFixed(4) + ';',
       'const float maxOffsetSpread = ' + s.maxOffsetSpread.toFixed(4) + ';',
+      'const float glowSpread = ' + s.glowSpread.toFixed(4) + ';',
+      'const float circleRadius = ' + s.circleRadius.toFixed(4) + ';',
+      'const float circleBrightness = ' + s.circleBrightness.toFixed(4) + ';',
+      'const float circleSpacing = ' + s.circleSpacing.toFixed(4) + ';',
       'const int linesPerGroup = ' + Math.round(s.lineCount) + ';',
       '',
       'const vec4 lineColor = vec4(' + lc[0].toFixed(4) + ', ' + lc[1].toFixed(4) + ', ' + lc[2].toFixed(4) + ', ' + lc[3].toFixed(4) + ');',
@@ -172,11 +180,11 @@
       '    float halfWidth = mix(minLineWidth, maxLineWidth, rand * horizontalFade) / 2.0;',
       '    float offset = random(offsetPosition + offsetTime * (1.0 + normalizedLineIndex)) * mix(minOffsetSpread, maxOffsetSpread, horizontalFade);',
       '    float linePosition = getPlasmaY(space.x, horizontalFade, offset);',
-      '    float line = drawSmoothLine(linePosition, halfWidth, space.y) / 2.0 + drawCrispLine(linePosition, halfWidth * 0.15, space.y);',
+      '    float line = drawSmoothLine(linePosition, halfWidth, space.y) * glowSpread + drawCrispLine(linePosition, halfWidth * 0.15, space.y);',
       '',
-      '    float circleX = mod(float(l) + u_time * lineSpeed, 25.0) - 12.0;',
+      '    float circleX = mod(float(l) + u_time * lineSpeed, circleSpacing) - circleSpacing * 0.48;',
       '    vec2 circlePosition = vec2(circleX, getPlasmaY(circleX, horizontalFade, offset));',
-      '    float circle = drawCircle(circlePosition, 0.01, space) * 4.0;',
+      '    float circle = drawCircle(circlePosition, circleRadius, space) * circleBrightness;',
       '',
       '    line = line + circle;',
       '    lines += line * lineColor * rand;',

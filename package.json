@@ -2,9 +2,9 @@
   "name": "icu-media-design",
   "version": "1.0.0",
   "description": "ICU Media Design - Web design and digital solutions agency",
-  "main": "server.js",
+  "main": "serve.mjs",
   "scripts": {
-    "start": "node server.js",
+    "start": "node serve.mjs",
     "scss": "sass scss/dorang.scss styles.css",
     "scss:watch": "sass --watch scss/dorang.scss styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,14 +12,7 @@
   "keywords": [],
   "author": "ICU Media Design",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "express-rate-limit": "^8.2.1",
-    "helmet": "^8.1.0",
-    "stripe": "^17.4.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "puppeteer": "^24.37.5"
   }

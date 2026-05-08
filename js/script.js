@@ -691,8 +691,6 @@ function setActiveNavLink() {
         'design.html': 'Services',
         'solutions.html': 'Services',
         'portfolio.html': 'Portfolio',
-        'work.html': 'Portfolio',
-        'blog.html': 'Home',
         'contact.html': 'Contact Us',
         'faq.html': 'FAQ'
     };
@@ -812,7 +810,7 @@ function initContactForm() {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
-            feedback.textContent = 'Something went wrong. Please try again or email us directly at hello@icumediadesign.com';
+            feedback.textContent = 'Something went wrong. Please try again or email us directly at hello@icumediadesign.co.nz';
             feedback.className = 'form-feedback form-feedback-error';
             feedback.style.display = 'block';
             submitBtn.textContent = originalText;
@@ -1006,19 +1004,3 @@ function initParallaxSections() {
     });
 }
 
-// jQuery functionality (if available)
-if (typeof jQuery !== 'undefined') {
-    $(document).ready(function(){
-        $('.search-toggle').click(function(){
-            $('.search-wrapper').toggleClass('show');
-        });
-
-        $('.modal-toggle').click(function(){
-            $('.modalBox').toggleClass('show');
-        });
-
-        $('.modalBox').click(function(){
-            $(this).removeClass('show');
-        });
-    });
-}

@@ -348,6 +348,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounters();
     initHeroStagger();
     initContactForm();
+    initTypingEffect();
+    initCursorGlow();
+    initPortfolioFilter();
+    initBlogFilter();
+    initParallaxSections();
 });
 
 // Mobile menu functionality
@@ -686,6 +691,8 @@ function setActiveNavLink() {
         'design.html': 'Services',
         'solutions.html': 'Services',
         'portfolio.html': 'Portfolio',
+        'work.html': 'Portfolio',
+        'blog.html': 'Home',
         'contact.html': 'Contact Us',
         'faq.html': 'FAQ'
     };
@@ -810,6 +817,191 @@ function initContactForm() {
             feedback.style.display = 'block';
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
+        }
+    });
+}
+
+// Typing Effect
+function initTypingEffect() {
+    var el = document.querySelector('.typed-text');
+    if (!el) return;
+
+    var strings;
+    try {
+        strings = JSON.parse(el.getAttribute('data-strings'));
+    } catch(e) { return; }
+
+    if (!strings || !strings.length) return;
+
+    var stringIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+    var typeSpeed = 80;
+    var deleteSpeed = 40;
+    var pauseEnd = 2000;
+    var pauseStart = 500;
+
+    function type() {
+        var current = strings[stringIndex];
+
+        if (isDeleting) {
+            el.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            el.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        var delay = isDeleting ? deleteSpeed : typeSpeed;
+
+        if (!isDeleting && charIndex === current.length) {
+            delay = pauseEnd;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            stringIndex = (stringIndex + 1) % strings.length;
+            delay = pauseStart;
+        }
+
+        setTimeout(type, delay);
+    }
+
+    setTimeout(type, 1000);
+}
+
+// Cursor Glow (desktop only)
+function initCursorGlow() {
+    if (window.innerWidth <= 768) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+
+    var mouseX = 0, mouseY = 0;
+    var glowX = 0, glowY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateGlow() {
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+        glow.style.left = glowX + 'px';
+        glow.style.top = glowY + 'px';
+        requestAnimationFrame(animateGlow);
+    }
+
+    animateGlow();
+}
+
+// Portfolio Filter
+function initPortfolioFilter() {
+    var filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    var cards = document.querySelectorAll('.portfolio-card');
+
+    if (!filterBtns.length || !cards.length) return;
+
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var filter = btn.getAttribute('data-filter');
+
+            cards.forEach(function(card) {
+                var categories = card.getAttribute('data-category') || '';
+                if (filter === 'all' || categories.indexOf(filter) !== -1) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(function() {
+                        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.transition = 'opacity 0.3s ease';
+                    card.style.opacity = '0';
+                    setTimeout(function() {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
+
+// Blog Filter
+function initBlogFilter() {
+    var filterBtns = document.querySelectorAll('.blog-category-pill');
+    var cards = document.querySelectorAll('.blog-card');
+    var featured = document.querySelector('.blog-featured');
+
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var filter = btn.getAttribute('data-filter');
+
+            cards.forEach(function(card) {
+                var category = card.getAttribute('data-category') || '';
+                if (filter === 'all' || category === filter) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    setTimeout(function() {
+                        card.style.transition = 'opacity 0.4s ease';
+                        card.style.opacity = '1';
+                    }, 50);
+                } else {
+                    card.style.transition = 'opacity 0.3s ease';
+                    card.style.opacity = '0';
+                    setTimeout(function() {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            if (featured) {
+                var featuredCat = featured.getAttribute('data-category') || '';
+                if (filter === 'all' || featuredCat === filter) {
+                    featured.style.display = '';
+                } else {
+                    featured.style.display = 'none';
+                }
+            }
+        });
+    });
+}
+
+// Parallax on scroll
+function initParallaxSections() {
+    if (window.innerWidth <= 768) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var parallaxElements = document.querySelectorAll('.header-content');
+    if (!parallaxElements.length) return;
+
+    var ticking = false;
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                var scrollY = window.scrollY;
+                parallaxElements.forEach(function(el) {
+                    var speed = 0.3;
+                    var yPos = -(scrollY * speed);
+                    el.style.transform = 'translateY(' + yPos + 'px)';
+                    el.style.opacity = Math.max(0, 1 - (scrollY / 600));
+                });
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 }

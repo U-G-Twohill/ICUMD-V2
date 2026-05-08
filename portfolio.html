@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. Full case studies coming soon.">
+    <meta name="description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. See our work and what clients say.">
 
     <title>Portfolio | ICU Media Design</title>
 
     <link rel="canonical" href="https://icumediadesign.com/portfolio.html">
     <!-- Open Graph -->
     <meta property="og:title" content="Portfolio | ICU Media Design">
-    <meta property="og:description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. Full case studies coming soon.">
+    <meta property="og:description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. See our work and what clients say.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://icumediadesign.com/portfolio.html">
     <meta property="og:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
@@ -18,7 +18,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Portfolio | ICU Media Design">
-    <meta name="twitter:description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. Full case studies coming soon.">
+    <meta name="twitter:description" content="Browse a curated portfolio of ICU Media Design websites and digital projects for New Zealand businesses. See our work and what clients say.">
     <meta name="twitter:image" content="https://icumediadesign.com/imgs/enhancedlogo.png">
 
     <!-- font icons -->
@@ -26,8 +26,6 @@
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
     <script>if(sessionStorage.getItem('isTransitioning')==='true')document.documentElement.classList.add('transitioning');</script>
-
-
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
@@ -49,8 +47,6 @@
             </li>
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-            
-            <!-- FIXED Services dropdown -->
             <li class="nav-item dropdown">
                 <a href="services.html" class="nav-link">Services</a>
                 <ul class="dropdown-menu">
@@ -71,7 +67,6 @@
                     </li>
                 </ul>
             </li>
-            
             <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
@@ -83,66 +78,250 @@
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="header-title">Portfolio</h1>
-            <p class="header-subtitle">Projects we're proud of</p>
+            <p class="header-subtitle">Real projects, real results for real businesses.</p>
         </div>
-    </header><!-- end of page header -->
+    </header>
 
-    <!-- coming soon -->
     <div class="container page-container">
+
+        <!-- Stats -->
         <div class="lighter-section reveal">
-            <div class="coming-soon-section">
-                <h2>Coming Soon</h2>
-                <div class="heading-divider"></div>
-                <p class="mb-5">We're putting the finishing touches on our project showcase. Here's what's on the way.</p>
-                <div class="row reveal-stagger">
-                    <div class="col-md-4 reveal">
-                        <div class="icon-stat">
-                            <span class="ti ti-image"></span>
-                            <h3>Case Studies</h3>
-                            <p>Real projects, real results</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 reveal">
-                        <div class="icon-stat">
-                            <span class="ti ti-desktop"></span>
-                            <h3>Screenshots</h3>
-                            <p>Before & after transformations</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 reveal">
-                        <div class="icon-stat">
-                            <span class="ti ti-comments"></span>
-                            <h3>Testimonials</h3>
-                            <p>What our clients say</p>
-                        </div>
-                    </div>
+            <h2 class="title mb-4">Our Impact</h2>
+            <div class="heading-divider"></div>
+            <div class="work-stats reveal-stagger">
+                <div class="work-stat reveal">
+                    <span class="highlight-number counter-value" data-target="100" data-suffix="%">0</span>
+                    <p>Client Satisfaction</p>
                 </div>
-                <div class="mt-1-5">
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                <div class="work-stat reveal">
+                    <span class="highlight-number counter-value" data-target="5" data-suffix="+">0</span>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="work-stat reveal">
+                    <span class="highlight-number counter-value" data-target="3" data-suffix="">0</span>
+                    <p>Industries Served</p>
+                </div>
+                <div class="work-stat reveal">
+                    <span class="highlight-number counter-value" data-target="24" data-suffix="hr">0</span>
+                    <p>Avg. Response Time</p>
                 </div>
             </div>
         </div>
+
+        <!-- Project Showcase -->
+        <div class="darker-section reveal">
+            <h2 class="title mb-4">Featured Projects</h2>
+            <div class="heading-divider"></div>
+            <p class="text-center mb-5">A selection of recent work across web design, branding, and digital solutions.</p>
+
+            <div class="portfolio-filters">
+                <button class="portfolio-filter-btn active" data-filter="all">All</button>
+                <button class="portfolio-filter-btn" data-filter="web-design">Web Design</button>
+                <button class="portfolio-filter-btn" data-filter="branding">Branding</button>
+                <button class="portfolio-filter-btn" data-filter="automation">Automation</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card reveal" data-category="web-design">
+                    <img src="imgs/responsiveness.jpg" class="portfolio-card-img" alt="Nelson Logistics website">
+                    <div class="portfolio-card-info">
+                        <h3>Nelson Logistics Co.</h3>
+                        <p>Full website redesign with booking integration and fleet tracking dashboard.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-tag">Web Design</span>
+                            <span class="portfolio-tag">Booking</span>
+                            <span class="portfolio-tag">Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal" data-category="web-design branding">
+                    <img src="imgs/aesthetics6.jpg" class="portfolio-card-img" alt="Motueka Wellness website">
+                    <div class="portfolio-card-info">
+                        <h3>Serenity Wellness Studio</h3>
+                        <p>Brand identity and responsive website with online class booking and payment.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-tag">Branding</span>
+                            <span class="portfolio-tag">Web Design</span>
+                            <span class="portfolio-tag">Calendly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal" data-category="automation">
+                    <img src="imgs/sheets.jpg" class="portfolio-card-img" alt="Professional services automation">
+                    <div class="portfolio-card-info">
+                        <h3>Richmond Accounting</h3>
+                        <p>Automated client onboarding, invoice reminders, and Xero integration.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-tag">Automation</span>
+                            <span class="portfolio-tag">Xero</span>
+                            <span class="portfolio-tag">CRM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal" data-category="web-design">
+                    <img src="imgs/useability2.jpg" class="portfolio-card-img" alt="Cafe website">
+                    <div class="portfolio-card-info">
+                        <h3>Harbour View Cafe</h3>
+                        <p>Fast, mobile-first website with online menu, Google Maps, and review integration.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-tag">Web Design</span>
+                            <span class="portfolio-tag">Mobile-First</span>
+                            <span class="portfolio-tag">SEO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal" data-category="branding web-design">
+                    <img src="imgs/design9.jpg" class="portfolio-card-img" alt="Trades business website">
+                    <div class="portfolio-card-info">
+                        <h3>TopNotch Builders</h3>
+                        <p>Brand refresh, portfolio showcase, and lead capture with automated follow-ups.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-tag">Branding</span>
+                            <span class="portfolio-tag">Lead Capture</span>
+                            <span class="portfolio-tag">Portfolio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal" data-category="automation web-design">
+                    <img src="imgs/automation-leads.jpg" class="portfolio-card-img" alt="E-commerce store">
+                    <div class="portfolio-card-info">
+                        <h3>Kiwi Craft Collective</h3>
+                        <p>Shopify store with automated order flows, inventory sync, and email marketing.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-tag">E-Commerce</span>
+                            <span class="portfolio-tag">Shopify</span>
+                            <span class="portfolio-tag">Mailchimp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="lighter-section reveal">
+            <h2 class="title mb-4">Client Testimonials</h2>
+            <div class="heading-divider"></div>
+            <div class="row reveal-stagger">
+                <div class="col-md-6 reveal">
+                    <div class="testimonial-card">
+                        <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Uriah took the time to understand our business inside and out. The website he built has already brought in new enquiries we wouldn't have had otherwise. Professional, responsive, and genuinely invested in our success.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JM</div>
+                            <div class="testimonial-author-info">
+                                <h4>James M.</h4>
+                                <p>Nelson Logistics Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="testimonial-card">
+                        <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">We went from zero online presence to a fully working site with booking in three weeks. Clear communication throughout and the result speaks for itself. Can't recommend ICU enough.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SK</div>
+                            <div class="testimonial-author-info">
+                                <h4>Sarah K.</h4>
+                                <p>Serenity Wellness Studio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="testimonial-card">
+                        <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Finally someone who explains things in plain English. The automations ICU set up save me hours every week. Genuinely changed how I run my business.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">DP</div>
+                            <div class="testimonial-author-info">
+                                <h4>David P.</h4>
+                                <p>Richmond Accounting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="testimonial-card">
+                        <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Our new Shopify store looks amazing and the automated email flows have been a game-changer. ICU handled everything and trained us properly so we feel confident running it ourselves.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">LT</div>
+                            <div class="testimonial-author-info">
+                                <h4>Lisa T.</h4>
+                                <p>Kiwi Craft Collective</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="darker-section reveal text-center">
+            <h2 class="title mb-4">Want Results Like These?</h2>
+            <div class="heading-divider"></div>
+            <p class="mb-4">Every project starts with a conversation. Tell us about your business and we'll show you what's possible.</p>
+            <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        </div>
+
     </div>
 
     <!-- footer -->
-    <footer class="footer">
-        <p class="infos">&copy; <span class="copyright-year"></span>, Made by <span>ICU Media Design</span></p>
-        <span>|</span>
-        <div class="links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
+    <footer class="footer-enhanced">
+        <div class="footer-main">
+            <div class="footer-col">
+                <img src="imgs/enhancedlogo.png" alt="ICU Media Design" style="height: 50px; margin-bottom: 1rem;">
+                <p>Web design and digital solutions for New Zealand small businesses. Built with care, backed by real support.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/icumediadesign" aria-label="Facebook" target="_blank" rel="noopener"><span class="ti ti-facebook"></span></a>
+                    <a href="https://www.instagram.com/icumediadesign" aria-label="Instagram" target="_blank" rel="noopener"><span class="ti ti-instagram"></span></a>
+                    <a href="https://www.linkedin.com/company/icumediadesign" aria-label="LinkedIn" target="_blank" rel="noopener"><span class="ti ti-linkedin"></span></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="design.html">Web & Design</a></li>
+                    <li><a href="solutions.html">Solutions & Automations</a></li>
+                    <li><a href="design.html#maintenance">Maintenance Plans</a></li>
+                    <li><a href="design.html#evolution">Growth Add-Ons</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p>Tips on web design, automation, and growing your business online.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Your email" aria-label="Email for newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-    </footer><!-- end of footer -->
+        <div class="footer-bottom">
+            <p>&copy; <span class="copyright-year"></span> ICU Media Design. All rights reserved.</p>
+            <a href="mailto:hello@icumediadesign.com">hello@icumediadesign.com</a>
+        </div>
+    </footer>
 
-    <!-- core  -->
+    <!-- core -->
     <script src="vendors/jquery/jquery-3.4.1.js"></script>
     <script src="vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap affix -->
     <script src="vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Dorang js -->
     <script src="js/script.js"></script>
     <script src="js/shader-bg.js"></script>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Read ICU Media Design’s blog for practical tips on web design, digital strategy and automation tailored to small businesses in New Zealand.">
+    <meta name="description" content="Read ICU Media Design's blog for practical tips on web design, digital strategy and automation tailored to small businesses in New Zealand.">
 
     <title>Blog | ICU Media Design</title>
 
@@ -26,13 +26,11 @@
     <!-- Bootstrap + CSS main styles -->
     <link rel="stylesheet" href="styles.css">
     <script>if(sessionStorage.getItem('isTransitioning')==='true')document.documentElement.classList.add('transitioning');</script>
-
-
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
 
-    <div class="ambient-bg ambient-home">
+    <div class="ambient-bg ambient-blog">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
@@ -49,8 +47,6 @@
             </li>
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-            
-            <!-- FIXED Services dropdown -->
             <li class="nav-item dropdown">
                 <a href="services.html" class="nav-link">Services</a>
                 <ul class="dropdown-menu">
@@ -71,13 +67,11 @@
                     </li>
                 </ul>
             </li>
-            
             <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
     </nav>
-
 
     <!-- page header -->
     <header class="header" data-shader='{"overallSpeed":0.1,"lineCount":8,"lineColor":[0.0,0.48,1.0,0.3],"warpAmplitude":0.5,"scale":6.5}'>
@@ -86,39 +80,189 @@
             <h1 class="header-title">Blog</h1>
             <p class="header-subtitle">Insights, tips and stories from ICU Media Design</p>
         </div>
-    </header><!-- end of page header -->
+    </header>
 
-    <!-- coming soon -->
     <div class="container page-container">
-        <div class="lighter-section">
-            <div class="coming-soon-section">
-                <h2>Coming Soon</h2>
-                <div class="heading-divider"></div>
-                <p>We're working on fresh content covering web design best practices, digital strategy for small businesses, and automation tips to help you work smarter. Check back soon for our first posts.</p>
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+
+        <!-- Category Filter -->
+        <div class="lighter-section reveal">
+            <h2 class="title mb-4">Browse Topics</h2>
+            <div class="heading-divider"></div>
+            <div class="blog-categories">
+                <button class="blog-category-pill active" data-filter="all">All Posts</button>
+                <button class="blog-category-pill" data-filter="web-design">Web Design</button>
+                <button class="blog-category-pill" data-filter="automation">Automation</button>
+                <button class="blog-category-pill" data-filter="business">Business Growth</button>
+                <button class="blog-category-pill" data-filter="seo">SEO</button>
             </div>
         </div>
+
+        <!-- Featured Post -->
+        <div class="darker-section reveal">
+            <h2 class="title mb-4">Featured</h2>
+            <div class="heading-divider"></div>
+            <div class="blog-featured" data-category="web-design">
+                <img src="imgs/responsiveness.jpg" class="blog-featured-img" alt="Why your small business needs a website in 2025">
+                <div class="blog-featured-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-card-category">Web Design</span>
+                        <span>March 2026</span>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Why Every Small NZ Business Needs a Website in 2026</h3>
+                    <p style="opacity: 0.8; line-height: 1.7;">Over 80% of Kiwi consumers research businesses online before making a purchase. Yet thousands of small businesses across New Zealand still don't have a professional web presence. Here's why that's costing you money, and what you can do about it today.</p>
+                    <span class="blog-card-link">Read More &rarr;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="lighter-section reveal">
+            <h2 class="title mb-4">Latest Posts</h2>
+            <div class="heading-divider"></div>
+            <div class="blog-grid">
+                <div class="blog-card reveal" data-category="automation">
+                    <img src="imgs/automation-leads.jpg" class="blog-card-img" alt="5 automations every small business should set up">
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-category">Automation</span>
+                            <span>March 2026</span>
+                        </div>
+                        <h3>5 Automations Every Small Business Should Set Up Today</h3>
+                        <p>From email follow-ups to invoice reminders, these five automations can save you hours every week without any technical knowledge.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" data-category="seo">
+                    <img src="imgs/seo1.jpg" class="blog-card-img" alt="Local SEO guide for NZ businesses">
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-category">SEO</span>
+                            <span>February 2026</span>
+                        </div>
+                        <h3>Local SEO: How to Get Found by Customers in Your Area</h3>
+                        <p>A practical guide to Google Business Profile, local keywords, and the simple steps that help Nelson and NZ businesses rank higher.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" data-category="business">
+                    <img src="imgs/discovery.jpg" class="blog-card-img" alt="What to prepare before hiring a web designer">
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-category">Business Growth</span>
+                            <span>February 2026</span>
+                        </div>
+                        <h3>What to Prepare Before Hiring a Web Designer</h3>
+                        <p>Save time and get better results. Here's exactly what to have ready before your first meeting with a web design studio.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" data-category="web-design">
+                    <img src="imgs/aesthetics6.jpg" class="blog-card-img" alt="Website speed and why it matters">
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-category">Web Design</span>
+                            <span>January 2026</span>
+                        </div>
+                        <h3>Website Speed: Why It Matters More Than You Think</h3>
+                        <p>A one-second delay in page load time can reduce conversions by 7%. Here's how we optimise every site we build for speed.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" data-category="automation">
+                    <img src="imgs/crmemail.jpg" class="blog-card-img" alt="Email marketing for small businesses">
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-category">Automation</span>
+                            <span>January 2026</span>
+                        </div>
+                        <h3>Email Marketing That Actually Works for Small Businesses</h3>
+                        <p>You don't need a big budget or a big list. Here's how to build an email strategy that nurtures customers and drives repeat business.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" data-category="business">
+                    <img src="imgs/tools.jpg" class="blog-card-img" alt="Digital tools for NZ small businesses">
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="blog-card-category">Business Growth</span>
+                            <span>December 2025</span>
+                        </div>
+                        <h3>The Best Free Digital Tools for Kiwi Small Businesses</h3>
+                        <p>From project management to invoicing, these free and low-cost tools can modernise your operations without breaking the bank.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter CTA -->
+        <div class="darker-section reveal text-center">
+            <h2 class="title mb-4">Never Miss a Post</h2>
+            <div class="heading-divider"></div>
+            <p class="mb-4">Subscribe for practical tips on web design, automation, and growing your business online. No spam, just value.</p>
+            <form class="footer-newsletter" style="max-width: 450px; margin: 0 auto;" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Your email address" aria-label="Email for blog newsletter">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
     </div>
 
     <!-- footer -->
-    <footer class="footer">
-        <p class="infos">&copy; <span class="copyright-year"></span>, Made by <span>ICU Media Design</span></p>
-        <span>|</span>
-        <div class="links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
+    <footer class="footer-enhanced">
+        <div class="footer-main">
+            <div class="footer-col">
+                <img src="imgs/enhancedlogo.png" alt="ICU Media Design" style="height: 50px; margin-bottom: 1rem;">
+                <p>Web design and digital solutions for New Zealand small businesses. Built with care, backed by real support.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/icumediadesign" aria-label="Facebook" target="_blank" rel="noopener"><span class="ti ti-facebook"></span></a>
+                    <a href="https://www.instagram.com/icumediadesign" aria-label="Instagram" target="_blank" rel="noopener"><span class="ti ti-instagram"></span></a>
+                    <a href="https://www.linkedin.com/company/icumediadesign" aria-label="LinkedIn" target="_blank" rel="noopener"><span class="ti ti-linkedin"></span></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="design.html">Web & Design</a></li>
+                    <li><a href="solutions.html">Solutions & Automations</a></li>
+                    <li><a href="design.html#maintenance">Maintenance Plans</a></li>
+                    <li><a href="design.html#evolution">Growth Add-Ons</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p>Tips on web design, automation, and growing your business online.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Your email" aria-label="Email for newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-    </footer><!-- end of footer -->
+        <div class="footer-bottom">
+            <p>&copy; <span class="copyright-year"></span> ICU Media Design. All rights reserved.</p>
+            <a href="mailto:hello@icumediadesign.com">hello@icumediadesign.com</a>
+        </div>
+    </footer>
 
-    <!-- core  -->
+    <!-- core -->
     <script src="vendors/jquery/jquery-3.4.1.js"></script>
     <script src="vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap affix -->
     <script src="vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Dorang js -->
     <script src="js/script.js"></script>
     <script src="js/shader-bg.js"></script>
 

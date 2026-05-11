@@ -811,7 +811,11 @@ function initScrollPrompt() {
         var firstSection = document.querySelector('.page-container .lighter-section, .page-container .darker-section');
         if (!firstSection) return;
         var navbarHeight = (typeof getNavbarHeight === 'function') ? getNavbarHeight() : 70;
-        var targetPosition = firstSection.offsetTop - navbarHeight - 20;
+        // Use bounding rect + scrollY so the negative margin-top on the first section
+        // (header-overlap pulls it up via margin) doesn't yield a negative offsetTop
+        // that clamps the scroll target to 0.
+        var sectionTop = firstSection.getBoundingClientRect().top + window.scrollY;
+        var targetPosition = sectionTop - navbarHeight - 20;
         window.scrollTo({ top: Math.max(0, targetPosition), behavior: 'smooth' });
     }
 

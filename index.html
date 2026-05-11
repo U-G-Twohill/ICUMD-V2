@@ -130,9 +130,13 @@
                         <p class="stat-label">Est. in NZ</p>
                     </div>
                 </div>
-                <div class="scroll-prompt"><span class="ti ti-arrow-down"></span></div>
             </div>
         </header><!-- end of page header -->
+
+        <!-- Scroll affordance — sits at the seam between hero and first section,
+             outside .header so it can escape the header's z-index stacking context
+             and render above the overlapping page-container. -->
+        <div class="scroll-prompt"><span class="ti ti-arrow-down"></span></div>
 
         <!-- page container -->
         <div class="container page-container">

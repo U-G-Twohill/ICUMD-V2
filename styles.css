@@ -2779,16 +2779,50 @@ img {
 
 /* ========================================
    Scroll Prompt
+   Home-only affordance sitting at the seam between the 100vh hero and the
+   first content section (which is pulled up by -20vh on home). Positioned
+   absolutely against the initial containing block so it escapes both the
+   header's z-index 10 stacking context and the page-container's z-index 15.
    ======================================== */
 .scroll-prompt {
-  text-align: center;
-  margin-top: 1.5rem;
-  opacity: 0.6;
+  position: absolute;
+  /* Section top is at 80vh on desktop home (100vh hero - 20vh overlap). Park
+     the arrow's bottom edge 0.75rem above that seam. */
+  top: calc(80vh - 0.75rem);
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 20;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.scroll-prompt:hover,
+.scroll-prompt:focus-visible {
+  opacity: 1;
+}
+
+.scroll-prompt:focus-visible {
+  outline: 2px solid rgba(102, 176, 255, 0.7);
+  outline-offset: 2px;
 }
 
 .scroll-prompt .ti {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  color: #fff;
   animation: bounceDown 2s ease-in-out infinite;
+  display: inline-block;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile: hide on small screens — section sits directly under stats with no room
+   for a useful affordance, and -15vh overlap means the seam is already close. */
+@media (max-width: 768px) {
+  .scroll-prompt {
+    display: none;
+  }
 }
 
 @keyframes bounceDown {

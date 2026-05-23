@@ -1,0 +1,24 @@
+{
+  "_description": "Energetic cobalt — woven lines with soft pulses. Landing page / hero.",
+  "_archetype": "dense",
+  "mode": "lines",
+  "lineDirection": "woven",
+  "wovenBlend": 0.5,
+  "lineType": "solid",
+  "accentType": "pulses",
+  "accentDensity": 0.6,
+  "accentSize": 0.025,
+  "lineCount": 16,
+  "overallSpeed": 0.22,
+  "warpAmplitude": 0.9,
+  "glowSpread": 0.7,
+  "lineColor": [0.0, 0.55, 1.0, 0.6],
+  "bgColor1": [0.04, 0.07, 0.12, 1.0],
+  "bgColor2": [0.06, 0.14, 0.28, 1.0],
+  "vignette": 0.25,
+  "responsive": {
+    "mobile":  { "lineCount": 8,  "accentDensity": 0.4, "warpAmplitude": 0.5 },
+    "tablet":  { "lineCount": 12 },
+    "wide":    { "lineCount": 20, "accentDensity": 0.7 }
+  }
+}

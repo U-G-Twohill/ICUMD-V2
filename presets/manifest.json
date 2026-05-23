@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "presets": [
+    "home",
+    "about",
+    "services",
+    "design",
+    "portfolio",
+    "solutions",
+    "contact",
+    "faq"
+  ]
+}

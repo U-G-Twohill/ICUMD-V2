@@ -17,6 +17,44 @@ Commands provide the logic; each project provides the data. All commands use rel
 
 ---
 
+## Field-Shader integration (the hero animation)
+
+The site's hero background is the **Field-Shader** WebGL engine, deployed in Phase 3 from `D:\Repos\Field-Shader\` on 2026-05-24. It replaced the older split-file `js/shader-bg.js` + `js/shader-bg-playground.js` + in-site `playground.html` that lived here previously.
+
+**Layout:**
+
+| Path | What |
+|---|---|
+| `js/shader-bg.min.js` | Production bundle (~18 KB gzipped). Copied from `D:\Repos\Field-Shader\dist\shader-bg.min.js`. Includes `.map` for devtools-only debugging. |
+| `presets/` | Per-page configs — `home.json`, `about.json`, `services.json`, `design.json`, `portfolio.json`, `solutions.json`, `contact.json`, `faq.json`, plus `manifest.json`. Copied from `D:\Repos\Field-Shader\presets\`. |
+| Each content page `<header ...>` | Carries `data-shader-preset="<name>"`. The bundle fetches `/presets/<name>.json` and renders. |
+
+**To update a preset (per-page tuning):**
+1. Open Field-Shader's playground at `D:\Repos\Field-Shader\playground.html`.
+2. Tune to taste, click **📦 Export as preset**.
+3. Paste the JSON into `D:\Repos\Field-Shader\presets\<name>.json`.
+4. Copy the file across to `D:\Websites\ICUMD Clone Designer\presets\<name>.json`.
+5. Commit ICUMD.
+
+No bundle rebuild needed — presets are data, not code.
+
+**To update the bundle (engine changes):**
+1. In `D:\Repos\Field-Shader\`: `npm run build`.
+2. Copy `dist/shader-bg.min.js` (+ `.map`) → `D:\Websites\ICUMD Clone Designer\js\`.
+3. Commit ICUMD.
+
+**Per-page overrides** are supported but avoided by default — keeps page HTML clean. If a one-off tweak is needed:
+```html
+<header data-shader-preset="home" data-shader='{"vignette":0.5}'>
+```
+The inline JSON wins on top-level keys; `responsive` blocks deep-merge.
+
+**There is no playground page on this site** — the canonical tuner lives in `D:\Repos\Field-Shader\`. ICUMD users / clients should not see the dev UI.
+
+**Rollback:** `git revert` the Phase 3 commit. The older `js/shader-bg.js` (single-file v1-ish) is preserved in git history.
+
+---
+
 ## The Claude-User Relationship
 
 Claude operates as an **agent assistant** with access to the workspace folders, context files, commands, and outputs. The relationship is:

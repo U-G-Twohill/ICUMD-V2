@@ -1,0 +1,20 @@
+{
+  "_description": "Calm teal — slow-drifting topo bands. About / story pages.",
+  "_archetype": "calm",
+  "mode": "topo",
+  "bandCount": 9,
+  "bandThickness": 0.22,
+  "bandSoftness": 0.55,
+  "bandContrast": 0.7,
+  "noiseScale": 1.1,
+  "driftSpeed": 0.05,
+  "contourGlow": 0.85,
+  "lineColor": [0.25, 0.7, 0.75, 0.65],
+  "bgColor1": [0.04, 0.09, 0.10, 1.0],
+  "bgColor2": [0.05, 0.13, 0.16, 1.0],
+  "vignette": 0.35,
+  "responsive": {
+    "mobile": { "bandCount": 6, "fbmOctaves": 3, "driftSpeed": 0.04 },
+    "wide":   { "bandCount": 14 }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_description": "Quiet slate — very low bandCount, slow drift, near-monochrome. FAQ / docs pages.",
+  "_archetype": "minimal",
+  "mode": "topo",
+  "bandCount": 5,
+  "bandThickness": 0.28,
+  "bandContrast": 0.55,
+  "bandSoftness": 0.6,
+  "noiseScale": 0.85,
+  "fbmOctaves": 3,
+  "driftSpeed": 0.04,
+  "contourGlow": 0.4,
+  "heightPaletteWalk": 0.0,
+  "lineColor": [0.55, 0.6, 0.65, 0.5],
+  "bgColor1": [0.06, 0.07, 0.08, 1.0],
+  "bgColor2": [0.08, 0.09, 0.11, 1.0],
+  "vignette": 0.25,
+  "responsive": {
+    "mobile": { "bandCount": 4, "fbmOctaves": 2 },
+    "wide":   { "bandCount": 7 }
+  }
+}

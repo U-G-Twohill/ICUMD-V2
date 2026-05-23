@@ -1,0 +1,25 @@
+{
+  "_description": "Vibrant gold — diagonal lines with comet trails. Portfolio/case-study pages.",
+  "_archetype": "vapor",
+  "mode": "lines",
+  "lineDirection": "diagonal",
+  "lineAngle": 30,
+  "lineType": "solid",
+  "accentType": "comets",
+  "circleRadius": 0.012,
+  "circleBrightness": 5.5,
+  "circleSpacing": 22,
+  "lineCount": 14,
+  "overallSpeed": 0.18,
+  "warpAmplitude": 0.7,
+  "glowSpread": 0.9,
+  "lineColor": [1.0, 0.78, 0.25, 0.6],
+  "bgColor1": [0.08, 0.06, 0.04, 1.0],
+  "bgColor2": [0.15, 0.10, 0.04, 1.0],
+  "vignette": 0.4,
+  "filmGrain": 0.08,
+  "responsive": {
+    "mobile": { "lineCount": 8,  "warpAmplitude": 0.4, "circleBrightness": 4.0 },
+    "wide":   { "lineCount": 18, "lineAngle": 25 }
+  }
+}

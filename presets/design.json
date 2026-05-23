@@ -1,0 +1,30 @@
+{
+  "_description": "Creative violet — domain-warped painted topo with IQ palette. Design/portfolio cover.",
+  "_archetype": "chaotic",
+  "mode": "topo",
+  "bandCount": 22,
+  "bandThickness": 0.08,
+  "bandContrast": 2.2,
+  "bandSoftness": 0.25,
+  "noiseScale": 2.8,
+  "fbmOctaves": 5,
+  "driftSpeed": 0.18,
+  "contourGlow": 1.0,
+  "domainWarpDepth": 2,
+  "domainWarpScale": 0.8,
+  "domainWarpAmplitude": 1.1,
+  "paletteMode": "iq-cosine",
+  "paletteA": [0.5, 0.5, 0.5],
+  "paletteB": [0.5, 0.5, 0.5],
+  "paletteC": [1.0, 1.0, 1.0],
+  "paletteD": [0.6, 0.4, 0.85],
+  "paletteSpeed": 0.04,
+  "heightPaletteWalk": 2.2,
+  "bgColor1": [0.06, 0.04, 0.10, 1.0],
+  "bgColor2": [0.10, 0.06, 0.18, 1.0],
+  "vignette": 0.3,
+  "filmGrain": 0.05,
+  "responsive": {
+    "mobile": { "bandCount": 14, "fbmOctaves": 3, "domainWarpDepth": 1 }
+  }
+}

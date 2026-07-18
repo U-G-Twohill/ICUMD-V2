@@ -312,12 +312,12 @@ img {
    add .solid-panels to the page container: same light/dark alternation,
    no transparency.
    ======================================== */
-.solid-panels .darker-section {
-  background: #08090c;
-}
-
+/* Only the transparency changes. Each section keeps its own gradient — it just
+   sits on an opaque page-coloured base instead of letting the shader through,
+   so the panels look exactly as they do on every other page. */
+.solid-panels .darker-section,
 .solid-panels .lighter-section {
-  background: #14181f;
+  background-color: #0f1318;
 }
 
 /* ========================================

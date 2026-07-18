@@ -176,5 +176,7 @@ through first, I'm easy to get hold of.
 1. **`imgs/uriah.jpg` is a hand-drawn MS Paint doodle.** Deferred by Uriah, not
    a blocker for the rest of the site — but on the page whose stated job is "show
    I'm a real person", a real photo will do more than any copy here.
-2. **Values images** (`clarity.jpg` etc.) are generic stock landscapes with no
-   relationship to the words. Fine for now; noted for a later pass.
+2. **Values images** (`clarity.jpg` etc.) — *not* an oversight. Uriah chose
+   ambiguous colour-led imagery deliberately, each meant to evoke its value
+   rather than depict it. Do not re-flag these as generic. A single art/asset
+   pass across the whole site is planned before go-live.

@@ -1,7 +1,7 @@
 # Solutions Page — Copy Deck (draft)
 
 **Date:** 2026-07-18
-**Status:** DRAFT — not wired into `solutions.html`. For Uriah's review.
+**Status:** ✅ **SHIPPED** — approved and wired into `solutions.html` 2026-07-18.
 **Derives from:** `context/positioning.md`. The spine's brief for this page:
 collapse the 6 equal cards into 3 outcome buckets, make AI *the how not the
 headline*, add the booking confirm-first option, run an I/partnership-"we" pass,

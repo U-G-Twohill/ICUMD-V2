@@ -1,7 +1,7 @@
 # Design Page — Copy Deck (draft)
 
 **Date:** 2026-07-18
-**Status:** DRAFT — not wired into `design.html`. For Uriah's review.
+**Status:** ✅ **SHIPPED** — approved and wired into `design.html` 2026-07-18.
 **Derives from:** `context/positioning.md`, and Uriah's scope call (2026-07-18):
 both Design and Solutions are far more granular than the brief needs, every
 engagement is tailored, and the maintenance tiers are over-specified. Pricing

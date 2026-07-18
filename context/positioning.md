@@ -86,6 +86,25 @@ See `[[copy-voice-rules]]` in memory for the full set. In short:
 - **Solo / "one person":** lean in only where a point genuinely needs it. Don't make it "me me me" everywhere — carry the personal advantage through the partnership "we" and let it surface explicitly only when necessary.
 - **Audience / size:** core market is small businesses and sole traders, and that warmth stays — but never frame the offer as a size *ceiling*. The load-bearing promise is the capability and how it's delivered (personal, full-context, no red tape), which a larger business wants just as much. Lead with capability + delivery; let small-business identity live in supporting copy, never as an exclusion.
 - **Day job / availability:** do NOT mention Uriah's landscaping day job or "part-time" on the site — buyers purchase outcomes and reliability, not your schedule, and "part-time" reads as a side project and undercuts professionalism. But never claim full-time or a team either (same transparency reason as the team-"we"). Set expectations via response-time + project timelines, not schedule disclosure; keep availability claims honest (no "always on"). If asked directly, reframe positively: a deliberately small client load means every project gets full attention — a quality feature, not a limitation.
+- **Describe the work broadly; don't publish a product catalogue.** *(2026-07-18)*
+  Every engagement is tailored, so enumerating fixed tiers, packages and itemised
+  inclusions both misrepresents the work and contradicts the "staircase, not a
+  menu" frame. Three rules:
+  - **"From" anchors only.** One starting price per major thing (websites from
+    $1,500, ongoing support from $200/month, integrations from $300). No tier
+    tables, no per-plan inclusion lists. "Scoped and quoted per project" carries
+    the rest. Anchors stay so buyers can self-qualify on budget before spending
+    Uriah's evenings.
+  - **No service-level promises.** No uptime percentages, response-time
+    guarantees, backup frequencies or reporting cadences. Every one is an
+    obligation a solo operator has to honour indefinitely, per client. The site
+    previously promised "99.9% uptime monitoring", "24-hour response time",
+    "daily backups" and monthly strategy reports. Don't reintroduce them.
+    *(The Home stats strip's "24hr Response" is a general claim, not a per-plan
+    SLA — it stays, but keep it honest.)*
+  - **Named offers are fine where they're genuinely distinct products.** SEO
+    audits and analytics stay named: Uriah rates them, and an audit is the natural
+    low-risk first engagement (it also fits the ICU "diagnosis" metaphor).
 - **CTAs must match what the site can actually do.** Don't name a mechanism the
   site doesn't have. There is no booking tool — every CTA goes to the contact
   form — so buttons say "Start the Conversation", not "Book a call". Offering

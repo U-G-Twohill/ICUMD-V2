@@ -116,19 +116,26 @@ where that's genuinely the right tool for it.
 
 ## §3 — How We Work Together *(heading unchanged — partnership "we")*
 
-| Card | Copy | Price line |
-|---|---|---|
-| **One-Off Setup** | I build it, then hand it over. You own it outright. | From **$300** for simple integrations. |
-| **Monthly Management** | I look after your automations and keep improving them as you go. | Plans from **$150/month**. |
-| **Project-Based** | Bigger builds — custom software, complex workflows, AI agents where they earn their place. | **Scoped and quoted per project.** |
+> **Revised 2026-07-18** after Uriah's scope call: three engagement *models*
+> became one engagement *story* with "from" anchors. See the spine's
+> "describe the work broadly" rule.
 
-**Footer line:** Every project starts with a free discovery call, and you'll have
-a written scope before any work begins.
+Some of this is a one-off — I build it, hand it over, and you own it outright.
+Some of it is worth me looking after on an ongoing basis, so it keeps working as
+the business changes. And some of it is a bigger build in its own right — custom
+software, complex workflows, AI agents where they genuinely earn their place.
 
-> *Rationale:* Only the team-"we" changes; structure and prices stay (verified
-> consistent with `faq.html` and the JSON-LD). "AI agents where they earn their
-> place" keeps AI honest without hiding it. The footer line replaces "No
-> surprises" with the concrete thing that actually prevents surprises.
+Which one you need depends on what we find, so I'd rather work that out with you
+than sell you a tier. As a rough idea: simple integrations start around **$300**,
+larger automations from **$500**, and ongoing management from **$150/month**.
+
+Every project starts with a free discovery call, and you'll have a written scope
+before any work begins.
+
+> *Rationale:* Same three ideas, no longer three products in a row demanding a
+> choice. Anchors survive so budget self-qualification still works. "I'd rather
+> work that out with you than sell you a tier" is the tailored promise stated
+> plainly. Replaces "No surprises" with the concrete thing that prevents them.
 
 ---
 

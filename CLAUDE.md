@@ -88,7 +88,8 @@ Claude should always orient itself through `/prime` at session start, then act w
 │   ├── personal-info.md          # Your role and responsibilities
 │   ├── business-info.md          # Organization overview
 │   ├── strategy.md               # Current priorities and goals
-│   └── current-data.md           # Metrics and current state
+│   ├── current-data.md           # Metrics and current state
+│   └── positioning.md            # Messaging spine — read before writing site copy
 ├── plans/                     # Implementation plans
 ├── outputs/                   # Work products and deliverables
 ├── reference/                 # Templates, guides, and patterns

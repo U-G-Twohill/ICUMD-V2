@@ -30,4 +30,6 @@ ICU Media Design is a web development agency aimed at helping small businesses, 
 
 --- I currently have a dayjob which is landscaping and I do enjoy, but it is a means to an end, this is what I want to make my career so that I can travel and help people all over the country and contribute meaningful change to everyones lives. One of the main goal I also have is to get the overall toolkit working well enough that I can ideally have good amounts of work done through claude code while I'm at my day job, or just out doing anything, I understand we need to start small but it is always importatnt to keep in mind that this is an impportant goal to work towards, and at any point that there are options to do that, they should be explored.
 
+--- **Positioning & messaging:** The brand's messaging spine (North Star, the Design↔Solutions unifying journey, voice/pronoun rules) lives in `context/positioning.md`. Read that before writing or editing any site copy. It supersedes the old "anti-jargon / fighting-the-industry" framing, which is disowned.
+
 _Keep this high-level — enough to orient Claude, not a comprehensive company wiki._

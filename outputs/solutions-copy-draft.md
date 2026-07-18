@@ -2,6 +2,23 @@
 
 **Date:** 2026-07-18
 **Status:** ✅ **SHIPPED** — approved and wired into `solutions.html` 2026-07-18.
+
+> **Revised after review, 2026-07-18.** The shipped page differs from the draft
+> below in three ways — Uriah's feedback was that the draft was still too close
+> to the other pages:
+> - **§1 is no longer a process section.** "How It Works" duplicated Home and
+>   Services with less detail. It is now **"Where's the Time Going?"** — a
+>   diagnostic: four recognisable symptoms (same thing typed twice, enquiries
+>   going cold, booking by hand, numbers you never look at), closing on "if none
+>   of it does, I'll tell you that too." Nav label: "Where the Time Goes".
+> - **§2 reframed as examples, not a catalogue** — opens "they're examples, not a
+>   menu" and ends with a tail of other common cases.
+> - **§3 restructured**, not just reworded. The prose block is now an
+>   `.option-list` (icon + label + description, divided rows, left-aligned).
+>   Deliberately not cards — cards would rebuild the tier menu the page just lost.
+>
+> The page also uses `.solid-panels` so the shader doesn't read through the
+> sections. Shader itself still to be finalised separately.
 **Derives from:** `context/positioning.md`. The spine's brief for this page:
 collapse the 6 equal cards into 3 outcome buckets, make AI *the how not the
 headline*, add the booking confirm-first option, run an I/partnership-"we" pass,

@@ -149,8 +149,18 @@ Full drafted copy lives in the copy deck: `outputs/home-copy-draft.md`.
   `outputs/about-copy-draft.md`. Four sections (Who You're Dealing With / How I
   Work / The Basics / close). Outstanding: the founder photo is still a
   placeholder doodle, deferred by Uriah.
-- **Next: Solutions page rewrite** (collapse 6 cards → 3 outcome buckets; AI as
-  the how not the headline; I/partnership-"we" pass; keep the Design bridge).
+- **Design, Solutions and Services — DONE** (2026-07-18). Decks:
+  `outputs/design-copy-draft.md`, `outputs/solutions-copy-draft.md`. All three
+  broadened per the "describe the work broadly" rule, team-"we" removed, and the
+  process description unified across Home/Services/Solutions.
+- **Next: the layout pass.** Uriah's diagnosis: sections are either a 3-column
+  card grid or a centred text block, so pages feel either tacky or wall-of-text.
+  The vocabulary already exists and is unused — `expanding-card` (0 uses),
+  `side-by-side` (1 section), `highlight-number` (1), `timeline` (1 section).
+  Two new shapes were added during the Solutions work: the 2×2 diagnostic grid
+  and `.option-list`. Working rule: **no two adjacent sections share a shape.**
+  Inventory every section across all pages before changing any of them.
+- Also outstanding: FAQ rewrite, `portfolio.html` content, shader finalisation.
 - *About's scope, for reference — corrected 2026-07-18. It is NOT a story page.* Uriah's view: the personal history is largely irrelevant, and
   About exists mainly "to show I'm a real person." Its job is to establish that
   he is **trustworthy, small but attentive, and able to help small businesses

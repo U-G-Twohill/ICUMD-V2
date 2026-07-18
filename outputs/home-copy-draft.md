@@ -93,7 +93,9 @@ I'll connect your tools and automate the busywork, so the day-to-day runs itself
 ## 6. CTA — APPROVED
 
 **Heading:** Let's build something
-**Sub:** Tell me where you want your business to go, and I'll show you what's possible — in a free 30-minute call. No pressure, no jargon.
+**Sub:** Tell me where you want your business to go, and I'll show you what's possible — in a free 30-minute call. No pressure.
+
+> *Trimmed 2026-07-18:* was "No pressure, no jargon." "No jargon" already carries §4's subhead; here "No pressure" is the load-bearing reassurance and the second clause was filler.
 **Primary CTA:** → Book your free discovery call
 **Secondary:** or email uriah@icumediadesign.co.nz
 

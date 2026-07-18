@@ -12,7 +12,17 @@
 
 This is the source. Every page, tagline, and CTA is a consequence of it.
 
-**Important — what this is NOT:** the positioning is *optimistic*, not *angry*. Earlier About copy framed ICU as anti-jargon / anti-gatekeeping / fighting the industry. That is **disowned** — it isn't Uriah's voice and it isn't true to his story. He didn't rage at the industry; he opted out of corporate red tape and found a worthwhile way to apply the same skills. Copy comes from optimism-applied-carefully, never from resentment.
+**Important — what this is NOT:** the positioning is *optimistic*, not *angry*. Earlier About copy framed ICU as anti-jargon / anti-gatekeeping / fighting the industry. That is **disowned** — it isn't Uriah's voice and it isn't true to his story. He didn't rage at the industry; during his degree he saw enough of it to know that path wasn't for him *in that context*, and he later came back to the work on his own terms.
+
+> **Factual correction (2026-07-18).** Earlier versions of this file — and the
+> Command Center `personal-info.md`, and several Open Brain entries — say Uriah
+> left a software-industry path due to **burnout**. That is wrong and should not
+> be repeated. He never entered that path: he had just finished his degree, left
+> Wellington for personal reasons unrelated to work, and wasn't confident enough
+> as a new graduate to apply for dev roles. The renewed interest came later, with
+> LLMs making self-teaching and proper retraining possible. The personal detail
+> behind the Wellington period is deliberately not recorded here — this repo is
+> public, and Uriah considers that detail irrelevant to the brand. Copy comes from optimism-applied-carefully, never from resentment.
 
 ---
 
@@ -96,7 +106,14 @@ Full drafted copy lives in the copy deck: `outputs/home-copy-draft.md`.
 ## Open threads (not yet resolved)
 
 - **Home page copy — DONE.** Written, approved, cohesion-passed, and wired into `index.html` (2026-06-07; milestone documented 2026-06-08). Full handoff: `outputs/session-summary-2026-06-08.md`. Copy deck: `outputs/home-copy-draft.md`. *Not yet visually verified in a browser; nothing committed to git.*
-- **Next: draft the About page** — where the full ethos/origin story + the agility wedge get full volume.
+- **Next: draft the About page.** *Scope corrected 2026-07-18 — this is NOT a
+  story page.* Uriah's view: the personal history is largely irrelevant, and
+  About exists mainly "to show I'm a real person." Its job is to establish that
+  he is **trustworthy, small but attentive, and able to help small businesses
+  because he is one** — not to narrate a journey. Keep biography to the minimum
+  that makes him feel real; the persuasive load is carried by the three layers,
+  the core promise, and the agility wedge, which are already written above.
+  Do not reintroduce an origin-story arc.
 - Pre-launch follow-ups (not blocking): §5 needs real screenshots + client consent (InfoFocus/Simons); `portfolio.html` still a placeholder; add real client quotes as they land.
 - **The contact form does not work.** `js/script.js` posts to a literal
   `YOUR_FORMSPREE_ID` placeholder, so every submission 404s and falls back to the

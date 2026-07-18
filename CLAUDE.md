@@ -17,6 +17,31 @@ Commands provide the logic; each project provides the data. All commands use rel
 
 ---
 
+## Stylesheet: edit `styles.css` directly — do NOT run `npm run scss`
+
+`styles.css` is **hand-maintained**. It is *not* compiled from `scss/`.
+
+The `scss/` tree is leftover from the original Dorang template and still imports
+the full Bootstrap 4.3.1 source. `styles.css` is a separate ~3,700-line file
+("ICU Media Design - Optimized CSS") carrying only a hand-rolled subset of the
+grid (`.row`, `.col-*`) plus the site's own components.
+
+**So `npm run scss` (and `scss:watch`) would overwrite `styles.css` with a very
+different stylesheet and break the site.** Treat those scripts as dead.
+
+Practical consequences:
+
+- Edit `styles.css` directly; there is no build step for CSS.
+- Bootstrap utility classes mostly **do not exist**. Only what is defined in
+  `styles.css` works — check before using one. `justify-content-center` was
+  silently a no-op until it was added on 2026-07-18.
+- `.flex-center` is the project's own flex-centring helper.
+
+Unresolved: whether to delete `scss/` + the npm scripts outright, or keep them.
+Nothing depends on them today.
+
+---
+
 ## Field-Shader integration (the hero animation)
 
 The site's hero background is the **Field-Shader** WebGL engine, deployed in Phase 3 from `D:\Repos\Field-Shader\` on 2026-05-24. It replaced the older split-file `js/shader-bg.js` + `js/shader-bg-playground.js` + in-site `playground.html` that lived here previously.

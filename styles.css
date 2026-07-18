@@ -304,6 +304,70 @@ img {
 .mt-5 { margin-top: 3rem !important; }
 .text-center { text-align: center !important; }
 .text-left { text-align: left !important; }
+
+/* ========================================
+   Solid panels
+   Section backgrounds are translucent by default, so the shader behind the
+   page shows through them. On pages where that competes with the content,
+   add .solid-panels to the page container: same light/dark alternation,
+   no transparency.
+   ======================================== */
+.solid-panels .darker-section {
+  background: #08090c;
+}
+
+.solid-panels .lighter-section {
+  background: #14181f;
+}
+
+/* ========================================
+   Option list
+   Icon + label + description in a divided row. For short sets of choices
+   that shouldn't read as a priced card menu.
+   ======================================== */
+.option-list {
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.option-item {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.option-item:last-child {
+  border-bottom: none;
+}
+
+.option-item > .ti {
+  color: var(--primary);
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.option-item h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.option-item p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .option-item {
+    gap: 0.85rem;
+    padding: 1rem 0;
+  }
+}
 .text-danger { color: var(--danger) !important; }
 .d-block { display: block !important; }
 /* The brighter blue, not --primary: these sit on the sections' lightened

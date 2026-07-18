@@ -126,8 +126,13 @@ Full drafted copy lives in the copy deck: `outputs/home-copy-draft.md`.
 ## Open threads (not yet resolved)
 
 - **Home page copy — DONE.** Written, approved, cohesion-passed, and wired into `index.html` (2026-06-07; milestone documented 2026-06-08). Full handoff: `outputs/session-summary-2026-06-08.md`. Copy deck: `outputs/home-copy-draft.md`. *Not yet visually verified in a browser; nothing committed to git.*
-- **Next: draft the About page.** *Scope corrected 2026-07-18 — this is NOT a
-  story page.* Uriah's view: the personal history is largely irrelevant, and
+- **About page — DONE.** Written and wired into `about.html` 2026-07-18. Copy deck:
+  `outputs/about-copy-draft.md`. Four sections (Who You're Dealing With / How I
+  Work / The Basics / close). Outstanding: the founder photo is still a
+  placeholder doodle, deferred by Uriah.
+- **Next: Solutions page rewrite** (collapse 6 cards → 3 outcome buckets; AI as
+  the how not the headline; I/partnership-"we" pass; keep the Design bridge).
+- *About's scope, for reference — corrected 2026-07-18. It is NOT a story page.* Uriah's view: the personal history is largely irrelevant, and
   About exists mainly "to show I'm a real person." Its job is to establish that
   he is **trustworthy, small but attentive, and able to help small businesses
   because he is one** — not to narrate a journey. Keep biography to the minimum

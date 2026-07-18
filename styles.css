@@ -1543,6 +1543,24 @@ body.home-page .header.header-overlap ~ .container.page-container > :first-child
   visibility: visible;
 }
 
+/* Touch devices never fire hover, so this copy would otherwise be unreachable
+   on phones and tablets — show it by default there. */
+@media (hover: none) {
+  .overlay-img .des {
+    top: 35%;
+  }
+
+  .overlay-img .des p {
+    margin-top: 15px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .overlay-img .overlay {
+    background: rgba(33, 37, 41, 0.8);
+  }
+}
+
 /* Modal */
 .modalBox {
   position: fixed;

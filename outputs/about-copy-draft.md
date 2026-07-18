@@ -1,7 +1,19 @@
 # About Page — Copy Deck (draft)
 
 **Date:** 2026-07-18
-**Status:** DRAFT — not wired into `about.html`. For Uriah's review.
+**Status:** ✅ **SHIPPED** — approved and wired into `about.html` 2026-07-18.
+
+**Decisions taken at approval:**
+- Location: **"Nelson, NZ"** included (Uriah's call).
+- **"About us" → "About"** everywhere — H1, nav, and footer links across all 8 pages.
+- **Photo deferred.** The MS Paint placeholder stays for now; Uriah will replace
+  it. He judged it not a blocker for the rest of the site. It remains the single
+  highest-impact fix on this page.
+
+**Two extra fixes found while wiring (see notes at the bottom):**
+- The hover-reveal value cards hid their copy entirely on touch devices.
+- About's meta description promised "the story, values and people" — wrong on
+  all three counts after this rewrite.
 **Derives from:** `context/positioning.md` (spine), and two constraints Uriah set
 this session:
 
@@ -142,13 +154,27 @@ through first, I'm easy to get hold of.
 
 ---
 
-## Blockers and flags
+## Outcome and outstanding items
 
-1. **`imgs/uriah.jpg` is a hand-drawn MS Paint doodle.** On the page whose stated
-   job is "show I'm a real person", this is the single highest-impact fix — a real
-   photo will do more than any copy here. **Copy should not ship without it.**
-2. **Nav says "About us"** while the H1 would say "About". Worth aligning across
-   all 9 pages, separately.
-3. **Values images** (`clarity.jpg` etc.) are generic stock-looking. Fine for now;
-   noted for a later pass.
-4. **Location** — say "Nelson" or keep it at "New Zealand"? Uriah's call.
+**Resolved at ship time:**
+- ~~Nav says "About us" vs H1 "About"~~ — aligned across all 8 pages, nav + footer.
+- ~~Location undecided~~ — "Nelson, NZ" shipped.
+
+**Found while wiring, fixed:**
+- **Hover-reveal cards hid their copy on touch.** `.overlay-img .des p` is
+  `opacity: 0; visibility: hidden` until `:hover`, and the mobile media query only
+  changed font size — so on phones and tablets the Clarity / Partnership /
+  Craftsmanship descriptions were permanently unreachable. Added a
+  `@media (hover: none)` fallback mirroring the hover state. Also affects
+  `design.html` (6 uses) and `solutions.html` (9 uses), which gain the same fix.
+  *Verified the rule parses and is correctly inactive on desktop; not yet
+  exercised on a physical touch device.*
+- **Meta description** rewritten — it described a "story", "values" and "people"
+  (plural), none of which match the page now.
+
+**Still outstanding:**
+1. **`imgs/uriah.jpg` is a hand-drawn MS Paint doodle.** Deferred by Uriah, not
+   a blocker for the rest of the site — but on the page whose stated job is "show
+   I'm a real person", a real photo will do more than any copy here.
+2. **Values images** (`clarity.jpg` etc.) are generic stock landscapes with no
+   relationship to the words. Fine for now; noted for a later pass.

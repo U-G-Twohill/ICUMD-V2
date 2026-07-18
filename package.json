@@ -5,8 +5,7 @@
   "main": "serve.mjs",
   "scripts": {
     "start": "node serve.mjs",
-    "scss": "sass scss/dorang.scss styles.css",
-    "scss:watch": "sass --watch scss/dorang.scss styles.css",
+    "favicons": "node scripts/generate-favicons.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -17,28 +17,30 @@ Commands provide the logic; each project provides the data. All commands use rel
 
 ---
 
-## Stylesheet: edit `styles.css` directly — do NOT run `npm run scss`
+## Stylesheet: edit `styles.css` directly — there is no CSS build step
 
-`styles.css` is **hand-maintained**. It is *not* compiled from `scss/`.
+`styles.css` is **hand-maintained**. Edit it directly.
 
-The `scss/` tree is leftover from the original Dorang template and still imports
-the full Bootstrap 4.3.1 source. `styles.css` is a separate ~3,700-line file
-("ICU Media Design - Optimized CSS") carrying only a hand-rolled subset of the
-grid (`.row`, `.col-*`) plus the site's own components.
-
-**So `npm run scss` (and `scss:watch`) would overwrite `styles.css` with a very
-different stylesheet and break the site.** Treat those scripts as dead.
+It was never compiled from the `scss/` tree that used to sit here. That tree was
+unmodified Dorang template (single commit, never touched) which still imported
+the full Bootstrap 4.3.1 source, so `npm run scss` would have overwritten
+`styles.css` with a completely different stylesheet. Both the tree and the
+`scss` / `scss:watch` scripts were removed on 2026-07-18. Recover from git
+history if ever needed — nothing referenced them.
 
 Practical consequences:
 
-- Edit `styles.css` directly; there is no build step for CSS.
-- Bootstrap utility classes mostly **do not exist**. Only what is defined in
-  `styles.css` works — check before using one. `justify-content-center` was
-  silently a no-op until it was added on 2026-07-18.
+- Bootstrap **CSS is not loaded** — only `themify-icons.css` and `styles.css`.
+  (Bootstrap *JS* is still loaded, via `vendors/`.)
+- So Bootstrap utility classes mostly **do not exist**. `styles.css` carries a
+  hand-rolled subset of the grid (`.row`, `.col-*`) plus a handful of utilities.
+  Check a class exists before using it — `justify-content-center` was silently a
+  no-op until it was added on 2026-07-18.
 - `.flex-center` is the project's own flex-centring helper.
 
-Unresolved: whether to delete `scss/` + the npm scripts outright, or keep them.
-Nothing depends on them today.
+Still open: `vendors/` is ~3MB (jQuery + Bootstrap bundle) and `current-data.md`
+flags it as mostly unused. Trimming it is a *separate, riskier* job than this
+one — it touches what pages actually load at runtime.
 
 ---
 

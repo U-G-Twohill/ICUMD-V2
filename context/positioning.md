@@ -57,6 +57,26 @@ On the site this should **feel like a staircase, not a menu.** "Where you start"
 
 ---
 
+## What the site is actually for (read this before writing any page)
+
+**The site legitimises; it does not sell to cold traffic.** Uriah's clients come
+by word of mouth and in-person leads. By the time someone opens the site they
+have usually already met him or been referred by someone they trust — they are
+**verifying, not being convinced**. The site's job is to back up the claims he
+has already made in person and show he is capable and real.
+
+Consequences for every page:
+
+- Write to a **warm** reader. No cold-lead persuasion architecture, no hard sell,
+  no objection-handling gauntlet, no urgency devices.
+- The question in their head is *"is this a real operation, does he know what
+  he's doing, will he look after me?"* — not *"why should I care?"*
+- **Confirm, don't convince.** Quiet competence and evidence beat pitch energy.
+- Cold-traffic conversion may matter later. It does not matter yet, and copy
+  should not be contorted for it. *(Reaffirmed 2026-07-18.)*
+
+---
+
 ## Messaging rules
 
 See `[[copy-voice-rules]]` in memory for the full set. In short:

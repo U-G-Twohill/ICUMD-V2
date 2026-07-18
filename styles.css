@@ -309,6 +309,16 @@ img {
 .flex-center { display: flex; justify-content: center; align-items: center; }
 .justify-content-center { justify-content: center !important; }
 
+/* A card's bottom margin separates cards once they stack on narrow screens.
+   In a section's final row on desktop they sit side by side, so that margin
+   is dead space stacked on top of the section's own padding. */
+@media (min-width: 768px) {
+  .lighter-section > .row:last-child .card,
+  .darker-section > .row:last-child .card {
+    margin-bottom: 0;
+  }
+}
+
 /* Forms */
 .form-group {
   margin-bottom: 1rem;
@@ -2691,6 +2701,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 0.5rem;
   transition: border-color 0.3s ease;
+  height: 100%;
 }
 
 .process-step:hover {
@@ -2735,6 +2746,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 0.5rem;
   transition: border-color 0.3s ease;
+  height: 100%;
 }
 
 .icon-stat:hover {

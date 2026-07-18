@@ -56,6 +56,11 @@ See `[[copy-voice-rules]]` in memory for the full set. In short:
 - **Solo / "one person":** lean in only where a point genuinely needs it. Don't make it "me me me" everywhere — carry the personal advantage through the partnership "we" and let it surface explicitly only when necessary.
 - **Audience / size:** core market is small businesses and sole traders, and that warmth stays — but never frame the offer as a size *ceiling*. The load-bearing promise is the capability and how it's delivered (personal, full-context, no red tape), which a larger business wants just as much. Lead with capability + delivery; let small-business identity live in supporting copy, never as an exclusion.
 - **Day job / availability:** do NOT mention Uriah's landscaping day job or "part-time" on the site — buyers purchase outcomes and reliability, not your schedule, and "part-time" reads as a side project and undercuts professionalism. But never claim full-time or a team either (same transparency reason as the team-"we"). Set expectations via response-time + project timelines, not schedule disclosure; keep availability claims honest (no "always on"). If asked directly, reframe positively: a deliberately small client load means every project gets full attention — a quality feature, not a limitation.
+- **CTAs must match what the site can actually do.** Don't name a mechanism the
+  site doesn't have. There is no booking tool — every CTA goes to the contact
+  form — so buttons say "Start the Conversation", not "Book a call". Offering
+  "a free 30-minute call" in supporting copy is fine: the call is real, it's just
+  arranged by reply. Revisit if a booking tool is ever added. *(2026-07-18)*
 - **Home page job:** wayfinding + possibility, NOT ethos or self-promotion. Early traffic is word-of-mouth/referral, so visitors arrive *pre-trusted* — they don't need convincing who Uriah is, they want to see *what's possible for them*. So Home leads with **routing** (Web & Design vs Solutions, Services, Contact) and **possibility** ("what you could have"), and demotes "why me" to a light touch carried across the page (the hero "I build…", the personal feel of the process, and proof/testimonials) rather than its own selling section. Carry the spine lightly; the full story/ethos lives on About. Every Home section earns its place by serving visitor flow, not by explaining Uriah.
 
 ---
@@ -93,5 +98,10 @@ Full drafted copy lives in the copy deck: `outputs/home-copy-draft.md`.
 - **Home page copy — DONE.** Written, approved, cohesion-passed, and wired into `index.html` (2026-06-07; milestone documented 2026-06-08). Full handoff: `outputs/session-summary-2026-06-08.md`. Copy deck: `outputs/home-copy-draft.md`. *Not yet visually verified in a browser; nothing committed to git.*
 - **Next: draft the About page** — where the full ethos/origin story + the agility wedge get full volume.
 - Pre-launch follow-ups (not blocking): §5 needs real screenshots + client consent (InfoFocus/Simons); `portfolio.html` still a placeholder; add real client quotes as they land.
+- **The contact form does not work.** `js/script.js` posts to a literal
+  `YOUR_FORMSPREE_ID` placeholder, so every submission 404s and falls back to the
+  error message. It fails gracefully, but the email link is currently the only
+  working contact path. Uriah will wire the real Formspree ID when going live
+  (deferred 2026-07-18) — until then, don't write copy that leans on the form.
 - Later: Solutions page rewrite (collapse 6 cards → 3 buckets; AI as the how not the headline; booking confirm-first; I/partnership-"we" pass), then Services/Design/FAQ rewrites — all deriving from this spine.
 - How prominently the solo nature sits on the homepage vs inner pages.

@@ -96,7 +96,9 @@ I'll connect your tools and automate the busywork, so the day-to-day runs itself
 **Sub:** Tell me where you want your business to go, and I'll show you what's possible — in a free 30-minute call. No pressure.
 
 > *Trimmed 2026-07-18:* was "No pressure, no jargon." "No jargon" already carries §4's subhead; here "No pressure" is the load-bearing reassurance and the second clause was filler.
-**Primary CTA:** → Book your free discovery call
+**Primary CTA:** → Start the conversation
+
+> *Reworded 2026-07-18:* was "Book your free discovery call." There is no booking tool on the site — the button goes to the contact form, so "Book" promised self-service scheduling the site cannot deliver. The supporting line still offers "a free 30-minute call", which remains true: the call is arranged by reply. Revisit if a booking tool is ever added. Same change applied to `solutions.html`'s CTA.
 **Secondary:** or email uriah@icumediadesign.co.nz
 
 *(Closes the loop opened in §3 "what's possible"; consistent free-30-min framing with §4; one primary action + low-commitment email fallback.)*

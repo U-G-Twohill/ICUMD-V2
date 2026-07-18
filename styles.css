@@ -303,6 +303,7 @@ img {
 .mb-5 { margin-bottom: 3rem !important; }
 .mt-5 { margin-top: 3rem !important; }
 .text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
 .text-danger { color: var(--danger) !important; }
 .d-block { display: block !important; }
 /* The brighter blue, not --primary: these sit on the sections' lightened
@@ -310,6 +311,12 @@ img {
 .text-theme-color { color: #66b0ff !important; }
 .flex-center { display: flex; justify-content: center; align-items: center; }
 .justify-content-center { justify-content: center !important; }
+
+/* The navbar is fixed and ~70px tall, so an anchor jump would otherwise land
+   with the section heading hidden underneath it. Offset every anchor target. */
+[id] {
+  scroll-margin-top: 100px;
+}
 
 /* A card's bottom margin separates cards once they stack on narrow screens.
    In a section's final row on desktop they sit side by side, so that margin

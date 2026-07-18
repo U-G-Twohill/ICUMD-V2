@@ -5,3 +5,4 @@ vendor/
 .DS_Store
 Thumbs.db
 screenshots/
+.playwright-mcp/

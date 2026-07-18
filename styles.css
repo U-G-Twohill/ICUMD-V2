@@ -307,6 +307,7 @@ img {
 .d-block { display: block !important; }
 .text-theme-color { color: var(--primary) !important; }
 .flex-center { display: flex; justify-content: center; align-items: center; }
+.justify-content-center { justify-content: center !important; }
 
 /* Forms */
 .form-group {

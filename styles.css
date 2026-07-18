@@ -305,7 +305,9 @@ img {
 .text-center { text-align: center !important; }
 .text-danger { color: var(--danger) !important; }
 .d-block { display: block !important; }
-.text-theme-color { color: var(--primary) !important; }
+/* The brighter blue, not --primary: these sit on the sections' lightened
+   gradient, where #007bff only reaches ~3.6:1 and fails WCAG AA. */
+.text-theme-color { color: #66b0ff !important; }
 .flex-center { display: flex; justify-content: center; align-items: center; }
 .justify-content-center { justify-content: center !important; }
 
